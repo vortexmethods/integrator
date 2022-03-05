@@ -49,8 +49,11 @@ public:
 	{
 		scalarResult.clear();
 		scalarResult.resize(task.size());
+
+
+#pragma omp parallel for schedule(dynamic, 1000)
 		for (int tsk = 0; tsk < task.size(); ++tsk)
-			scalarResult[tsk] = scalarEvaluate(task[tsk].first, task[tsk].second);
+			scalarResult[tsk] = this->scalarEvaluate(task[tsk].first, task[tsk].second);
 	}//run()
 
 	/// \brief Перегрузка функции для выполнения одного векторнозначного вычисления

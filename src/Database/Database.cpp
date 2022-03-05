@@ -168,3 +168,14 @@ void Database<3>::calcNrm()
 		nrm.push_back((v1^v2).unit());
 	}
 }
+
+template<> 
+void Database<3>::calcCnt()
+{
+	cnt.clear();
+	cnt.resize(0);
+
+	cnt.reserve(topo.size());
+	for (const auto& trg : topo)
+		cnt.push_back((node[trg[0]] + node[trg[1]] + node[trg[2]])*0.3333333333333333);
+}

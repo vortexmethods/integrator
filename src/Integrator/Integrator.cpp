@@ -13,8 +13,11 @@
 */
 
 #include <iostream>
+#include <fstream>
+#include "omp.h"
 
 #include "CompTest.h"
+#include "CompI3DM.h"
 
 /*!
 \mainpage Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента
@@ -40,11 +43,28 @@ int main(int argc, char** argv)
 	Database<3> db3;
 	db3.readNodeTopoFromFile("G1.dat");
 	db3.fillNbh();
+	db3.calcNrm();
+	db3.calcCnt();
 
-	CompTest cmp(db3);
-	cmp.task.push_back({ 1, 1 });
-	cmp.task.push_back({ 1, 2 });
+	db3.point = db3.cnt;
+
+	
+	CompI3DM cmp(db3);
+	for (int i = 0; i < 100*db3.topo.size(); ++i)
+		for (int j = 0; j < 100*db3.topo.size(); ++j)
+			cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
+	
+	double t1 = omp_get_wtime();
 	cmp.run();
+	double t2 = omp_get_wtime();
+	std::cout << t2 - t1 << " sec." << std::endl;
 
-	std::cout << cmp.scalarResult[0] << " " << cmp.scalarResult[1] << std::endl;
+	/*
+	std::ofstream of("result.txt");
+	for (const auto& res : cmp.scalarResult)
+		of << res << '\n';
+	of.close();
+	*/
+
+	
 }

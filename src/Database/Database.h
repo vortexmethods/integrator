@@ -51,6 +51,9 @@ public:
 	/// Нормали к ячейкам сетки
 	std::vector<numvector<double, dim>> nrm;
 
+	/// Центры ячеек сетки
+	std::vector<numvector<double, dim>> cnt;
+
 	/// Координаты точек вычисления однократных интегралов
 	std::vector<numvector<double, dim>> point;
 
@@ -76,6 +79,11 @@ public:
 	/// Вычисление нормалей
 	/// \warning Базовая реализация отсутствует, см. явные специализации для конкретных dim
 	void calcNrm();
+
+	/// Вычисление центров панелей
+	/// \warning Базовая реализация отсутствует, см. явные специализации для конкретных dim
+	void calcCnt();
+
 };//class Database
 
 //Специализации функций-членов шаблонного класса для dim=3
@@ -85,3 +93,5 @@ template<> void Database<3>::readNodeTopoFromFile(const std::string& fileName);
 template<> void Database<3>::fillNbh();
 
 template<> void Database<3>::calcNrm();
+
+template<> void Database<3>::calcCnt();

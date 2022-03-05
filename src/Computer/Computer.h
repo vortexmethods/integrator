@@ -60,7 +60,7 @@ public:
 	/// \param[in] i индекс контрольной точки или контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат интегрирования
-	virtual double scalarEvaluate(int i, int j) = 0;
+	virtual inline double scalarEvaluate(int i, int j) = 0;
 	
 	/// \brief Виртуальная функция для выполнения одного векторнозначного вычисления
 	///
