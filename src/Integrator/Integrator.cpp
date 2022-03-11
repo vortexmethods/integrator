@@ -8,13 +8,11 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
-#include <iostream>
 #include <fstream>
-#include "omp.h"
 
 #include "CompTest.h"
 #include "CompI3DM.h"
@@ -31,40 +29,74 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 
 int main(int argc, char** argv)
 {
-    std::cout << "Hello World!\n"; 
+	Parallel par;
+	
+	// Инициализация подсистемы MPI
+	MPI_Init(&argc, &argv);
+	// Получить размер коммуникатора MPI_COMM_WORLD
+	// (общее число процессов в рамках задачи)
+	MPI_Comm_size(MPI_COMM_WORLD, &par.np);
+	// Получить номер текущего процесса в рамках 
+	// коммуникатора MPI_COMM_WORLD
+	MPI_Comm_rank(MPI_COMM_WORLD, &par.rank);	
+	
+	Parallel::CreateMpiType();
 
 	Database<3> db3;
-	db3.readNodeTopoFromFile("G1.dat");
+	int nNode, nTopo;
+
+	if (par.rank == 0)
+	{
+		std::cout << "Hello World!\n";	
+		db3.readNodeTopoFromFile("G1.dat");
+		nNode = (int)db3.node.size();
+		nTopo = (int)db3.topo.size();
+	}
+
+	//Рассылка базы данных
+	par.SplitMPI(db3.node.size()).BcastVector(db3.node);
+	par.SplitMPI(db3.topo.size()).BcastVector(db3.topo);
+
 	db3.fillNbh();
 	db3.calcNrm();
 	db3.calcCnt();
+	db3.point = db3.cnt;		
 
-	db3.point = db3.cnt;
+	CompI3DM cmp(db3, par);
+	if (par.rank == 0)
+	{	
+		for (int i = 0; i < 1 * db3.topo.size(); ++i)
+			for (int j = 0; j < 1 * db3.topo.size(); ++j)
+				cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
+	}
 
-	
-	CompI3DM cmp(db3);
-	for (int i = 0; i < 100*db3.topo.size(); ++i)
-		for (int j = 0; j < 100*db3.topo.size(); ++j)
-			cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
-	
+	MPI_Barrier(MPI_COMM_WORLD);
 	double t1 = omp_get_wtime();
-	cmp.run();
+	
+	cmp.run(false);
+	
+	MPI_Barrier(MPI_COMM_WORLD);
 	double t2 = omp_get_wtime();
+	
 	std::cout << t2 - t1 << " sec." << std::endl;
 
 	/*
-	std::ofstream of("result.txt");
-	for (const auto& res : cmp.scalarResult)
-		of << res << '\n';
-	of.close();
-	*/
+	if (par.rank == 0)
+	{
+		std::ofstream of("result_false.txt");
+		for (const auto& res : cmp.scalarResult)
+			of << res << '\n';
+		of.close();
+	}
+	//*/
 
+	MPI_Finalize();
 	
 }

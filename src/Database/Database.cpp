@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #include "Database.h"

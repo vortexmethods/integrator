@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
-project(Integrator LANGUAGES CXX)
+project(integrator LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
@@ -49,6 +49,13 @@ find_package(OpenMP)
 if (OPENMP_FOUND)
     set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+
+#MPI
+find_package(MPI REQUIRED)
+if (MPI_FOUND)
+    include_directories(${MPI_INCLUDE_PATH})
+	target_link_libraries(integrator ${MPI_LIBRARIES})
 endif()
 
 set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})

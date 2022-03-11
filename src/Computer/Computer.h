@@ -8,13 +8,14 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #pragma once
 
 #include "Database.h"
+#include "Parallel.h"
 
 /*!
 \brief Абстрактный шаблонный класс -- вычислитель интегралов
@@ -24,9 +25,12 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.1
-\date 01 марта 2022 г.
+\version 0.2
+\date 11 марта 2022 г.
 */
+
+
+#define OMP_SCHEDULE_BLOCK_SIZE 1000
 
 template <int dim>
 class Computer
@@ -34,6 +38,9 @@ class Computer
 public:
 	/// Константная ссылка на базу данных геометрических параметров
 	const Database<dim>& db;
+
+	/// Константная ссылка на класс, управляющий распараллеливанием по MPI
+	const Parallel& par;
 	
 	/// Вектор пар, определяющий необходимые вычисления
 	std::vector<std::pair<int, int>> task;
@@ -47,13 +54,16 @@ public:
 	/// \brief Конструктор
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
-	Computer(const Database<dim>& db_) : db(db_) {};
+	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
+	Computer(const Database<dim>& db_, const Parallel& par_) : db(db_), par(par_) {};
 	
 	/// Деструктор
 	virtual ~Computer() {};
 
-	/// Виртуальная функция выполнения всего объема расчетов
-	virtual void run() = 0;
+	/// \brief Виртуальная функция выполнения всего объема расчетов
+	///
+	/// \param[in] split признак разделения задач на 3 подсписка: для дальних пар ячеек, для ячеек с общим ребром и для ячеек с общей вершиной
+	virtual void run(bool split) = 0;
 
 	/// \brief Виртуальная функция для выполнения одного скалярнозначного вычисления
 	///

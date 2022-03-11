@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #pragma once
@@ -24,8 +24,8 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.1
-\date 01 марта 2022 г.
+\version 0.2
+\date 11 марта 2022 г.
 */
 
 template <int dim>
@@ -35,17 +35,19 @@ class ComputerVector :
 public:
 	using Computer<dim>::vectorResult;
 	using Computer<dim>::task;
+	using Computer<dim>::par;
 	
 	/// \brief Конструктор
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
-	ComputerVector(const Database<dim>& db_) : Computer(db_) {};
+	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
+	ComputerVector(const Database<dim>& db_, const Parallel& par_) : Computer(db_, par_) {};
 	
 	/// Деструктор
 	virtual ~ComputerVector() {};
 
 	/// Перегрузка функции выполнения всего объема расчетов
-	virtual void run() override
+	virtual void run(bool split) override
 	{
 		vectorResult.clear();
 		vectorResult.resize(task.size());

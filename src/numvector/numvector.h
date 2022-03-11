@@ -90,7 +90,6 @@ namespace VMlib
 		/// Собственно, вектор с данными
 		T r[n];
 	public:
-
 		/// \brief Оператор "[]" доступа к элементу
 		///
 		/// \tparam T тип данных компонент вектора
@@ -1167,5 +1166,8 @@ using VMlib::dist2;
 
 typedef numvector<double, 3> v3D;
 typedef numvector<double, 2> v2D;
+
+typedef numvector<int, 3> i3D;
+typedef numvector<int, 2> i2D;
 
 #endif

@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #include "CompI3DM.h"
@@ -17,18 +17,9 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-CompI3DM::CompI3DM(const Database<3>& db_) : ComputerScalar(db_) {};
+CompI3DM::CompI3DM(const Database<3>& db_, const Parallel& par_) : ComputerScalar(db_, par_) {};
 CompI3DM::~CompI3DM() {};
 
-//double Theta(const v3D& va, const v3D& vb, const v3D& vc)
-//{
-//	const v3D& ova = va.unit();
-//	const v3D& ovb = vb.unit();
-//	const v3D& ovc = vc.unit();
-//
-//	return 2.0 * atan2((ova ^ ovb) & ovc, 1.0 + (ova & ovb) + (ovb & ovc) + (ovc & ova));
-//
-//}
 
 double CompI3DM::scalarEvaluate(int i, int j)
 {

@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #pragma once
@@ -23,8 +23,8 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.1
-\date 01 марта 2022 г.
+\version 0.2
+\date 11 марта 2022 г.
 */
 
 class CompTest :
@@ -35,7 +35,8 @@ public:
 	/// \brief Конструктор
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
-	CompTest(const Database<3>& db_);
+	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
+	CompTest(const Database<3>& db_, const Parallel& par_);
 	
 	/// Деструктор
 	~CompTest();

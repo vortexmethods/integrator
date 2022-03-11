@@ -8,13 +8,13 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 01 марта 2022 г.
-\version 0.1
+\date 11 марта 2022 г.
+\version 0.2
 */
 
 #include "CompTest.h"
 
-CompTest::CompTest(const Database<3>& db_) : ComputerScalar(db_) {};
+CompTest::CompTest(const Database<3>& db_, const Parallel& par_) : ComputerScalar(db_, par_) {};
 CompTest::~CompTest() {};
 
 double CompTest::scalarEvaluate(int i, int j)
