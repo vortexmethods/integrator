@@ -8,27 +8,27 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 11 марта 2022 г.
-\version 0.2
+\date 02 апреля 2022 г.
+\version 0.3
 */
 
 #pragma once
-#include "ComputerScalar.h"
+#include "Computer.h"
 
 /*!
 \brief Пример класса -- вычислителя скалярнозначных интегралов для пространственного случая
 \n Наследован от Computer<3>
-\n Для примера вычисялет расстояние между центрами панелей
+\n Для примера вычисляет расстояние между центрами панелей
 
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.2
-\date 11 марта 2022 г.
+\version 0.3
+\date 02 апреля 2022 г.
 */
 
 class CompTest :
-	public ComputerScalar<3>
+	public Computer<double, 3>
 {
 public:
 
@@ -46,6 +46,6 @@ public:
 	/// \param[in] i индекс контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат --- расстояние между центрами панелей
-	virtual double scalarEvaluate(int i, int j) override;	
+	virtual double evaluate(int i, int j) override;	
 };
 

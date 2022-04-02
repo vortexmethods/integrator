@@ -43,7 +43,7 @@
 #define WARNING(desc) message(__FILE__ "(" STRINGIZE(__LINE__) ") : warning: " #desc)
 */
 
-/*
+//*
 #if defined(__GNUC__) || defined(__clang__)
 #define DEPRECATED __attribute__((deprecated))
 #elif defined(_MSC_VER)
@@ -52,13 +52,14 @@
 #pragma message("WARNING: You need to implement DEPRECATED for this compiler")
 #define DEPRECATED
 #endif
-*/
+//*/
 
-#define DEPRECATED
+//#define DEPRECATED
 
 #include <cmath>
 #include <initializer_list>
 #include <ostream>
+//#include <array>
 #include <set>
 #include <vector>
 
@@ -82,13 +83,15 @@ namespace VMlib
 	*/
 
 
-	template<typename T, size_t n>
-	class numvector
+	template<typename T, size_t n> 
+	class numvector //: public std::array<T, n>
 	{
 	protected:
 
 		/// Собственно, вектор с данными
 		T r[n];
+//#define r _Elems
+
 	public:
 		/// \brief Оператор "[]" доступа к элементу
 		///
@@ -502,6 +505,74 @@ namespace VMlib
 		}//rotateLeft(...)
 
 
+		/// \brief Разность двух векторов
+		///
+		/// Исходный вектор при этом не изменяется
+		///
+		/// \tparam T тип данных компонент вектора
+		/// \tparam P тип данных компонент вычитаемого вектора
+		/// \tparam m длина вычитаемого вектора	
+		/// \interior[in] вычитаемый вектор
+		/// \return разность векторов в виде std::vector<T>
+		template<typename P, size_t m>
+		std::vector<T> difference(const numvector<P, m>& other) const
+		{
+			std::vector<T> res;
+			bool Unique;
+
+			for (size_t i = 0; i < n; ++i)
+			{
+				Unique = true;
+
+				for (size_t j = 0; j < m; ++j)
+					if (other[j] == r[i])
+					{
+						Unique = false;
+						break;
+					}
+
+				if (Unique) 
+					res.push_back(r[i]);
+			}//for i
+
+			return res;
+		}//difference(...)
+
+
+		/// \brief Разность двух векторов
+		///
+		/// Исходный вектор при этом не изменяется
+		///
+		/// \tparam T тип данных компонент вектора
+		/// \tparam P тип данных компонент вычитаемого вектора
+		/// \tparam m длина вычитаемого вектора	
+		/// \interior[in] вычитаемый вектор
+		/// \return разность векторов в виде std::vector<T>
+		template<typename P, size_t m>
+		std::vector<T> intersection(const numvector<P, m>& other) const
+		{
+			std::vector<T> res;
+			bool Unique;
+
+			for (size_t i = 0; i < n; ++i)
+			{
+				Unique = true;
+
+				for (size_t j = 0; j < m; ++j)
+					if (other[j] == r[i])
+					{
+						Unique = false;
+						break;
+					}
+
+				if (!Unique)
+					res.push_back(r[i]);
+			}//for i
+
+			return res;
+		}//intersection(...)
+				
+
 		/// \brief Геометрический поворот двумерного вектора на 90 градусов
 		///
 		/// Исходный вектор при этом не изменяется
@@ -679,7 +750,9 @@ namespace VMlib
 		/// \brief Оператор присваивания всем компонентам вектора одного и того же числа
 		DEPRECATED numvector<T, n> operator=(double c)
 		{
-			return numvector<T, n>(c);
+			for (size_t i = 0; i < n; ++i)
+				r[i] = c;			
+			return *this;
 		}//operator(...)
 
 
@@ -782,6 +855,31 @@ namespace VMlib
 		numvector<R, n> p = x - y;
 		return sqrt(p&p);
 	}//dist(...)
+
+
+	/// \brief Вычисление угла между двумя радиус-векторами
+	///
+	/// \tparam T тип данных компонент первого радиус-вектора
+	/// \tparam P тип данных компонент второго радиус-вектора
+	/// \tparam n размерность векторов
+	/// \param[in] x константная ссылка на радиус-вектор первой точки
+	/// \param[in] y константная ссылка на радиус-вектор второй точки
+	/// \return угол между радиус-векторами
+	template <typename T, typename P, size_t n>
+	auto angle(const numvector<T, n>& x, const numvector<P, n>& y) -> typename std::remove_const<decltype(x[0] * y[0])>::type
+	{
+		auto den = sqrt((x.length2() * y.length2()));
+		if (den == 0)
+			return 0;
+
+		typename std::remove_const<decltype(x[0] * y[0])>::type res = (x & y) / den;
+		if (res >= 1.0)
+			return 0;
+		if (res <= -1.0)
+			return (typename std::remove_const<decltype(x[0] * y[0])>::type)3.1415926535897932;
+
+		return acos(res);
+	}
 
 
 	/// \brief Оператор "<<" вывода вектора в поток
@@ -922,6 +1020,48 @@ namespace VMlib
 		return str;
 	}//operator<<
 
+
+
+	/////////////// ПАРЫ <T, numvector<T, n>>
+
+	template<typename T, size_t n>
+	struct pairScalarVector : public std::pair<T, numvector<T, n>>
+	{
+	public:
+		//using std::pair<T, numvector<T, n>>;
+
+		pairScalarVector() {};
+		pairScalarVector(T val) : std::pair<T, numvector<T, n>>(val, val) {  };
+		pairScalarVector(T val, const numvector<T, n>& vec) : std::pair<T, numvector<T, n>>(val, vec) {  };
+
+		pairScalarVector<T, n> operator+(const std::pair<T, numvector<T, n>>& y) const
+		{
+			return { first + y.first, second + y.second };
+		}
+		pairScalarVector<T, n>& operator+=(const std::pair<T, numvector<T, n>>& y)
+		{
+			first += y.first;
+			second += y.second;
+			return *this;
+		}
+		pairScalarVector<T, n> operator*(T a) const
+		{
+			return { first * a, second * a };
+		}
+	};
+
+	template<typename T, size_t n>
+	pairScalarVector<T, n> operator*(T a, const pairScalarVector<T, n>& y)
+	{
+		return y*a;
+	}
+
+	template<typename T, size_t n>
+	std::ostream& operator<<(std::ostream& str, const pairScalarVector<T, n>& y)
+	{
+		str << "< " << y.first << ", " << y.second << " >";
+		return str;
+	}
 
 	////////////////////////////////////////////////////////////////////////
 	// Далее deprecate-функции для ПОЛНОЙ СОВМЕСТИМОСТИ со старой версией //
@@ -1163,11 +1303,14 @@ namespace VMlib
 
 using VMlib::numvector;
 using VMlib::dist2;
+using VMlib::pairScalarVector;
 
 typedef numvector<double, 3> v3D;
 typedef numvector<double, 2> v2D;
 
 typedef numvector<int, 3> i3D;
 typedef numvector<int, 2> i2D;
+
+typedef pairScalarVector<double, 3> p13D;
 
 #endif

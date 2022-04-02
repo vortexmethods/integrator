@@ -8,16 +8,16 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 11 марта 2022 г.
-\version 0.2
+\date 02 апреля 2022 г.
+\version 0.3
 */
 
 #include "CompTest.h"
 
-CompTest::CompTest(const Database<3>& db_, const Parallel& par_) : ComputerScalar(db_, par_) {};
+CompTest::CompTest(const Database<3>& db_, const Parallel& par_) : Computer(db_, par_) {};
 CompTest::~CompTest() {};
 
-double CompTest::scalarEvaluate(int i, int j)
+double CompTest::evaluate(int i, int j)
 {
 	v3D pi = (db.node[db.topo[i][0]] + db.node[db.topo[i][1]] + db.node[db.topo[i][2]]) * 0.33333333333333333;
 	v3D pj = (db.node[db.topo[j][0]] + db.node[db.topo[j][1]] + db.node[db.topo[j][2]]) * 0.33333333333333333;

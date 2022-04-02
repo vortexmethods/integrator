@@ -38,7 +38,7 @@
 
 //using namespace VMlib;
 
-MPI_Datatype Parallel::MPI_V3D, Parallel::MPI_I3D, Parallel::MPI_PAIRII;
+MPI_Datatype Parallel::MPI_V3D, Parallel::MPI_I3D, Parallel::MPI_V2D, Parallel::MPI_I2D, Parallel::MPI_PAIRII;
 
 // Распределение задач по процессорам
 parProp Parallel::SplitMPIone(size_t n, bool bcastAll) const
@@ -145,6 +145,18 @@ void Parallel::CreateMpiType()
 		MPI_Type_create_struct(1, len, pos, typi, &MPI_I3D);
 		MPI_Type_commit(&MPI_V3D);
 		MPI_Type_commit(&MPI_I3D);
+	}
+
+	{
+		int          len[1] = { 2 };
+		MPI_Aint     pos[1] = { 0 };
+		MPI_Datatype typd[1] = { MPI_DOUBLE };
+		MPI_Datatype typi[1] = { MPI_INT };
+
+		MPI_Type_create_struct(1, len, pos, typd, &MPI_V2D);
+		MPI_Type_create_struct(1, len, pos, typi, &MPI_I2D);
+		MPI_Type_commit(&MPI_V2D);
+		MPI_Type_commit(&MPI_I2D);
 	}
 
 	{

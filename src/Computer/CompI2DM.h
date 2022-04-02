@@ -3,7 +3,7 @@
 
 /*!
 \file
-\brief Файл с описанием класса CompI3DM
+\brief Файл с описанием класса CompI2DM
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
@@ -16,7 +16,7 @@
 #include "Computer.h"
 
 /*!
-\brief Класс -- вычислитель для 3D случая однократного интеграла от функции Грина
+\brief Класс -- вычислитель для 2D случая однократного интеграла от функции Грина
 \n Наследован от Computer<double, 3>
 
 \author Гумирова Алия Ильдусовна
@@ -26,8 +26,8 @@
 \date 02 апреля 2022 г.
 */
 
-class CompI3DM :
-	public Computer<double, 3>
+class CompI2DM :
+	public Computer<double, 2>
 {
 public:
 
@@ -35,37 +35,16 @@ public:
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
 	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
-	CompI3DM(const Database<3>& db_, const Parallel& par_);
-	
+	CompI2DM(const Database<2>& db_, const Parallel& par_);
+
 	/// Деструктор
-	~CompI3DM();
+	~CompI2DM();
 
 	/// \brief Перегрузка функции для выполнения одного скалярнозначного вычисления
 	///
 	/// \param[in] i индекс контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат --- расстояние между центрами панелей
-	virtual inline double evaluate(int i, int j) override;	
+	virtual inline double evaluate(int i, int j) override;
 };
-
-//class CompI3DM :
-//	public ComputerScalar<3>
-//{
-//public:
-//
-//	/// \brief Конструктор
-//	/// 	
-//	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
-//	CompI3DM(const Database<3>& db_);
-//
-//	/// Деструктор
-//	~CompI3DM();
-//
-//	/// \brief Перегрузка функции для выполнения одного скалярнозначного вычисления
-//	///
-//	/// \param[in] i индекс контрольной панели в базе данных
-//	/// \param[in] j индекс влияющей панели в базе данных
-//	/// \return скалярный результат --- расстояние между центрами панелей
-//	virtual inline double scalarEvaluate(int i, int j) override;
-//};
 
