@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Класс CompI2DK</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.3</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d0/db3/class_comp_i2_d_k.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d2/d75/class_comp_i2_d_k-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс CompI2DK</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/d71/_comp_i2_d_k_8h_source.html">CompI2DK.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:CompI2DK:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d68/class_comp_i2_d_k__inherit__graph.png" border="0" usemap="#_comp_i2_d_k_inherit__map" alt="Inheritance graph"/></div>
+<map name="_comp_i2_d_k_inherit__map" id="_comp_i2_d_k_inherit__map">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html" title="Computer\&lt; double, 2 \&gt;" alt="" coords="5,5,161,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса CompI2DK:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d4f/class_comp_i2_d_k__coll__graph.png" border="0" usemap="#_comp_i2_d_k_coll__map" alt="Collaboration graph"/></div>
+<map name="_comp_i2_d_k_coll__map" id="_comp_i2_d_k_coll__map">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html" title="Computer\&lt; double, 2 \&gt;" alt="" coords="127,109,283,136"/>
+<area shape="rect" id="node4" href="../../d0/df0/class_parallel.html" title="Класс, опеделяющий параметры исполнения задачи в параллельном MPI&#45;режиме " alt="" coords="172,13,237,39"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab7581573d28aff9a833dc0f845cb5fad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html#ab7581573d28aff9a833dc0f845cb5fad">CompI2DK</a> (const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt; &amp;db_, const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;par_)</td></tr>
+<tr class="memdesc:ab7581573d28aff9a833dc0f845cb5fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">�����������  <a href="#ab7581573d28aff9a833dc0f845cb5fad">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab7581573d28aff9a833dc0f845cb5fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addef7b1b076ab9aa777acca2f2c71f65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html#addef7b1b076ab9aa777acca2f2c71f65">~CompI2DK</a> ()</td></tr>
+<tr class="memdesc:addef7b1b076ab9aa777acca2f2c71f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">����������  <a href="#addef7b1b076ab9aa777acca2f2c71f65">Подробнее...</a><br /></td></tr>
+<tr class="separator:addef7b1b076ab9aa777acca2f2c71f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1bee93979c1bb762a025c3794de3e1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;v1, const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;v2)</td></tr>
+<tr class="separator:a0d1bee93979c1bb762a025c3794de3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95aabe54521d98593534fdd7033ac9b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;v, const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;ti, const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;tj)</td></tr>
+<tr class="separator:a95aabe54521d98593534fdd7033ac9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509cb3d31f11151d71e29952cbf98cfb"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html#a509cb3d31f11151d71e29952cbf98cfb">evaluate</a> (int i, int j) override</td></tr>
+<tr class="memdesc:a509cb3d31f11151d71e29952cbf98cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">���������� ������� ��� ���������� ������ ���������������� ����������  <a href="#a509cb3d31f11151d71e29952cbf98cfb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a509cb3d31f11151d71e29952cbf98cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79afc38363d70a19e70be7f49b404c41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a79afc38363d70a19e70be7f49b404c41">run</a> (bool split)</td></tr>
+<tr class="memdesc:a79afc38363d70a19e70be7f49b404c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальная функция выполнения всего объема расчетов  <a href="#a79afc38363d70a19e70be7f49b404c41">Подробнее...</a><br /></td></tr>
+<tr class="separator:a79afc38363d70a19e70be7f49b404c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a14340d689ad01e29210b93c31156f06b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a></td></tr>
+<tr class="memdesc:a14340d689ad01e29210b93c31156f06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на базу данных геометрических параметров  <a href="#a14340d689ad01e29210b93c31156f06b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a14340d689ad01e29210b93c31156f06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298915e70ef36f4f4259bd9ea578ad04"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">par</a></td></tr>
+<tr class="memdesc:a298915e70ef36f4f4259bd9ea578ad04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на класс, управляющий распараллеливанием по MPI.  <a href="#a298915e70ef36f4f4259bd9ea578ad04">Подробнее...</a><br /></td></tr>
+<tr class="separator:a298915e70ef36f4f4259bd9ea578ad04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; dim &gt; *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a></td></tr>
+<tr class="memdesc:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный указатель на интегратор по гауссовым точкам (может быть пустым)  <a href="#affa6a3bfd6e3bafc416c1f788b22b70d">Подробнее...</a><br /></td></tr>
+<tr class="separator:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1f7935bcae12a74140237e5765c9ba"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a></td></tr>
+<tr class="memdesc:a9a1f7935bcae12a74140237e5765c9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор пар, определяющий необходимые вычисления  <a href="#a9a1f7935bcae12a74140237e5765c9ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9a1f7935bcae12a74140237e5765c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f615779271ff521fe656a5db083104"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a></td></tr>
+<tr class="memdesc:a90f615779271ff521fe656a5db083104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор для хранения результатов вычислений  <a href="#a90f615779271ff521fe656a5db083104">Подробнее...</a><br /></td></tr>
+<tr class="separator:a90f615779271ff521fe656a5db083104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="../../d2/d71/_comp_i2_d_k_8h_source.html">CompI2DK.h</a> строка <a class="el" href="../../d2/d71/_comp_i2_d_k_8h_source.html#l00018">18</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ab7581573d28aff9a833dc0f845cb5fad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CompI2DK::CompI2DK </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>db_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td>
+          <td class="paramname"><em>par_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>����������� </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">db_</td><td>����������� ������ �� ���� ������ �������������� ���������� </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">par_</td><td>����������� ������ �� �����, ����������� ������������������ �� MPI </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a> строка <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00011">11</a></p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;: <a class="code" href="../../d0/d39/class_computer.html#a6a0d6ae7b8417877a4ddf7388f4d1a13">Computer</a>(db_, par_) {};</div><div class="ttc" id="class_computer_html_a6a0d6ae7b8417877a4ddf7388f4d1a13"><div class="ttname"><a href="../../d0/d39/class_computer.html#a6a0d6ae7b8417877a4ddf7388f4d1a13">Computer&lt; double, 2 &gt;::Computer</a></div><div class="ttdeci">Computer(const Database&lt; dim &gt; &amp;db_, const Parallel &amp;par_, const Gausspoints&lt; dim &gt; *const gp_=nullptr)</div><div class="ttdoc">Конструктор </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00063">Computer.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="addef7b1b076ab9aa777acca2f2c71f65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CompI2DK::~CompI2DK </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>���������� </p>
+
+<p>См. определение в файле <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a> строка <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00012">12</a></p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{};  </div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a509cb3d31f11151d71e29952cbf98cfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI2DK::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>���������� ������� ��� ���������� ������ ���������������� ���������� </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>������ ����������� ������ � ���� ������ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>������ �������� ������ � ���� ������ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>��������� ��������� &mdash; ���������� ����� �������� ������� </dd></dl>
+
+<p>Замещает <a class="el" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">Computer&lt; double, 2 &gt;</a>.</p>
+
+<p>См. определение в файле <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a> строка <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00029">29</a></p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; pt1 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][0]];</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; pt2 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][1]];</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//������� �� ������ ������ � ����� ����������</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; va = pt1 - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]];</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; vb = pt1 - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]];</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; wa = pt2 - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]];</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; wb = pt2 - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]];</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> ova(va), ovb(vb), owa(wa), owb(wb);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//������ �������� v_a � v_b ��������������</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> lva = ova.normalize();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> lvb = ovb.normalize();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> lwa = owa.normalize();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">double</span> lwb = owb.normalize();</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//tau_j - ��������� ������������ ������ ������ </span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> tauj = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]] - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]];</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> taui = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][1]] - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][0]];</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//L_j - ����� ������������� ������</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> Lj = tauj.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">normalize</a>();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> Li = taui.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">normalize</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span> LiEps_zero = Li * <a class="code" href="../../d7/def/_comp_i2_d_k_8cpp.html#a2e9f91192279036c420c255d9cd9a226">eps_zero</a>;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//h - ������������ ���������� ������</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//const double mh = 1.0;</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//if ((lva &lt; LiEps_zero) &amp;&amp; (lwb &lt; LiEps_zero))</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (i == j)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> 0.25 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * (3.0 - 2.0 * log(Lj <span class="comment">/*/ mh*/</span>)) * Lj * Lj;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> c = (0.5 * (<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][1]] + <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i][0]])) - (0.5 * (<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]] + <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]]));</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> c_k = -c.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9">kcross</a>();</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> tauj_k = -tauj.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9">kcross</a>();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">double</span> br1, br21;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span> br22 = (((c &amp; taui) * tauj) + ((c &amp; tauj) * taui)) &amp; c_k;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">double</span> br23 = 0.25 * (Lj * Lj - Li * Li) * (taui &amp; tauj_k);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> br3;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> Delta = 0.0;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//if (db.ifSosed({ i, j }) ) </span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">bool</span> zerowa = (lwa &lt; LiEps_zero);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> zerovb = (lvb &lt; LiEps_zero);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (zerowa || zerovb)</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (zerowa)</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">double</span> thVaVb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(va, vb);          </div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">double</span> thVbWb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(vb, wb);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            br1 = ((Lj * thVbWb) * taui - (Li * thVaVb) * tauj) &amp; c_k;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            br21 = -0.5 * (thVbWb - thVaVb);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            br3 = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(va, taui, tauj) * log(lva <span class="comment">/*/mh*/</span>) - <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(vb, taui, tauj) * log(lvb <span class="comment">/*/mh*/</span>) + <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">\</a></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">				  psi</a>(wb, taui, tauj) * log(lwb <span class="comment">/*/mh*/</span>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zerovb)</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordtype">double</span> thWaWb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(wa, wb);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">double</span> thVaWa = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(va, wa);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            </div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            br1 = ((Lj * thVaWa) * taui - (Li * thWaWb) * tauj) &amp; c_k;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            br21 = 0.5 * (thVaWa - thWaWb);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            br3 = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(va, taui, tauj) * log(lva <span class="comment">/*/mh*/</span>) - <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">\</a></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">				  psi</a>(wa, taui, tauj) * log(lwa <span class="comment">/*/mh*/</span>) + <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(wb, taui, tauj) * log(lwb <span class="comment">/*/mh*/</span>);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        </div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">//br1 = (Lj * ((zerowa ? 0.0 : Theta(va, wa)) + (zerovb ? 0.0 : Theta(vb, wb))) * taui \</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">             - Li * ((zerovb ? 0.0 : Theta(va, vb)) + (zerowa ? 0.0 : Theta(wa, wb))) * tauj) &amp; c_k;</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">//br21 = 0.5 * ((zerowa ? 0.0 : Theta(va, wa) - Theta(wa, wb)) - (zerovb ? 0.0 : Theta(vb, wb) - Theta(va, vb)));</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        </div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">//br3 = psi(va, taui, tauj) * log(lva /*/mh*/) - (zerovb ? 0.0 : psi(vb, taui, tauj) * log(lvb /*/mh*/)) - \</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">                     (zerowa ? 0.0 : psi(wa, taui, tauj) * log(lwa /*/mh*/)) + psi(wb, taui, tauj) * log(lwb /*/mh*/);</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        </div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">double</span> thij = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(taui, tauj);    </div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        Delta = -0.0625 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * (Li * Li + Lj * Lj) * thij * sin(thij);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">double</span> thVaVb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(va, vb);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">double</span> thWaWb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(wa, wb);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">double</span> thVaWa = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(va, wa);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordtype">double</span> thVbWb = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">Theta</a>(vb, wb);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        br1 = ((Lj * (thVaWa + thVbWb)) * taui - (Li * (thVaVb + thWaWb)) * tauj) &amp; c_k;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        br21 = 0.5 * (thVaWa - thWaWb - thVbWb + thVaVb);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        br3 = <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(va, taui, tauj) * log(lva <span class="comment">/*/mh*/</span>) - <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(vb, taui, tauj) * log(lvb <span class="comment">/*/mh*/</span>) - <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">\</a></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">		      psi</a>(wa, taui, tauj) * log(lwa <span class="comment">/*/mh*/</span>) + <a class="code" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">psi</a>(wb, taui, tauj) * log(lwb <span class="comment">/*/mh*/</span>);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> 0.25 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * (3.0 * Li * Lj + br1 + br21 * (br22 + br23) + br3) + Delta;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 2 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a8e16f463451bfe1c316f359c535cd947"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">VMlib::numvector::normalize</a></div><div class="ttdeci">T normalize(P newlen=1.0)</div><div class="ttdoc">Нормирование вектора на заданную длину </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00437">numvector.h:437</a></div></div>
+<div class="ttc" id="_comp_i2_d_k_8cpp_html_a2e9f91192279036c420c255d9cd9a226"><div class="ttname"><a href="../../d7/def/_comp_i2_d_k_8cpp.html#a2e9f91192279036c420c255d9cd9a226">eps_zero</a></div><div class="ttdeci">const double eps_zero</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00009">CompI2DK.cpp:9</a></div></div>
+<div class="ttc" id="class_comp_i2_d_k_html_a0d1bee93979c1bb762a025c3794de3e1"><div class="ttname"><a href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1">CompI2DK::Theta</a></div><div class="ttdeci">double Theta(const v2D &amp;v1, const v2D &amp;v2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00019">CompI2DK.cpp:19</a></div></div>
+<div class="ttc" id="_computer_8h_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00037">Computer.h:37</a></div></div>
+<div class="ttc" id="class_comp_i2_d_k_html_a95aabe54521d98593534fdd7033ac9b3"><div class="ttname"><a href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3">CompI2DK::psi</a></div><div class="ttdeci">double psi(const v2D &amp;v, const v2D &amp;ti, const v2D &amp;tj)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00024">CompI2DK.cpp:24</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a1471ef55266b8e21d045c4f4e05912d9"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9">VMlib::numvector::kcross</a></div><div class="ttdeci">numvector&lt; T, 2 &gt; kcross() const </div><div class="ttdoc">Геометрический поворот двумерного вектора на 90 градусов </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00583">numvector.h:583</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/db3/class_comp_i2_d_k_a509cb3d31f11151d71e29952cbf98cfb_cgraph.png" border="0" usemap="#d0/db3/class_comp_i2_d_k_a509cb3d31f11151d71e29952cbf98cfb_cgraph" alt=""/></div>
+<map name="d0/db3/class_comp_i2_d_k_a509cb3d31f11151d71e29952cbf98cfb_cgraph" id="d0/db3/class_comp_i2_d_k_a509cb3d31f11151d71e29952cbf98cfb_cgraph">
+<area shape="rect" id="node2" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947" title="Нормирование вектора на заданную длину " alt="" coords="197,5,385,32"/>
+<area shape="rect" id="node4" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9" title="Геометрический поворот двумерного вектора на 90 градусов " alt="" coords="206,56,377,83"/>
+<area shape="rect" id="node5" href="../../d0/db3/class_comp_i2_d_k.html#a0d1bee93979c1bb762a025c3794de3e1" title="CompI2DK::Theta" alt="" coords="227,107,355,133"/>
+<area shape="rect" id="node6" href="../../d0/db3/class_comp_i2_d_k.html#a95aabe54521d98593534fdd7033ac9b3" title="CompI2DK::psi" alt="" coords="235,157,347,184"/>
+<area shape="rect" id="node3" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="433,5,600,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a95aabe54521d98593534fdd7033ac9b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI2DK::psi </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>ti</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>tj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a> строка <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00024">24</a></p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> ((v &amp; ti) * (v &amp; tj)) - ((v ^ ti) * (v ^ tj));</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div></div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/db3/class_comp_i2_d_k_a95aabe54521d98593534fdd7033ac9b3_icgraph.png" border="0" usemap="#d0/db3/class_comp_i2_d_k_a95aabe54521d98593534fdd7033ac9b3_icgraph" alt=""/></div>
+<map name="d0/db3/class_comp_i2_d_k_a95aabe54521d98593534fdd7033ac9b3_icgraph" id="d0/db3/class_comp_i2_d_k_a95aabe54521d98593534fdd7033ac9b3_icgraph">
+<area shape="rect" id="node2" href="../../d0/db3/class_comp_i2_d_k.html#a509cb3d31f11151d71e29952cbf98cfb" title="���������� ������� ��� ���������� ������ ���������������� ���������� " alt="" coords="165,5,309,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79afc38363d70a19e70be7f49b404c41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::run </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>split</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальная функция выполнения всего объема расчетов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">split</td><td>признак разделения задач на 3 подсписка: для дальних пар ячеек, для ячеек с общим ребром и для ячеек с общей вершиной </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d1bee93979c1bb762a025c3794de3e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI2DK::Theta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a> строка <a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html#l00019">19</a></p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> atan2((v1 ^ v2), (v1 &amp; v2));</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div></div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/db3/class_comp_i2_d_k_a0d1bee93979c1bb762a025c3794de3e1_icgraph.png" border="0" usemap="#d0/db3/class_comp_i2_d_k_a0d1bee93979c1bb762a025c3794de3e1_icgraph" alt=""/></div>
+<map name="d0/db3/class_comp_i2_d_k_a0d1bee93979c1bb762a025c3794de3e1_icgraph" id="d0/db3/class_comp_i2_d_k_a0d1bee93979c1bb762a025c3794de3e1_icgraph">
+<area shape="rect" id="node2" href="../../d0/db3/class_comp_i2_d_k.html#a509cb3d31f11151d71e29952cbf98cfb" title="���������� ������� ��� ���������� ������ ���������������� ���������� " alt="" coords="181,5,325,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a14340d689ad01e29210b93c31156f06b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt;dim&gt;&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::db</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на базу данных геометрических параметров </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affa6a3bfd6e3bafc416c1f788b22b70d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt;dim&gt;* const <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::gp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константный указатель на интегратор по гауссовым точкам (может быть пустым) </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a298915e70ef36f4f4259bd9ea578ad04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a>&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::par</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на класс, управляющий распараллеливанием по MPI. </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a90f615779271ff521fe656a5db083104"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double &gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вектор для хранения результатов вычислений </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a1f7935bcae12a74140237e5765c9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;int, int&gt; &gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::task</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вектор пар, определяющий необходимые вычисления </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>Computer/<a class="el" href="../../d2/d71/_comp_i2_d_k_8h_source.html">CompI2DK.h</a></li>
+<li>Computer/<a class="el" href="../../d7/def/_comp_i2_d_k_8cpp_source.html">CompI2DK.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/db3/class_comp_i2_d_k.html">CompI2DK</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>
