@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #pragma once
@@ -22,8 +22,8 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.3
-\date 02 апреля 2022 г.
+\version 0.4
+\date 02 августа 2022 г.
 */
 
 class CompJ3DK :
@@ -67,9 +67,11 @@ public:
 	
 	v3D IntJSingSosed(const i2D& ii, const i2D& jj);
 	v3D IntJRegSosed(int i, const i2D& jj, size_t refineLevel = 0);
+	std::pair<v3D, int> IntJRegSosedEpsRel(int i, const i2D& jj);
 	
 	p13D IntSingContact(const i2D& ii, const i2D& jj);
 	p13D IntRegContact(const i2D& ii, const i2D& jj, size_t refineLevel = 0);
+	std::pair<p13D, int> IntRegContactEpsRel(const i2D& ii, const i2D& jj);
 
 	//std::vector<double> anglesSosed(int i, int j);	 // И.К.
 		
@@ -81,5 +83,7 @@ public:
 	v3D IntJRegContact(const i2D& ii, const i2D& jj, size_t refineLevel = 0);	
 	v3D IntJSingContact(const i2D& ii, const i2D& jj);
 	//*/
+
+	std::vector<int> refines;
 };
 

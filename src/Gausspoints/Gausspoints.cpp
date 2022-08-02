@@ -8,11 +8,11 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
-#include "Gausspoints.h"
+#include "GaussPoints.h"
 
 
 template<>

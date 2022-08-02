@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #include "CompJ2DM.h"
@@ -68,29 +68,29 @@ v2D CompJ2DM::evaluate(int i, int j)
 
 	double nrmva = sqr(va[0] * va[0] + va[1] * va[1]);
 
-	std::cout << " nrmva = " << nrmva << std::endl;
+	//std::cout << " nrmva = " << nrmva << std::endl;
 
 	double nrmvb = sqr(vb[0] * vb[0] + vb[1] * vb[1]);
 
-	std::cout << " nrmvb = " << nrmvb << std::endl;
+	//std::cout << " nrmvb = " << nrmvb << std::endl;
 
-	std::cout << " lva = " << lva << " " << "lvb = " << lvb << std::endl;
+	//std::cout << " lva = " << lva << " " << "lvb = " << lvb << std::endl;
 
 	//if ((nrmva > eps_zero) && (nrmvb > eps_zero) && (fabs((nrmva + nrmvb) / L - 1) < eps_zero))
 	//ВЫДАЕТ НУЛИ!
 	if (/*(lva/L > eps_zero) && (lvb/L > eps_zero) &&*/ (fabs((lva + lvb) / L - 1.0) < eps_zero))
 	{
-		std::cout << "i = " << i << " " << " , " << " " << "j = " << j << std::endl;
-		std::cout << "log(lva / lvb) = " << log(lva / lvb) << std::endl;
-		std::cout << "(log(lva / lvb) * tau) = " << (log(lva / lvb) * tau) << std::endl;
-		std::cout << "res = " << 0.5 / M_PI * (log(lva / lvb) * tau) << std::endl;
+		//std::cout << "i = " << i << " " << " , " << " " << "j = " << j << std::endl;
+		//std::cout << "log(lva / lvb) = " << log(lva / lvb) << std::endl;
+		//std::cout << "(log(lva / lvb) * tau) = " << (log(lva / lvb) * tau) << std::endl;
+		//std::cout << "res = " << 0.5 / M_PI * (log(lva / lvb) * tau) << std::endl;
 
 		return 0.5 / M_PI * (log(lva / lvb) * tau);
 	}
 	else
 	{
-		std::cout << "i = " << i << " " << " , " << " " << "j = " << j << std::endl;
-		std::cout << "res = " << 0.5 / M_PI * (log(lva / lvb) * tau - Theta * tau_k) << std::endl;
+		//std::cout << "i = " << i << " " << " , " << " " << "j = " << j << std::endl;
+		//std::cout << "res = " << 0.5 / M_PI * (log(lva / lvb) * tau - Theta * tau_k) << std::endl;
 
 		return 0.5 / M_PI * (log(lva / lvb) * tau - Theta * tau_k);
 	}

@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #include "Database.h"
@@ -159,7 +159,9 @@ void Database<3>::fillNbh()
 	for (int trg = 0; trg < topo.size(); ++trg)
 		for (int vert = 0; vert < 3; ++vert)
 			for (auto& it : contacti[vert][trg])
+			{
 				nbh[{trg, it}] = contact;
+			}
 
 	//std::cout << "-----------2-------------" << std::endl;
 	//for (auto& n : nbh)

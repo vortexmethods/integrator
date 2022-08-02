@@ -1,11 +1,11 @@
 /*--------------------------------*- VMlib -*----------------*---------------*\
-| ##  ## ##   ## ##   ##  ##    |                            | Version 1.10   |
-| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2021/05/17     |
+| ##  ## ##   ## ##   ##  ##    |                            | Version x.x    |
+| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2022/08/02     |
 | ##  ## ## # ## ##   ##  ####  |  Open Source Code          *----------------*
 |  ####  ##   ## ##   ##  ## ## |  https://www.github.com/vortexmethods/VM2D  |
 |   ##   ##   ## #### ### ####  |  https://www.github.com/vortexmethods/VM3D  |
 |                                                                             |
-| Copyright (C) 2017-2020 Ilia Marchevsky                                     |
+| Copyright (C) 2017-2022 Ilia Marchevsky                                     |
 *-----------------------------------------------------------------------------*
 | File name: parallel.h                                                       |
 | Info: Source code of VMlib                                                  |
@@ -30,8 +30,8 @@
 \file
 \brief Заголовочный файл с описанием класса Parallel и структуры parProp
 \author Марчевский Илья Константинович
-\version 1.10
-\date 17 мая 2021 г.
+\version x.xx
+\date 02 августа 2022 г.
 */
 
 #ifndef PARALLEL_H
@@ -52,8 +52,8 @@ template <typename T>
 	/*!
 	\brief Стрктура, содержащая параметры исполнения задачи в параллельном MPI-режиме
 	\author Марчевский Илья Константинович
-	\version 1.10
-	\date 17 мая 2021 г.
+	\version x.x
+	\date 02 августа 2022 г.
 	*/
 struct parProp
 {
@@ -122,6 +122,8 @@ struct parProp
         if (globResize)
             globVec.resize(totalLen);
 
+		//printf("id = %d, myLen = %d, totalLen = %d, globVec.size = %d\n", rank, (int)myLen, (int)totalLen, (int)globVec.size());
+
         MPI_Gatherv(const_cast<T*>(locVec.data()), myLen, mpi_get_type<T>(), globVec.data(), len.data(), disp.data(), mpi_get_type<T>(), 0, comm);
     };
 };
@@ -131,10 +133,8 @@ struct parProp
 	\brief Класс, опеделяющий параметры исполнения задачи в параллельном MPI-режиме
 
 	\author Марчевский Илья Константинович
-	\author Сокол Ксения Сергеевна
-	\author Рятина Евгения Павловна
-	\version 1.10
-	\date 17 мая 2021 г.
+	\version x.x
+	\date 02 августа 2022 г.
 	*/
 	class Parallel
 	{
@@ -179,6 +179,9 @@ struct parProp
 
         /// MPI-описатель типа std::pair<int, int>
         static MPI_Datatype MPI_PAIRII;
+
+		/// MPI-описатель типа std::pair<double, v3D>
+		static MPI_Datatype MPI_PAIR13D;
 
         /// Формирование MPI-описателей пользовательских типов
         static void CreateMpiType();
@@ -290,6 +293,9 @@ struct parProp
         else if constexpr (std::is_same_v<T, std::pair<int, int>>) {
             mpi_type = Parallel::MPI_PAIRII;
         }
+		else if constexpr (std::is_same_v<T, std::pair<double, v3D>>) {
+			mpi_type = Parallel::MPI_PAIR13D;
+		}
 
         assert(mpi_type != MPI_DATATYPE_NULL);
 

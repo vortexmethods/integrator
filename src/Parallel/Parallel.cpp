@@ -1,11 +1,11 @@
 /*--------------------------------*- VMlib -*----------------*---------------*\
-| ##  ## ##   ## ##   ##  ##    |                            | Version 1.10   |
-| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2021/05/17     |
+| ##  ## ##   ## ##   ##  ##    |                            | Version x.x    |
+| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2022/08/02     |
 | ##  ## ## # ## ##   ##  ####  |  Open Source Code          *----------------*
 |  ####  ##   ## ##   ##  ## ## |  https://www.github.com/vortexmethods/VM2D  |
 |   ##   ##   ## #### ### ####  |  https://www.github.com/vortexmethods/VM3D  |
 |                                                                             |
-| Copyright (C) 2017-2020 Ilia Marchevsky                                     |
+| Copyright (C) 2017-2022 Ilia Marchevsky                                     |
 *-----------------------------------------------------------------------------*
 | File name: Parallel.cpp                                                     |
 | Info: Source code of VMlib                                                  |
@@ -30,15 +30,15 @@
 \file
 \brief Файл кода с описанием класса Parallel
 \author Марчевский Илья Константинович
-\version 1.10
-\date 17 мая 2021 г.
+\version x.x
+\date 02 августа 2022 г.
 */
 
 #include "Parallel.h"
 
 //using namespace VMlib;
 
-MPI_Datatype Parallel::MPI_V3D, Parallel::MPI_I3D, Parallel::MPI_V2D, Parallel::MPI_I2D, Parallel::MPI_PAIRII;
+MPI_Datatype Parallel::MPI_V3D, Parallel::MPI_I3D, Parallel::MPI_V2D, Parallel::MPI_I2D, Parallel::MPI_PAIRII, Parallel::MPI_PAIR13D;
 
 // Распределение задач по процессорам
 parProp Parallel::SplitMPIone(size_t n, bool bcastAll) const
@@ -171,5 +171,19 @@ void Parallel::CreateMpiType()
 		//На всякий случай вычисляем extent и удлинняем тип
 		MPI_Type_create_resized(MPI_PAIRIIshort, 0, sizeof(std::pair<int, int>), &MPI_PAIRII);
 		MPI_Type_commit(&MPI_PAIRII);
+	}
+
+	{
+		MPI_Datatype MPI_PAIR13Dshort;
+		std::pair<double, v3D> testPair({ 1.0, {1.0, 1.0, 1.0} });
+		int          len[2] = { 1, 1 };
+		MPI_Aint     pos[2] = { 0, reinterpret_cast<long long>(&testPair.second) - reinterpret_cast<long long>(&testPair.first) };
+		MPI_Datatype typ[2] = { MPI_DOUBLE, MPI_V3D };
+		MPI_Type_create_struct(2, len, pos, typ, &MPI_PAIR13Dshort);
+		MPI_Type_commit(&MPI_PAIR13Dshort);
+
+		//На всякий случай вычисляем extent и удлинняем тип
+		MPI_Type_create_resized(MPI_PAIR13Dshort, 0, sizeof(std::pair<double, v3D>), &MPI_PAIR13D);
+		MPI_Type_commit(&MPI_PAIR13D);
 	}
 }

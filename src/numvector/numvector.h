@@ -1,11 +1,11 @@
 /*--------------------------------*- VMlib -*----------------*---------------*\
-| ##  ## ##   ## ##   ##  ##    |                            | Version 1.6    |
-| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2019/10/28     |
+| ##  ## ##   ## ##   ##  ##    |                            | Version x.x    |
+| ##  ## ### ### ##       ##    |  VMlib: VM2D/VM3D Library  | 2022/08/02     |
 | ##  ## ## # ## ##   ##  ####  |  Open Source Code          *----------------*
 |  ####  ##   ## ##   ##  ## ## |  https://www.github.com/vortexmethods/VM2D  |
 |   ##   ##   ## #### ### ####  |  https://www.github.com/vortexmethods/VM3D  |
 |                                                                             |
-| Copyright (C) 2017-2019 Ilia Marchevsky                                     |
+| Copyright (C) 2017-2022 Ilia Marchevsky                                     |
 *-----------------------------------------------------------------------------*
 | File name: numvector.h                                                      |
 | Info: Source code of VMlib                                                  |
@@ -30,8 +30,8 @@
 \file
 \brief Описание класса numvector
 \author Марчевский Илья Константинович
-\version 1.6   
-\date 28 октября 2019 г.
+\version x.x   
+\date 02 августа 2022 г.
 */
 
 #ifndef NUMVECTOR_H_
@@ -498,21 +498,33 @@ namespace VMlib
 		/// \return вектор, полученный "вращением" исходного на k позиций влево
 		numvector<T, n> rotateLeft(size_t k) const
 		{
+			if (k > n)
+				throw;
+
+			if (k == n)
+				return *this;
+
 			numvector<T, n> res;
-			for (size_t i = 0; i < n; ++i)
-				res[i] = r[(i + k) % n];
+
+			//for (size_t i = 0; i < n; ++i) 
+			//	res[i] = r[(i + k) % n];
+
+			for (size_t i = 0; i < n - k; ++i)
+				res[i] = r[i + k];
+			for (size_t i = n - k; i < n; ++i)
+				res[i] = r[i + k - n];
 			return res;
 		}//rotateLeft(...)
 
 
-		/// \brief Разность двух векторов
+		/// \brief Разность двух векторов как множеств
 		///
 		/// Исходный вектор при этом не изменяется
 		///
 		/// \tparam T тип данных компонент вектора
 		/// \tparam P тип данных компонент вычитаемого вектора
 		/// \tparam m длина вычитаемого вектора	
-		/// \interior[in] вычитаемый вектор
+		/// \param[in] other вычитаемый вектор
 		/// \return разность векторов в виде std::vector<T>
 		template<typename P, size_t m>
 		std::vector<T> difference(const numvector<P, m>& other) const
@@ -539,14 +551,14 @@ namespace VMlib
 		}//difference(...)
 
 
-		/// \brief Разность двух векторов
+		/// \brief Пересечение двух векторов как множеств
 		///
 		/// Исходный вектор при этом не изменяется
 		///
 		/// \tparam T тип данных компонент вектора
 		/// \tparam P тип данных компонент вычитаемого вектора
 		/// \tparam m длина вычитаемого вектора	
-		/// \interior[in] вычитаемый вектор
+		/// \param[in] other вычитаемый вектор
 		/// \return разность векторов в виде std::vector<T>
 		template<typename P, size_t m>
 		std::vector<T> intersection(const numvector<P, m>& other) const
@@ -902,6 +914,17 @@ namespace VMlib
 		return str;
 	}//operator<<(...)
 
+	/// \brief Обертка функции вычисления длины вектора
+	/// 
+	/// \tparam T тип данных компонент вектора
+	/// \tparam n размерность вектора
+	/// \return длину вектора
+	template<typename T, size_t n>
+	T fabs(const numvector<T, n>& x)
+	{
+		return x.norm1();
+	}
+
 
 	////////////////////////////////////////////////
 	//// Далее --- операциями с парами векторов ////
@@ -1036,17 +1059,23 @@ namespace VMlib
 
 		pairScalarVector<T, n> operator+(const std::pair<T, numvector<T, n>>& y) const
 		{
-			return { first + y.first, second + y.second };
+			return { this->first + y.first, this->second + y.second };
 		}
+
+		pairScalarVector<T, n> operator-(const std::pair<T, numvector<T, n>>& y) const
+		{
+			return { this->first - y.first, this->second - y.second };
+		}
+
 		pairScalarVector<T, n>& operator+=(const std::pair<T, numvector<T, n>>& y)
 		{
-			first += y.first;
-			second += y.second;
+			this->first += y.first;
+			this->second += y.second;
 			return *this;
 		}
 		pairScalarVector<T, n> operator*(T a) const
 		{
-			return { first * a, second * a };
+			return { this->first * a, this->second * a };
 		}
 	};
 
@@ -1062,6 +1091,20 @@ namespace VMlib
 		str << "< " << y.first << ", " << y.second << " >";
 		return str;
 	}
+
+	template<typename T, size_t n>
+	std::pair<T,T> fabs(const pairScalarVector<T, n>& x)
+	{
+		return std::make_pair<double, double>(std::fabs(x.first), fabs(x.second));
+	};
+
+	//template<typename T>
+	//std::pair<T, T> operator/(const std::pair<T, T>& x, const std::pair<T, T>& y)
+	//inline std::pair<double, double> operator/(const struct std::pair<double, double>& x, const struct std::pair<double, double>& y)
+	//{
+	//	return { x.first / y.first, x.second / y.second };
+	//}
+	
 
 	////////////////////////////////////////////////////////////////////////
 	// Далее deprecate-функции для ПОЛНОЙ СОВМЕСТИМОСТИ со старой версией //

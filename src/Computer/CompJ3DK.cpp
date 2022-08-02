@@ -8,20 +8,26 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #include "CompJ3DK.h"
 
+#include <iomanip> 
+
+
+#define AUTOSPLIT
+
 const double eps_zero = 1e-6;
 const double eps_zero2 = eps_zero * eps_zero;
 
-const double eps_psi_theta = 1e-6;
+const double eps_psi_theta = eps_zero;
 const double eps_psi_theta2 = eps_psi_theta * eps_psi_theta;
 
 
-const int nrefine = 1;
+const int nrefine = 0;
+const double epsRel = 1e-5; 
 
 CompJ3DK::CompJ3DK(const Database<3>& db_, const Parallel& par_, const Gausspoints<3>* const gp_) : Computer(db_, par_, gp_) {};
 CompJ3DK::~CompJ3DK() {};
@@ -330,6 +336,12 @@ v3D CompJ3DK::IntJRegSosed(int i, const i2D& jj, size_t refineLevel)
 	return gp->integrate<v3D>(fo, i, refineLevel);
 }
 
+std::pair<v3D, int> CompJ3DK::IntJRegSosedEpsRel(int i, const i2D& jj)
+{
+	auto fo = [this, jj](const v3D& r) { return JRegSosed(r, jj); };
+	return gp->integrateEpsRel<v3D>(fo, i, epsRel);
+}
+
 
 p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 {
@@ -363,7 +375,7 @@ p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 		deltaB = atan2(( e ^ taub) & nrmj,  e & taub);
 	}
 
-	if ((deltaA * deltaB < eps_zero) && (fabs(deltaA - deltaB) > M_PI))
+	if ((deltaA * deltaB < 0) && (fabs(deltaA - deltaB) > M_PI))
 	{
 		e *= -1.0;
 		deltaA = atan2((-e ^ taua) & nrmj, -e & taua);
@@ -517,7 +529,13 @@ p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 p13D CompJ3DK::IntRegContact(const i2D& ii, const i2D& jj, size_t refineLevel)
 {
 	auto fo = [this, ii, jj](const v3D& r) { return RegContact(r, ii, jj); };
-	return  gp->integrate<p13D>(fo, ii[0], refineLevel);
+	return gp->integrate<p13D>(fo, ii[0], refineLevel);
+}
+
+std::pair<p13D, int> CompJ3DK::IntRegContactEpsRel(const i2D& ii, const i2D& jj)
+{
+	auto fo = [this, ii, jj](const v3D& r) { return RegContact(r, ii, jj); };
+	return gp->integrateEpsRel<p13D>(fo, ii[0], epsRel);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -547,7 +565,15 @@ v3D CompJ3DK::evaluate(int i, int j)
 		//auto funcReg = [&](const v3D& r) { return JRegSosed(r, { j, shifts[1] }); };
 		//auto IntegralReg = gp->integrate<v3D>(funcReg, i);
 
+#ifdef AUTOSPLIT		
+		auto [IntegralReg, nrefine] = IntJRegSosedEpsRel(i, { j, shifts[1] });
+		//refines.push_back(nrefine);
+#else
 		v3D IntegralReg = IntJRegSosed(i, { j, shifts[1] }, nrefine);
+		//refines.push_back(nrefine);
+#endif
+
+
 		v3D IntegralSing = IntJSingSosed({ i, shifts[0] }, { j, shifts[1] });
 
 		v3D res = IntegralReg + IntegralSing;
@@ -583,10 +609,20 @@ v3D CompJ3DK::evaluate(int i, int j)
 		//std::cout << std::endl;
 		//std::cout << std::endl;
 
-		auto IntegralReg = IntRegContact({ i, shifts[1] }, { j, shifts[1] }, nrefine);
+#ifdef AUTOSPLIT		
+		auto[IntegralReg, nrefine] = IntRegContactEpsRel({ i, shifts[1] }, { j, shifts[1] });
+		//refines.push_back(nrefine);
+#else
+		p13D IntegralReg = IntRegContact({ i, shifts[1] }, { j, shifts[1] }, nrefine);
+		//refines.push_back(nrefine);
+#endif	
+		
 		auto IntegralSing = IntSingContact({ i, shifts[0] }, { j, shifts[1] });
 
 		double intTheta = IntegralReg.first + IntegralSing.first;
+
+		
+
 		int p = 0;		
 		double refTheta = 2.0 * M_PI * db.measure[i];
 		if (intTheta > refTheta)
@@ -594,6 +630,8 @@ v3D CompJ3DK::evaluate(int i, int j)
 		else if (intTheta < -refTheta)
 			p = ((int)trunc((-refTheta - intTheta) / (2.0 * refTheta)) + 1);
 		
+		//std::cout << "intTheta = " << std::setprecision(10) << intTheta + 2.0 * p * refTheta << std::endl;
+
 		//if (p) 
 		//	std::cout << "p = " << p << std::endl;
 
@@ -618,7 +656,14 @@ v3D CompJ3DK::evaluate(int i, int j)
 	auto func = [&](const v3D& r) { return J3D(r, j); };
 		
 
-	auto res = gp->integrate<v3D>(func, i, nrefine);
+#ifdef AUTOSPLIT		
+	auto[res, nrefine] = gp->integrateEpsRel<v3D>(func, i, epsRel);
+	//refines.push_back(nrefine);
+#else
+	v3D res = gp->integrate<v3D>(func, i, nrefine);
+	//refines.push_back(nrefine);
+#endif
+	   	  
 	//std::cout << "res = " << res << std::endl;
 
 	return res;

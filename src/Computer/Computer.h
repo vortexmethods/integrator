@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #pragma once
@@ -27,8 +27,8 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.3
-\date 02 апреля 2022 г.
+\version 0.4
+\date 02 августа 2022 г.
 */
 
 
@@ -96,12 +96,20 @@ void Computer<T,dim>::run(bool split)
 		std::vector<T> locResult;
 		locResult.resize(parall.myLen);
 
+		MPI_Barrier(MPI_COMM_WORLD);
+		double timempi = -omp_get_wtime();
+
 		std::cout << "thread_max = " << omp_get_max_threads() << std::endl;
 #pragma omp parallel for schedule(dynamic, OMP_SCHEDULE_BLOCK_SIZE)
 		for (int tsk = 0; tsk < locTask.size(); ++tsk)
 			locResult[tsk] = this->evaluate(locTask[tsk].first, locTask[tsk].second);
+				
+		parall.GathervVector(locResult, result, false);
+		MPI_Barrier(MPI_COMM_WORLD);
+		timempi += omp_get_wtime();
+		if (parall.rank == 0)
+		    std::cout << "time = " << timempi << std::endl;
 
-		parall.GathervVector(locResult, result);
 	}//if !split
 
 	if (split)
@@ -129,16 +137,29 @@ void Computer<T,dim>::run(bool split)
 				taskFar.push_back({ task[tsk].first, task[tsk].second, tsk });
 		}
 
-#pragma omp parallel for schedule(dynamic, OMP_SCHEDULE_BLOCK_SIZE)
+		double tfar = -omp_get_wtime(); 
+#pragma omp parallel for schedule(dynamic, 50000) //OMP_SCHEDULE_BLOCK_SIZE)
 		for (int tsk = 0; tsk < taskFar.size(); ++tsk)
 			result[taskFar[tsk][2]] = this->evaluate(taskFar[tsk][0], taskFar[tsk][1]);
+		tfar += omp_get_wtime();
 
-#pragma omp parallel for schedule(dynamic, OMP_SCHEDULE_BLOCK_SIZE)
+		double tsosed = -omp_get_wtime();
+#pragma omp parallel for schedule(dynamic, 100)//OMP_SCHEDULE_BLOCK_SIZE)
 		for (int tsk = 0; tsk < taskSosed.size(); ++tsk)
 			result[taskSosed[tsk][2]] = this->evaluate(taskSosed[tsk][0], taskSosed[tsk][1]);
+		tsosed += omp_get_wtime();
 
-#pragma omp parallel for schedule(dynamic, OMP_SCHEDULE_BLOCK_SIZE)
+		double tcontact = -omp_get_wtime();
+#pragma omp parallel for schedule(dynamic, 300)//OMP_SCHEDULE_BLOCK_SIZE)
 		for (int tsk = 0; tsk < taskContact.size(); ++tsk)
 			result[taskContact[tsk][2]] = this->evaluate(taskContact[tsk][0], taskContact[tsk][1]);
+		tcontact += omp_get_wtime();
+
+		std::cout << "time_far     = " << tfar / taskFar.size() << " " << taskFar.size() << std::endl ;
+		std::cout << "time_sosed   = " << tsosed / taskSosed.size() << " " << taskSosed.size() << std::endl;
+		std::cout << "time_contact = " << tcontact / taskContact.size() << " " << taskContact.size() << std::endl;
+		std::cout << "Total_time   = " << tfar + tsosed + tcontact << std::endl;
+
+
 	}//if split
 }

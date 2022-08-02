@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 апреля 2022 г.
-\version 0.3
+\date 02 августа 2022 г.
+\version 0.4
 */
 
 #pragma once
@@ -35,8 +35,8 @@ enum nbh_t {
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.3
-\date 02 апреля 2022 г.
+\version 0.4
+\date 02 августа 2022 г.
 */
 template <int dim>
 class Database
@@ -75,6 +75,7 @@ public:
 	/// \brief Считывание базы данных из файла
 	/// 
 	/// \param[in] fileName имя файла в формате Salome
+	/// \param[in] scale коэффициент масштабирования профиля
 	/// \warning Базовая реализация отсутствует, см. явные специализации для конкретных dim
 	void readNodeTopoFromFile(const std::string& fileName, double scale = 1.0);
 		
