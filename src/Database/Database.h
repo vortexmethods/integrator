@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 августа 2022 г.
-\version 0.4
+\date 11 сентября 2022 г.
+\version 0.5
 */
 
 #pragma once
@@ -35,8 +35,8 @@ enum nbh_t {
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.4
-\date 02 августа 2022 г.
+\version 0.5
+\date 11 сентября 2022 г.
 */
 template <int dim>
 class Database

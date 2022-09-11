@@ -3,7 +3,7 @@
 
 /*!
 \file
-\brief Файл с описанием класса CompJ2DM
+\brief Файл с описанием класса CompI3DK
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
@@ -16,8 +16,8 @@
 #include "Computer.h"
 
 /*!
-\brief Класс -- вычислитель для 2D случая однократного интеграла от градиента функции Грина
-\n Наследован от Computer<v2D, 2>
+\brief Класс -- вычислитель для 3D случая двукратного интеграла от функции Грина
+\n Наследован от Computer<double, 3>
 
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
@@ -26,8 +26,8 @@
 \date 11 сентября 2022 г.
 */
 
-class CompJ2DK :
-	public Computer<v2D, 2>
+class CompI3DK :
+	public Computer<double, 3>
 {
 public:
 
@@ -35,20 +35,19 @@ public:
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
 	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
-	CompJ2DK(const Database<2>& db_, const Parallel& par_);
-
+	/// \param[in] gp_ константный указатель на класс, обеспечивающий интегрирование по гауссовым точкам
+	CompI3DK(const Database<3>& db_, const Parallel& par_, const Gausspoints<3>* const gp_);
+	
 	/// Деструктор
-	~CompJ2DK();
-
-	double Theta(const v2D& v1, const v2D& v2);
-
-	v2D omega(const v2D& v, const v2D& ti, const v2D& tj);
+	~CompI3DK();
 
 	/// \brief Перегрузка функции для выполнения одного скалярнозначного вычисления
 	///
 	/// \param[in] i индекс контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат --- расстояние между центрами панелей
-	virtual inline v2D evaluate(int i, int j) override;
+	virtual inline double evaluate(int i, int j) override;	
+
+	std::vector<int> refines;
 };
 

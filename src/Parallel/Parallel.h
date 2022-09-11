@@ -31,7 +31,7 @@
 \brief Заголовочный файл с описанием класса Parallel и структуры parProp
 \author Марчевский Илья Константинович
 \version x.xx
-\date 02 августа 2022 г.
+\date 11 сентября 2022 г.
 */
 
 #ifndef PARALLEL_H
@@ -53,7 +53,7 @@ template <typename T>
 	\brief Стрктура, содержащая параметры исполнения задачи в параллельном MPI-режиме
 	\author Марчевский Илья Константинович
 	\version x.x
-	\date 02 августа 2022 г.
+	\date 11 сентября 2022 г.
 	*/
 struct parProp
 {

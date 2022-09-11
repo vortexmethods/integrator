@@ -31,7 +31,7 @@
 \brief Файл кода с описанием класса Parallel
 \author Марчевский Илья Константинович
 \version x.x
-\date 02 августа 2022 г.
+\date 11 сентября 2022 г.
 */
 
 #include "Parallel.h"

@@ -31,7 +31,7 @@
 \brief Описание класса numvector
 \author Марчевский Илья Константинович
 \version x.x   
-\date 02 августа 2022 г.
+\date 11 сентября 2022 г.
 */
 
 #ifndef NUMVECTOR_H_

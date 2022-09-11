@@ -3,10 +3,10 @@
 
 /*!
 \file
-\brief Файл с описанием класса CompJ3DK
-\author Гумирова Алия Ильдусовна
+\brief Файл с описанием класса CompI3DK_Duffy
+\author Иванова Юлия Витальевна
 \author Марчевский Илья Константинович
-\author Серафимова София Романовна
+\author Хорошева Анна Александровна
 
 \date 11 сентября 2022 г.
 \version 0.5
@@ -16,48 +16,53 @@
 #include "Computer.h"
 
 /*!
-\brief Класс -- вычислитель для 3D случая двукратного интеграла от градиента функции Грина
-\n Наследован от Computer<v3D, 3>
+\brief Класс -- вычислитель для 3D случая двукратного интеграла от функции Грина
+\n Наследован от Computer<double, 3>
 
-\author Гумирова Алия Ильдусовна
+\author Иванова Юлия Витальевна
 \author Марчевский Илья Константинович
-\author Серафимова София Романовна
+\author Хорошева Анна Александровна
 \version 0.5
 \date 11 сентября 2022 г.
 */
 
-class CompJ3DK :
-	public Computer<v3D, 3>
+class CompI3DK_Duffy :
+	public Computer<double, 3>
 {
 public:
+
+	const GausspointsCube<2>* const gp2;
+	const GausspointsCube<3>* const gp3;
 
 	/// \brief Конструктор
 	/// 	
 	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
 	/// \param[in] par_ константная ссылка на класс, управляющий распараллеливанием по MPI
 	/// \param[in] gp_ константный указатель на класс, обеспечивающий интегрирование по гауссовым точкам
-	CompJ3DK(const Database<3>& db_, const Parallel& par_, const Gausspoints<3>* const gp_);
+	CompI3DK_Duffy(const Database<3>& db_, const Parallel& par_, const Gausspoints<3>* const gp_, const GausspointsCube<2>* const gp2_, const GausspointsCube<3>* const gp3_);
 
 	/// Деструктор
-	~CompJ3DK();
+	~CompI3DK_Duffy();
 
 	/// \brief Перегрузка функции для выполнения одного скалярнозначного вычисления
 	///
 	/// \param[in] i индекс контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат --- расстояние между центрами панелей
-	virtual inline v3D evaluate(int i, int j) override;
+	virtual inline double evaluate(int i, int j) override;
 	
 	//////////////////////
 
+	/*
 	p13D ThetaPsi(const v3D& pt, int j);
 	v3D J3D(const v3D& pt, int j);
-
+	*/
 	//////////////////////
 	
 	i2D RenumerationSosed(int i, int j);
 	i2D RenumerationContact(int i, int j);
-		
+	
+	/*
 	p13D SingSosed(const v3D& M, const i2D& jj);
 	p13D SingContact(const v3D& M, const i2D& ii, const i2D& jj);
 	
@@ -74,7 +79,8 @@ public:
 	std::pair<p13D, int> IntRegContactEpsRel(const i2D& ii, const i2D& jj);
 
 	//std::vector<double> anglesSosed(int i, int j);	 // И.К.
-		
+	*/
+
 	// И.К. Нижние функции не нужны
 	/*
 	v3D JSingContact(const v3D& M, const i2D& ii, const i2D& jj);
@@ -84,6 +90,13 @@ public:
 	v3D IntJSingContact(const i2D& ii, const i2D& jj);
 	//*/
 
+
+	v3D DistContact(double xi1, double xi2, double eta1, double eta2, const i3D& nodes_i, const i3D& nodes_j);
+	v3D DistSosed(double xi2, double u1, double u2, const i3D& nodes_i, const i3D& nodes_j);
+
+	double IntDuffyContact(const i2D& ii, const i2D& jj, size_t& refineLevel);
+	double IntDuffySosed(const i2D& ii, const i2D& jj, size_t& refineLevel);
+	
 	std::vector<int> refines;
 };
 

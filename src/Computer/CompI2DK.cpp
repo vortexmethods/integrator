@@ -1,3 +1,17 @@
+// РџСЂРѕРµРєС‚ Integrator 
+// (c) Рђ.Р. Р“СѓРјРёСЂРѕРІР°, Р.Рљ. РњР°СЂС‡РµРІСЃРєРёР№, РЎ.Р . РЎРµСЂР°С„РёРјРѕРІР°, 2022
+
+/*!
+\file
+\brief Р¤Р°Р№Р» c СЂРµР°Р»РёР·Р°С†РёРµР№ РєР»Р°СЃСЃР° CompI2DK
+\author Р“СѓРјРёСЂРѕРІР° РђР»РёСЏ РР»СЊРґСѓСЃРѕРІРЅР°
+\author РњР°СЂС‡РµРІСЃРєРёР№ РР»СЊСЏ РљРѕРЅСЃС‚Р°РЅС‚РёРЅРѕРІРёС‡
+\author РЎРµСЂР°С„РёРјРѕРІР° РЎРѕС„РёСЏ Р РѕРјР°РЅРѕРІРЅР°
+
+\date 11 СЃРµРЅС‚СЏР±СЂСЏ 2022 Рі.
+\version 0.5
+*/
+
 #include "CompI2DK.h"
 
 #include <fstream>
@@ -11,11 +25,8 @@ const double eps_zero = 1e-6;
 CompI2DK::CompI2DK(const Database<2>& db_, const Parallel& par_) : Computer(db_, par_) {};
 CompI2DK::~CompI2DK() {};  
 
-//НЕ ДОДЕЛАН!
 
-//I_2D(K_i, K_j) - повторный интеграл от логарифмического потенциала 
-
-//Величина, равная по модулю углу, под которым видна панель из точки наблюдения
+//Р’РµР»РёС‡РёРЅР°, СЂР°РІРЅР°СЏ РїРѕ РјРѕРґСѓР»СЋ СѓРіР»Сѓ, РїРѕРґ РєРѕС‚РѕСЂС‹Рј РІРёРґРЅР° РїР°РЅРµР»СЊ РёР· С‚РѕС‡РєРё РЅР°Р±Р»СЋРґРµРЅРёСЏ
 double CompI2DK::Theta(const v2D& v1, const v2D& v2)
 {
 	return atan2((v1 ^ v2), (v1 & v2));
@@ -31,7 +42,7 @@ double CompI2DK::evaluate(int i, int j)
 	const v2D& pt1 = db.node[db.topo[i][0]];
 	const v2D& pt2 = db.node[db.topo[i][1]];
 
-	//Векторы из вершин панели в точку наблюдения
+	//Р’РµРєС‚РѕСЂС‹ РёР· РІРµСЂС€РёРЅ РїР°РЅРµР»Рё РІ С‚РѕС‡РєСѓ РЅР°Р±Р»СЋРґРµРЅРёСЏ
 	const v2D& va = pt1 - db.node[db.topo[j][0]];
 	const v2D& vb = pt1 - db.node[db.topo[j][1]];
 
@@ -41,23 +52,23 @@ double CompI2DK::evaluate(int i, int j)
 	//
 	v2D ova(va), ovb(vb), owa(wa), owb(wb);
 
-	//Модули векторов v_a и v_b соответственно
+	//РњРѕРґСѓР»Рё РІРµРєС‚РѕСЂРѕРІ v_a Рё v_b СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ
 	double lva = ova.normalize();
 	double lvb = ovb.normalize();
 	double lwa = owa.normalize();
 	double lwb = owb.normalize();
 
-	//tau_j - единичный направляющий вектор панели 
+	//tau_j - РµРґРёРЅРёС‡РЅС‹Р№ РЅР°РїСЂР°РІР»СЏСЋС‰РёР№ РІРµРєС‚РѕСЂ РїР°РЅРµР»Рё 
 	v2D tauj = db.node[db.topo[j][1]] - db.node[db.topo[j][0]];
 	v2D taui = db.node[db.topo[i][1]] - db.node[db.topo[i][0]];
 
-	//L_j - длина прямолинейной панели
+	//L_j - РґР»РёРЅР° РїСЂСЏРјРѕР»РёРЅРµР№РЅРѕР№ РїР°РЅРµР»Рё
 	double Lj = tauj.normalize();
 	double Li = taui.normalize();
 
 	double LiEps_zero = Li * eps_zero;
 
-	//h - произвольный постоянный вектор
+	//h - РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ РїРѕСЃС‚РѕСЏРЅРЅС‹Р№ РІРµРєС‚РѕСЂ
 	//const double mh = 1.0;
 
 
@@ -135,5 +146,5 @@ double CompI2DK::evaluate(int i, int j)
 	return 0.25 / M_PI * (3.0 * Li * Lj + br1 + br21 * (br22 + br23) + br3) + Delta;
 }
 
-// & - скалярное произведение
-// ^ - вектороне произведение 
+// & - СЃРєР°Р»СЏСЂРЅРѕРµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ
+// ^ - РІРµРєС‚РѕСЂРѕРЅРµ РїСЂРѕРёР·РІРµРґРµРЅРёРµ 

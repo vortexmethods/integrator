@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 августа 2022 г.
-\version 0.4
+\date 11 сентября 2022 г.
+\version 0.5
 */
 
 #pragma once
@@ -22,8 +22,8 @@
 \author Гумирова Алия Ильдусовна
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
-\version 0.4
-\date 02 августа 2022 г.
+\version 0.5
+\date 11 сентября 2022 г.
 */
 
 class CompI3DM :
@@ -45,27 +45,6 @@ public:
 	/// \param[in] i индекс контрольной панели в базе данных
 	/// \param[in] j индекс влияющей панели в базе данных
 	/// \return скалярный результат --- расстояние между центрами панелей
-	virtual inline double evaluate(int i, int j) override;	
+	virtual inline double evaluate(int i, int j) override;
 };
-
-//class CompI3DM :
-//	public ComputerScalar<3>
-//{
-//public:
-//
-//	/// \brief Конструктор
-//	/// 	
-//	/// \param[in] db_ константная ссылка на базу данных геометрических параметров
-//	CompI3DM(const Database<3>& db_);
-//
-//	/// Деструктор
-//	~CompI3DM();
-//
-//	/// \brief Перегрузка функции для выполнения одного скалярнозначного вычисления
-//	///
-//	/// \param[in] i индекс контрольной панели в базе данных
-//	/// \param[in] j индекс влияющей панели в базе данных
-//	/// \return скалярный результат --- расстояние между центрами панелей
-//	virtual inline double scalarEvaluate(int i, int j) override;
-//};
 

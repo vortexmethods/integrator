@@ -8,8 +8,8 @@
 \author Марчевский Илья Константинович
 \author Серафимова София Романовна
 
-\date 02 августа 2022 г.
-\version 0.4
+\date 11 сентября 2022 г.
+\version 0.5
 */
 
 #include <omp.h>
@@ -21,13 +21,19 @@
 #include "CompJ3DM.h"
 #include "CompI2DM.h"
 #include "CompJ2DM.h"
+#include "CompI3DK.h"
+#include "CompI3DK-Duffy.h"
 #include "CompJ3DK.h"
+#include "CompJ3DK-Duffy.h"
 #include "CompI2DK.h"
 #include "CompJ2DK.h"
 
 
 int main(int argc, char** argv)
 {
+	//std::cout << integrateUnitCube<double,2>([](const v2D& r) { return r[0] * r[0] * r[1] ; }, gp2D4);
+	
+	
 	Parallel par;
 
 	// Инициализация подсистемы MPI
@@ -68,17 +74,20 @@ int main(int argc, char** argv)
 		//db3.readNodeTopoFromFile("Fish.dat", 100.0);
 	        //db3.readNodeTopoFromFile("s5m.dat", 0.0005); ///// <--- (359, 360)
 		//db3.readNodeTopoFromFile("s5m2.dat", 0.0005);
-		//db3.readNodeTopoFromFile("MeshScreen", 0.016);
-		//db3.readNodeTopoFromFile("0012e2", 1.0);
+		
+		//db3.readNodeTopoFromFile("s6", 0.0005);
+		//db3.readNodeTopoFromFile("MeshScreen.dat", 0.016);
+	        db3.readNodeTopoFromFile("0012e2", 1.0);
+		//db3.readNodeTopoFromFile("sph11000.dat", 1.0);
 		//db3.readNodeTopoFromFile("1x1x1_extrafine", 1.0);
 		
-		//db3.readNodeTopoFromFile("Case1.dat", 1.0);
+		//db3.readNodeTopoFromFile("Case1_2.dat", 1.0);
 		//db3.readNodeTopoFromFile("Case-6-4.dat", 1.0);
 
 		//db3.readNodeTopoFromFile("Test.dat");
 
-        //db3.readNodeTopoFromFile("Vint16k.dat", 1.0);
-		db3.readNodeTopoFromFile("ellipsoid2000", 1.0);
+                //db3.readNodeTopoFromFile("Vint16k.dat", 1.0);
+		//db3.readNodeTopoFromFile("ellipsoid2000", 1.0);
 
 		nNode = (int)db3.node.size();
 		nTopo = (int)db3.topo.size();
@@ -115,6 +124,11 @@ int main(int argc, char** argv)
 
 	CompJ3DK cmp(db3, par, &gaussianQuadratures);
 	
+	GausspointsCube<2> gaussianQuadraturesCube2(gp2D6);
+	GausspointsCube<3> gaussianQuadraturesCube3(gp2D6);
+	//CompI3DK_Duffy cmp(db3, par, &gaussianQuadratures, &gaussianQuadraturesCube2, &gaussianQuadraturesCube3);
+        //CompJ3DK_Duffy cmp(db3, par, &gaussianQuadratures, &gaussianQuadraturesCube2, &gaussianQuadraturesCube3);
+	
 	//std::cout << db3.topo[5826] << std::endl;
 	
 	if (par.rank == 0)
@@ -123,11 +137,12 @@ int main(int argc, char** argv)
 		int stp = 20000;
 		int q = 0;
 		
-		std::cout << "range : [ " << q * stp << "..." << std::min((q + 1) * stp, (int)db3.topo.size()) << " )" << std::endl;
+		//std::cout << "range : [ " << q * stp << "..." << std::min((q + 1) * stp, (int)db3.topo.size()) << " )" << std::endl;
 		
 		for (int i = q* stp; i < std::min((q+1)*stp, (int)db3.topo.size()); ++i)
 		for (int j = 0; j < db3.topo.size(); ++j)
- 		{
+		//int i = 10934, j = 10957;
+		{
 		/*	
 			int i = 1749;//37;
 			int j = 2060;// 115;
@@ -167,14 +182,14 @@ int main(int argc, char** argv)
 			
 
 			//std::cout << "area/area = " << fabs(db3.measure[i] - db3.measure[j]) / std::max(db3.measure[i], db3.measure[j]) << std::endl;
-			
-			cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
-			cmp.task.push_back({ j % (int)db3.topo.size(), i % (int)db3.topo.size() });
+			//if (cmp.db.ifContact({ i, j }) || (cmp.db.ifSosed({ i, j })))
+			{
+				cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
+				//cmp.task.push_back({ j % (int)db3.topo.size(), i % (int)db3.topo.size() });
+			}
 		}
 	}
 	//*/
-
-	
 
 	
 
@@ -239,16 +254,16 @@ int main(int argc, char** argv)
 			if ((cmp.task[2 * i].first != cmp.task[2 * i].second))
 				alldiff.push_back(diff);
 
-			//*
+			/*
 			//if (diff > 1e-4)
 			if ((cmp.task[2 * i].first!= cmp.task[2 * i].second) && (diff > 1e-5 || std::isnan(diff)))
 			{
-
+			
 				if (db3.ifSosed({ cmp.task[2 * i].first, cmp.task[2 * i].second }))
 				{
 					std::cout << "i,j = {" << cmp.task[2 * i].first << ", " << cmp.task[2 * i].second << "}, " << diff << ",  " << A << " " << B << std::endl;
 					std::cout << "SOSED!" << std::endl;
-
+			
 				}
 				else if (db3.ifContact({ cmp.task[2 * i].first, cmp.task[2 * i].second }))
 				{
@@ -264,14 +279,17 @@ int main(int argc, char** argv)
 					std::cout << "FAR!" << std::endl;
 				}
 			}
-			//if
-			//	std::cout << "ContactOK" << std::endl;
-			//*/
+			*/
 
-
+			////if
+			////	std::cout << "ContactOK" << std::endl;
+			////
 		}
+		//*/
 
-		std::cout << "max = " << *std::max_element(alldiff.begin(), alldiff.end()) << std::endl;
+		//std::cout << "max = " << *std::max_element(alldiff.begin(), alldiff.end()) << std::endl;
+
+
 
 		// Показывает статистику доразбиений, если только она собирается; ее сбор в параллельном режиме ведет к гонке данных...
 		/*
@@ -291,8 +309,8 @@ int main(int argc, char** argv)
 	double t2 = omp_get_wtime();
 
 	std::cout << t2 - t1 << " sec." << std::endl;
-
-	//std::cout << cmp.result[0] << " " << cmp.result[1] << std::endl;
+	std::cout.precision(16);
+	std::cout << "Result: " << cmp.result[0] << std::endl;
 
 
 
@@ -306,7 +324,7 @@ int main(int argc, char** argv)
 			//of << res[0] << " " << res[1] << '\n';
 		of.close();
 	}
-	/*/
+	//*/
 
 	//std::cout << cmp.scalarResult[1 * db2.topo.size() + 25] << std::endl;
 
