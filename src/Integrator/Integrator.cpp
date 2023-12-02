@@ -72,21 +72,20 @@ int main(int argc, char** argv)
 		//db3.readNodeTopoFromFile("Krylo01.dat");
 		//db3.readNodeTopoFromFile("cubehole.dat", 20.0);
 		//db3.readNodeTopoFromFile("Fish.dat", 100.0);
-	        //db3.readNodeTopoFromFile("s5m.dat", 0.0005); ///// <--- (359, 360)
-		//db3.readNodeTopoFromFile("s5m2.dat", 0.0005);
-		
-		//db3.readNodeTopoFromFile("s6", 0.0005);
+	    //db3.readNodeTopoFromFile("s5m.dat", 0.0005); ///// <--- (359, 360)
+		//db3.readNodeTopoFromFile("s5m2.dat", 0.005);
+				//db3.readNodeTopoFromFile("s6", 0.0005);
 		//db3.readNodeTopoFromFile("MeshScreen.dat", 0.016);
-	        db3.readNodeTopoFromFile("0012e2", 1.0);
+	    //db3.readNodeTopoFromFile("0012e2", 1.0);
 		//db3.readNodeTopoFromFile("sph11000.dat", 1.0);
 		//db3.readNodeTopoFromFile("1x1x1_extrafine", 1.0);
 		
 		//db3.readNodeTopoFromFile("Case1_2.dat", 1.0);
 		//db3.readNodeTopoFromFile("Case-6-4.dat", 1.0);
 
-		//db3.readNodeTopoFromFile("Test.dat");
+		db3.readNodeTopoFromFile("CaseTest.dat");
 
-                //db3.readNodeTopoFromFile("Vint16k.dat", 1.0);
+        //db3.readNodeTopoFromFile("Vint16k.dat", 1.0);
 		//db3.readNodeTopoFromFile("ellipsoid2000", 1.0);
 
 		nNode = (int)db3.node.size();
@@ -104,7 +103,7 @@ int main(int argc, char** argv)
 
 	db3.point = db3.cnt;
 
-	ModelAnalyze MA(db3);
+	//ModelAnalyze MA(db3);
 	//std::cout << "MaxSideRatio= " << MA.MaxSide() << std::endl;
 	//std::cout << "MaxAreaRatio= " << MA.MaxAreaNeib(false) << std::endl;
 	//std::cout << "MaxAreaRatio= " << MA.MaxAreaNeib(true) << std::endl;
@@ -124,28 +123,26 @@ int main(int argc, char** argv)
 
 	CompJ3DK cmp(db3, par, &gaussianQuadratures);
 	
-	GausspointsCube<2> gaussianQuadraturesCube2(gp2D6);
-	GausspointsCube<3> gaussianQuadraturesCube3(gp2D6);
+	//GausspointsCube<2> gaussianQuadraturesCube2(gp2D6);
+	//GausspointsCube<3> gaussianQuadraturesCube3(gp2D6);
 	//CompI3DK_Duffy cmp(db3, par, &gaussianQuadratures, &gaussianQuadraturesCube2, &gaussianQuadraturesCube3);
-        //CompJ3DK_Duffy cmp(db3, par, &gaussianQuadratures, &gaussianQuadraturesCube2, &gaussianQuadraturesCube3);
+    //CompJ3DK_Duffy cmp(db3, par, &gaussianQuadratures, &gaussianQuadraturesCube2, &gaussianQuadraturesCube3);
 	
 	//std::cout << db3.topo[5826] << std::endl;
 	
 	if (par.rank == 0)
 	{
 		//for (int i = 0; i < db3.topo.size(); ++i)
-		int stp = 20000;
+		int stp = 200000;
 		int q = 0;
 		
 		//std::cout << "range : [ " << q * stp << "..." << std::min((q + 1) * stp, (int)db3.topo.size()) << " )" << std::endl;
 		
 		for (int i = q* stp; i < std::min((q+1)*stp, (int)db3.topo.size()); ++i)
 		for (int j = 0; j < db3.topo.size(); ++j)
-		//int i = 10934, j = 10957;
+		//int i = 0, j = 1;
 		{
 		/*	
-			int i = 1749;//37;
-			int j = 2060;// 115;
 			std::cout.precision(16);
 			std::cout << "pnl[" << i << "]" << std::endl;
 			std::cout << db3.topo[i] << std::endl;
@@ -185,13 +182,14 @@ int main(int argc, char** argv)
 			//if (cmp.db.ifContact({ i, j }) || (cmp.db.ifSosed({ i, j })))
 			{
 				cmp.task.push_back({ i % (int)db3.topo.size(), j % (int)db3.topo.size() });
-				//cmp.task.push_back({ j % (int)db3.topo.size(), i % (int)db3.topo.size() });
+				cmp.task.push_back({ j % (int)db3.topo.size(), i % (int)db3.topo.size() });
 			}
 		}
 	}
+	//3Dtest
 	//*/
 
-	
+	std::cout << "Number of tasks = " << cmp.task.size() << std::endl;
 
 	/*
 	Database<2> db2;
@@ -226,6 +224,7 @@ int main(int argc, char** argv)
 			for (int j = 0; j < 50*db2.topo.size(); ++j)		
 				cmp.task.push_back({ i % (int)db2.topo.size(), j % (int)db2.topo.size() });
 	}
+	//2Dtest
 	//*/
 
 	MPI_Barrier(MPI_COMM_WORLD);
@@ -233,7 +232,7 @@ int main(int argc, char** argv)
 
 	cmp.refines.clear();
 	cmp.refines.reserve(cmp.task.size());
-	cmp.run(false);
+	cmp.run(true);
 
 	//std::cout << cmp.result[0] << std::endl;
 	
@@ -254,9 +253,9 @@ int main(int argc, char** argv)
 			if ((cmp.task[2 * i].first != cmp.task[2 * i].second))
 				alldiff.push_back(diff);
 
-			/*
+			//*
 			//if (diff > 1e-4)
-			if ((cmp.task[2 * i].first!= cmp.task[2 * i].second) && (diff > 1e-5 || std::isnan(diff)))
+			if ((cmp.task[2 * i].first!= cmp.task[2 * i].second) && (diff > 1e-4 || std::isnan(diff)))
 			{
 			
 				if (db3.ifSosed({ cmp.task[2 * i].first, cmp.task[2 * i].second }))
@@ -279,7 +278,7 @@ int main(int argc, char** argv)
 					std::cout << "FAR!" << std::endl;
 				}
 			}
-			*/
+			//*/
 
 			////if
 			////	std::cout << "ContactOK" << std::endl;
@@ -292,13 +291,13 @@ int main(int argc, char** argv)
 
 
 		// Показывает статистику доразбиений, если только она собирается; ее сбор в параллельном режиме ведет к гонке данных...
-		/*
+		//*
 		const auto& refines = cmp.refines;
 		for (int i = 0; i < 13; ++i)
 		{
 			std::cout << i << ": " << std::count(refines.begin(), refines.end(), i) << std::endl;
 		}
-		*/
+		//*/
 
 
 		//*/
@@ -310,7 +309,8 @@ int main(int argc, char** argv)
 
 	std::cout << t2 - t1 << " sec." << std::endl;
 	std::cout.precision(16);
-	std::cout << "Result: " << cmp.result[0] << std::endl;
+	//std::cout << "Result: " << cmp.result[0] << std::endl;
+	//std::cout << "Result: " << cmp.result[1] << std::endl;
 
 
 

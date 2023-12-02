@@ -21,7 +21,7 @@
 
 #include "Database.h"
 
-const int maxRefine = 5;
+const int maxRefine = 7;
 
 #define DIVZERO 2e-6
 

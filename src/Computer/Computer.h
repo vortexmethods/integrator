@@ -155,9 +155,9 @@ void Computer<T,dim>::run(bool split)
 			result[taskContact[tsk][2]] = this->evaluate(taskContact[tsk][0], taskContact[tsk][1]);
 		tcontact += omp_get_wtime();
 
-		std::cout << "time_far     = " << tfar / taskFar.size() << " " << taskFar.size() << std::endl ;
-		std::cout << "time_sosed   = " << tsosed / taskSosed.size() << " " << taskSosed.size() << std::endl;
-		std::cout << "time_contact = " << tcontact / taskContact.size() << " " << taskContact.size() << std::endl;
+		std::cout << "time_far     = " << tfar     << "s, time per task = " << tfar / taskFar.size()         << ", (tasks = " << taskFar.size() << ")" << std::endl;
+		std::cout << "time_sosed   = " << tsosed   << "s, time per task = " << tsosed / taskSosed.size()     << ", (tasks = " << taskSosed.size() << ")" << std::endl;
+		std::cout << "time_contact = " << tcontact << "s, time per task = " << tcontact / taskContact.size() << ", (tasks = " << taskContact.size() << ")" << std::endl;
 		std::cout << "Total_time   = " << tfar + tsosed + tcontact << std::endl;
 
 

@@ -27,7 +27,7 @@ const double eps_psi_theta2 = eps_psi_theta * eps_psi_theta;
 
 
 const int nrefine = 0;
-const double epsRel = 1e-5; 
+const double epsRel = 1e-6; 
 
 CompJ3DK::CompJ3DK(const Database<3>& db_, const Parallel& par_, const Gausspoints<3>* const gp_) : Computer(db_, par_, gp_) {};
 CompJ3DK::~CompJ3DK() {};
@@ -449,22 +449,6 @@ p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 		
 		double W = atan2(sinDelta * sin(kappa / 2) * sinXi, \
 			cos(kappa / 2) + sin(delta) * cos((mu-psi)/2.0 - (nu+psi)/2.0) *cosXi + cos(delta) * sin((mu - psi) / 2.0 - (nu + psi) / 2.0));
-				
-		double D = 1.0 / (sqr(sin(delta - psi)) + sinDelta * sinPsi * (1.0 - cosXi) * (cos(delta-psi) + cosSigma));
-
-		//double G = cosDelta * (cosPsi * cosChi - sinPsi * cosSigma) + sinPsi * cosPsi * (sqr(cosSigma) + sqr(cosChi)) + sinDelta * cosEta / sinPsi;
-		double G = cosPsi * (sinDelta * cosSigma * cosXi + cosDelta * cosChi - sqr(sinDelta) / sinPsi);
-		
-
-		double gent = 2.0 * (Anu * sinMu * sinNuPsi - Amu * sinNu * sinMuPsi - \
-			D * sinMu * sinNu * sinDelta * (W * cosEta + 0.5 * sinPsi * sinXi * (Lambda1 - Lambda2 * cosSigma))) / (sinPsi * sinKappa);
-
-		double gens =
-			0.5 * (3.0 - log(2.0)) + \
-			(sinMu*sinNu/sinKappa)*((logOneCosLambda-logOneCosTheta)*cosPsi/sinPsi + D*(Lambda1 * sinDelta * cosEta / sinPsi + \
-				Lambda2 * cosChi - 2.0 * W * sinDelta * sinXi - G * (logSinNu - logSinMu))) - \
-			(cosMu*sinNu*(logOneCosLambda-logSinMu) + sinMu*cosNu*(logOneCosTheta-logSinNu))/sinKappa - \
-			0.5*(logSinMu+logSinNu-log(sinKappa));
 
 		double mulPsi   = sign(sinXi * sinPsi);
 		double mulDelta = sign(sinXi * sinDelta);
@@ -481,12 +465,29 @@ p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 					cosSigma * (sinMu - sinNu + 0.5 * sin(mu - nu) * Lambda2) / sinKappa
 			}; 
 		}
-						
+				
+		
+
+
 		if ((fabs(sinXi) < eps_zero) && (fabs(sin(psi)) > eps_zero))
 		{ // tests 1,2,3,4,5,6			
+			
+			double D = 1.0 / (sqr(sin(delta - psi)) + sinDelta * sinPsi * (1.0 - cosXi) * (cos(delta - psi) + cosSigma));
+			//double G = cosDelta * (cosPsi * cosChi - sinPsi * cosSigma) + sinPsi * cosPsi * (sqr(cosSigma) + sqr(cosChi)) + sinDelta * cosEta / sinPsi;
+			double G = cosPsi * (sinDelta * cosSigma * cosXi + cosDelta * cosChi - sqr(sinDelta) / sinPsi);
+			double gens =
+				0.5 * (3.0 - log(2.0)) + \
+				(sinMu * sinNu / sinKappa) * ((logOneCosLambda - logOneCosTheta) * cosPsi / sinPsi + D * (Lambda1 * sinDelta * cosEta / sinPsi + \
+					Lambda2 * cosChi - 2.0 * W * sinDelta * sinXi - G * (logSinNu - logSinMu))) - \
+				(cosMu * sinNu * (logOneCosLambda - logSinMu) + sinMu * cosNu * (logOneCosTheta - logSinNu)) / sinKappa - \
+				0.5 * (logSinMu + logSinNu - log(sinKappa));
+
+
 			double are = arg(sin(0.5 * (nu + mu)) + sin(0.5 * (mu - nu) - psi + delta * cosXi));
-			double arc = arg(1.0 / tan(0.5 * (nu + psi)) + tan(0.5 * delta) * cosXi);
-			double ard = arg(      tan(0.5 * (mu - psi)) + tan(0.5 * delta) * cosXi);		
+			double arc = 0.0;
+			if (fabs(0.5 * (nu + psi)) > eps_zero)
+				arc = arg(1.0 / tan(0.5 * (nu + psi)) + tan(0.5 * delta) * cosXi);
+			double ard = arg(tan(0.5 * (mu - psi)) + tan(0.5 * delta) * cosXi);		
 
 			return v2D{ 
 				2.0 * mulDelta * (sin(delta) * sinMu * sinNu / cosChi * cosXi * are + \
@@ -511,6 +512,21 @@ p13D CompJ3DK::IntSingContact(const i2D& ii, const i2D& jj)
 					0.5*(1.0-log(2.0))-0.5*log((1.0-cosPsi*cosMu)*(1.0+cosPsi*cosNu)/sinKappa) + (0.5*sin(mu-nu)*Lambda1 + cosPsi*(sinMu-sinNu))/sinKappa
 			};				
 		}
+
+		double D = 1.0 / (sqr(sin(delta - psi)) + sinDelta * sinPsi * (1.0 - cosXi) * (cos(delta - psi) + cosSigma));
+		double G = cosPsi * (sinDelta * cosSigma * cosXi + cosDelta * cosChi - sqr(sinDelta) / sinPsi);
+
+
+		double gent = 2.0 * (Anu * sinMu * sinNuPsi - Amu * sinNu * sinMuPsi - \
+			D * sinMu * sinNu * sinDelta * (W * cosEta + 0.5 * sinPsi * sinXi * (Lambda1 - Lambda2 * cosSigma))) / (sinPsi * sinKappa);
+
+		double gens =
+			0.5 * (3.0 - log(2.0)) + \
+			(sinMu * sinNu / sinKappa) * ((logOneCosLambda - logOneCosTheta) * cosPsi / sinPsi + D * (Lambda1 * sinDelta * cosEta / sinPsi + \
+				Lambda2 * cosChi - 2.0 * W * sinDelta * sinXi - G * (logSinNu - logSinMu))) - \
+			(cosMu * sinNu * (logOneCosLambda - logSinMu) + sinMu * cosNu * (logOneCosTheta - logSinNu)) / sinKappa - \
+			0.5 * (logSinMu + logSinNu - log(sinKappa));
+
 
 		return v2D{
 			gent, gens
@@ -547,6 +563,9 @@ v3D CompJ3DK::evaluate(int i, int j)
 	if (i==j)
 	//if (&(db.topo[i]) == &(db.topo[j]))	
 	{
+#pragma omp critical
+		refines.push_back(0);
+
 		return { 0.0, 0.0, 0.0 };
 	}
 
@@ -567,7 +586,8 @@ v3D CompJ3DK::evaluate(int i, int j)
 
 #ifdef AUTOSPLIT		
 		auto [IntegralReg, nrefine] = IntJRegSosedEpsRel(i, { j, shifts[1] });
-		//refines.push_back(nrefine);
+#pragma omp critical
+		refines.push_back(nrefine);
 #else
 		v3D IntegralReg = IntJRegSosed(i, { j, shifts[1] }, nrefine);
 		//refines.push_back(nrefine);
@@ -610,10 +630,11 @@ v3D CompJ3DK::evaluate(int i, int j)
 		//std::cout << std::endl;
 
 #ifdef AUTOSPLIT		
-		auto[IntegralReg, nrefine] = IntRegContactEpsRel({ i, shifts[1] }, { j, shifts[1] });
-		//refines.push_back(nrefine);
+		auto[IntegralReg, nrefine] = IntRegContactEpsRel({ i, shifts[0] }, { j, shifts[1] });
+#pragma omp critical
+		refines.push_back(nrefine);
 #else
-		p13D IntegralReg = IntRegContact({ i, shifts[1] }, { j, shifts[1] }, nrefine);
+		p13D IntegralReg = IntRegContact({ i, shifts[0] }, { j, shifts[1] }, nrefine);
 		//refines.push_back(nrefine);
 #endif	
 		
@@ -658,7 +679,8 @@ v3D CompJ3DK::evaluate(int i, int j)
 
 #ifdef AUTOSPLIT		
 	auto[res, nrefine] = gp->integrateEpsRel<v3D>(func, i, epsRel);
-	//refines.push_back(nrefine);
+#pragma omp critical
+	refines.push_back(nrefine);
 #else
 	v3D res = gp->integrate<v3D>(func, i, nrefine);
 	//refines.push_back(nrefine);
