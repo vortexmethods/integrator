@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Шаблон класса Computer&lt; T, dim &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d0/d39/class_computer.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d8/d81/class_computer-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса Computer&lt; T, dim &gt;<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса Computer&lt; T, dim &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d70/class_computer__coll__graph.png" border="0" usemap="#_computer_3_01_t_00_01dim_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_computer_3_01_t_00_01dim_01_4_coll__map" id="_computer_3_01_t_00_01dim_01_4_coll__map">
+<area shape="rect" id="node3" href="../../d0/df0/class_parallel.html" title="Класс, опеделяющий параметры исполнения задачи в параллельном MPI&#45;режиме " alt="" coords="172,13,237,39"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6a0d6ae7b8417877a4ddf7388f4d1a13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a6a0d6ae7b8417877a4ddf7388f4d1a13">Computer</a> (const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt; &amp;db_, const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;par_, const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; dim &gt; *const gp_=nullptr)</td></tr>
+<tr class="memdesc:a6a0d6ae7b8417877a4ddf7388f4d1a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <a href="#a6a0d6ae7b8417877a4ddf7388f4d1a13">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6a0d6ae7b8417877a4ddf7388f4d1a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba4ac1c69399cb0bd711587647ee9f4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a1ba4ac1c69399cb0bd711587647ee9f4">~Computer</a> ()</td></tr>
+<tr class="memdesc:a1ba4ac1c69399cb0bd711587647ee9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор  <a href="#a1ba4ac1c69399cb0bd711587647ee9f4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1ba4ac1c69399cb0bd711587647ee9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79afc38363d70a19e70be7f49b404c41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a79afc38363d70a19e70be7f49b404c41">run</a> (bool split)</td></tr>
+<tr class="memdesc:a79afc38363d70a19e70be7f49b404c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальная функция выполнения всего объема расчетов  <a href="#a79afc38363d70a19e70be7f49b404c41">Подробнее...</a><br /></td></tr>
+<tr class="separator:a79afc38363d70a19e70be7f49b404c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734f98d2a5fb1d645fa3a33fb62e1053"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">evaluate</a> (int i, int j)=0</td></tr>
+<tr class="memdesc:a734f98d2a5fb1d645fa3a33fb62e1053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальная функция для выполнения одного вычисления  <a href="#a734f98d2a5fb1d645fa3a33fb62e1053">Подробнее...</a><br /></td></tr>
+<tr class="separator:a734f98d2a5fb1d645fa3a33fb62e1053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a14340d689ad01e29210b93c31156f06b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a></td></tr>
+<tr class="memdesc:a14340d689ad01e29210b93c31156f06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на базу данных геометрических параметров  <a href="#a14340d689ad01e29210b93c31156f06b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a14340d689ad01e29210b93c31156f06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298915e70ef36f4f4259bd9ea578ad04"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">par</a></td></tr>
+<tr class="memdesc:a298915e70ef36f4f4259bd9ea578ad04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на класс, управляющий распараллеливанием по MPI.  <a href="#a298915e70ef36f4f4259bd9ea578ad04">Подробнее...</a><br /></td></tr>
+<tr class="separator:a298915e70ef36f4f4259bd9ea578ad04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; dim &gt; *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a></td></tr>
+<tr class="memdesc:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный указатель на интегратор по гауссовым точкам (может быть пустым)  <a href="#affa6a3bfd6e3bafc416c1f788b22b70d">Подробнее...</a><br /></td></tr>
+<tr class="separator:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1f7935bcae12a74140237e5765c9ba"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a></td></tr>
+<tr class="memdesc:a9a1f7935bcae12a74140237e5765c9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор пар, определяющий необходимые вычисления  <a href="#a9a1f7935bcae12a74140237e5765c9ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9a1f7935bcae12a74140237e5765c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f615779271ff521fe656a5db083104"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a></td></tr>
+<tr class="memdesc:a90f615779271ff521fe656a5db083104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор для хранения результатов вычислений  <a href="#a90f615779271ff521fe656a5db083104">Подробнее...</a><br /></td></tr>
+<tr class="separator:a90f615779271ff521fe656a5db083104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename T, int dim&gt;<br />
+class Computer&lt; T, dim &gt;</h3>
+
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00040">40</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a6a0d6ae7b8417877a4ddf7388f4d1a13"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::<a class="el" href="../../d0/d39/class_computer.html">Computer</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>db_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td>
+          <td class="paramname"><em>par_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; dim &gt; *const&#160;</td>
+          <td class="paramname"><em>gp_</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">db_</td><td>константная ссылка на базу данных геометрических параметров </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">par_</td><td>константная ссылка на класс, управляющий распараллеливанием по MPI </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gp_</td><td>константный указатель на класс, обеспечивающий интегрирование по гауссовым точкам </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00063">63</a></p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;: <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>(db_), <a class="code" href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">par</a>(par_), <a class="code" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a>(gp_) {};</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_computer_html_a298915e70ef36f4f4259bd9ea578ad04"><div class="ttname"><a href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">Computer::par</a></div><div class="ttdeci">const Parallel &amp; par</div><div class="ttdoc">Константная ссылка на класс, управляющий распараллеливанием по MPI. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00047">Computer.h:47</a></div></div>
+<div class="ttc" id="class_computer_html_affa6a3bfd6e3bafc416c1f788b22b70d"><div class="ttname"><a href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">Computer::gp</a></div><div class="ttdeci">const Gausspoints&lt; dim &gt; *const gp</div><div class="ttdoc">Константный указатель на интегратор по гауссовым точкам (может быть пустым) </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00050">Computer.h:50</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1ba4ac1c69399cb0bd711587647ee9f4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::~<a class="el" href="../../d0/d39/class_computer.html">Computer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00066">66</a></p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a734f98d2a5fb1d645fa3a33fb62e1053"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual T <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальная функция для выполнения одного вычисления </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>индекс контрольной точки или контрольной панели в базе данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>индекс влияющей панели в базе данных </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>результат интегрирования </dd></dl>
+
+<p>Замещается в <a class="el" href="../../d0/db3/class_comp_i2_d_k.html#a509cb3d31f11151d71e29952cbf98cfb">CompI2DK</a>, <a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d">CompI3DK_Duffy</a>, <a class="el" href="../../d7/dc2/class_comp_j2_d_k.html#a1809dbfeb2b673f1ed053b856044d1e0">CompJ2DK</a>, <a class="el" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a6405c284816d4c5702e48836b190906d">CompJ3DK_Duffy</a>, <a class="el" href="../../d8/d34/class_comp_i3_d_k.html#a0762b67e10ad23e1d13ccfcac16d746f">CompI3DK</a>, <a class="el" href="../../d6/d00/class_comp_j3_d_k.html#a59269cb6598222aa69ded32ab39c6550">CompJ3DK</a>, <a class="el" href="../../df/db4/class_comp_test.html#a74f98b5fa9a8752c7958452cfd1ad145">CompTest</a>, <a class="el" href="../../df/d5f/class_comp_i2_d_m.html#a12ccb505cef82bd21b51bc8eebbe8bc5">CompI2DM</a>, <a class="el" href="../../d6/db9/class_comp_i3_d_m.html#ada966ca63c9dec90341795215d535465">CompI3DM</a>, <a class="el" href="../../da/df7/class_comp_j2_d_m.html#a703ad27f69e891a52b8f0debd0896640">CompJ2DM</a> и <a class="el" href="../../d4/db2/class_comp_j3_d_m.html#a009a825490ad6355bd8121188af700af">CompJ3DM</a>.</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d39/class_computer_a734f98d2a5fb1d645fa3a33fb62e1053_icgraph.png" border="0" usemap="#d0/d39/class_computer_a734f98d2a5fb1d645fa3a33fb62e1053_icgraph" alt=""/></div>
+<map name="d0/d39/class_computer_a734f98d2a5fb1d645fa3a33fb62e1053_icgraph" id="d0/d39/class_computer_a734f98d2a5fb1d645fa3a33fb62e1053_icgraph">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html#a1ba4ac1c69399cb0bd711587647ee9f4" title="Деструктор " alt="" coords="343,5,487,47"/>
+<area shape="rect" id="node3" href="../../d0/d39/class_computer.html#a79afc38363d70a19e70be7f49b404c41" title="Виртуальная функция выполнения всего объема расчетов " alt="" coords="189,63,295,90"/>
+<area shape="rect" id="node4" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="389,71,440,98"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79afc38363d70a19e70be7f49b404c41"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::run </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>split</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Виртуальная функция выполнения всего объема расчетов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">split</td><td>признак разделения задач на 3 подсписка: для дальних пар ячеек, для ячеек с общим ребром и для ячеек с общей вершиной </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00083">83</a></p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>.clear();</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>.resize(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size());</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!split)</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">auto</span> parall = <a class="code" href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">par</a>.<a class="code" href="../../d0/df0/class_parallel.html#a31daa8b6f5482131cda3a1ee5f45b670">SplitMPI</a>(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size(), <span class="keyword">true</span>);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;id = &quot; &lt;&lt; this-&gt;par.myidWork &lt;&lt; &quot;, len = &quot; &lt;&lt; parprop.myLen &lt;&lt; &quot;, disp = &quot; &lt;&lt; parprop.myDisp &lt;&lt; std::endl;</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::vector&lt;std::pair&lt;int, int&gt;&gt; locTask;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        parall.<a class="code" href="../../df/d1d/structpar_prop.html#ac92dcdec0eb56774047dd8e0af921291">ScattervVector</a>(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>, locTask);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::vector&lt;T&gt; locResult;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        locResult.resize(parall.myLen);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        MPI_Barrier(MPI_COMM_WORLD);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">double</span> timempi = -omp_get_wtime();</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;thread_max = &quot;</span> &lt;&lt; omp_get_max_threads() &lt;&lt; std::endl;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(dynamic, OMP_SCHEDULE_BLOCK_SIZE)</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> tsk = 0; tsk &lt; locTask.size(); ++tsk)</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            locResult[tsk] = this-&gt;<a class="code" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">evaluate</a>(locTask[tsk].first, locTask[tsk].second);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                </div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        parall.GathervVector(locResult, <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>, <span class="keyword">false</span>);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        MPI_Barrier(MPI_COMM_WORLD);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        timempi += omp_get_wtime();</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (parall.rank == 0)</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;time = &quot;</span> &lt;&lt; timempi &lt;&lt; std::endl;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }<span class="comment">//if !split</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (split)</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::vector&lt;numvector&lt;int, 3&gt;&gt; taskFar, taskSosed, taskContact;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        taskFar.reserve(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size());</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        taskSosed.reserve(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size());</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        taskContact.reserve(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size());</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> tsk = 0; tsk &lt; <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>.size(); ++tsk)</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">auto</span> it = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.nbh.find(<a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk]);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span> (it != <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.nbh.end())</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">switch</span> (it-&gt;second)</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                {</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a>:</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    taskSosed.push_back({ <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].first, <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].second, tsk });</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    <span class="keywordflow">break</span>;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a>:</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    taskContact.push_back({ <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].first, <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].second, tsk });</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <span class="keywordflow">break</span>;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                }</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                taskFar.push_back({ <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].first, <a class="code" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a>[tsk].second, tsk });</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">double</span> tfar = -omp_get_wtime(); </div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(dynamic, 50000) //OMP_SCHEDULE_BLOCK_SIZE)</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> tsk = 0; tsk &lt; taskFar.size(); ++tsk)</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>[taskFar[tsk][2]] = this-&gt;<a class="code" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">evaluate</a>(taskFar[tsk][0], taskFar[tsk][1]);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        tfar += omp_get_wtime();</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">double</span> tsosed = -omp_get_wtime();</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(dynamic, 100)//OMP_SCHEDULE_BLOCK_SIZE)</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> tsk = 0; tsk &lt; taskSosed.size(); ++tsk)</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>[taskSosed[tsk][2]] = this-&gt;<a class="code" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">evaluate</a>(taskSosed[tsk][0], taskSosed[tsk][1]);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        tsosed += omp_get_wtime();</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">double</span> tcontact = -omp_get_wtime();</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(dynamic, 300)//OMP_SCHEDULE_BLOCK_SIZE)</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> tsk = 0; tsk &lt; taskContact.size(); ++tsk)</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a>[taskContact[tsk][2]] = this-&gt;<a class="code" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">evaluate</a>(taskContact[tsk][0], taskContact[tsk][1]);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        tcontact += omp_get_wtime();</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;time_far     = &quot;</span> &lt;&lt; tfar     &lt;&lt; <span class="stringliteral">&quot;s, time per task = &quot;</span> &lt;&lt; tfar / taskFar.size()         &lt;&lt; <span class="stringliteral">&quot;, (tasks = &quot;</span> &lt;&lt; taskFar.size() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;time_sosed   = &quot;</span> &lt;&lt; tsosed   &lt;&lt; <span class="stringliteral">&quot;s, time per task = &quot;</span> &lt;&lt; tsosed / taskSosed.size()     &lt;&lt; <span class="stringliteral">&quot;, (tasks = &quot;</span> &lt;&lt; taskSosed.size() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;time_contact = &quot;</span> &lt;&lt; tcontact &lt;&lt; <span class="stringliteral">&quot;s, time per task = &quot;</span> &lt;&lt; tcontact / taskContact.size() &lt;&lt; <span class="stringliteral">&quot;, (tasks = &quot;</span> &lt;&lt; taskContact.size() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Total_time   = &quot;</span> &lt;&lt; tfar + tsosed + tcontact &lt;&lt; std::endl;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }<span class="comment">//if split</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}<div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_computer_html_a298915e70ef36f4f4259bd9ea578ad04"><div class="ttname"><a href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">Computer::par</a></div><div class="ttdeci">const Parallel &amp; par</div><div class="ttdoc">Константная ссылка на класс, управляющий распараллеливанием по MPI. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00047">Computer.h:47</a></div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a></div><div class="ttdoc">соседняя через вершину (3D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00026">Database.h:26</a></div></div>
+<div class="ttc" id="class_computer_html_a734f98d2a5fb1d645fa3a33fb62e1053"><div class="ttname"><a href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">Computer::evaluate</a></div><div class="ttdeci">virtual T evaluate(int i, int j)=0</div><div class="ttdoc">Виртуальная функция для выполнения одного вычисления </div></div>
+<div class="ttc" id="structpar_prop_html_ac92dcdec0eb56774047dd8e0af921291"><div class="ttname"><a href="../../df/d1d/structpar_prop.html#ac92dcdec0eb56774047dd8e0af921291">parProp::ScattervVector</a></div><div class="ttdeci">void ScattervVector(std::vector&lt; T &gt; &amp;globVec, std::vector&lt; T &gt; &amp;locVec, bool locResize=true)</div><div class="ttdoc">Обертка функции MPI_Scatterv(...) для распределения вектора по процессорам </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d4c/_parallel_8h_source.html#l00105">Parallel.h:105</a></div></div>
+<div class="ttc" id="class_computer_html_a9a1f7935bcae12a74140237e5765c9ba"><div class="ttname"><a href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">Computer::task</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; int, int &gt; &gt; task</div><div class="ttdoc">Вектор пар, определяющий необходимые вычисления </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00053">Computer.h:53</a></div></div>
+<div class="ttc" id="class_computer_html_a90f615779271ff521fe656a5db083104"><div class="ttname"><a href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">Computer::result</a></div><div class="ttdeci">std::vector&lt; T &gt; result</div><div class="ttdoc">Вектор для хранения результатов вычислений </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00056">Computer.h:56</a></div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a></div><div class="ttdoc">соседняя через грань (3D) или через граничную точку (2D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00024">Database.h:24</a></div></div>
+<div class="ttc" id="class_parallel_html_a31daa8b6f5482131cda3a1ee5f45b670"><div class="ttname"><a href="../../d0/df0/class_parallel.html#a31daa8b6f5482131cda3a1ee5f45b670">Parallel::SplitMPI</a></div><div class="ttdeci">parProp SplitMPI(size_t n, bool bcastAll=false) const </div><div class="ttdoc">Распределение задач по процессорам </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1f/_parallel_8cpp_source.html#l00090">Parallel.cpp:90</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_cgraph.png" border="0" usemap="#d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_cgraph" alt=""/></div>
+<map name="d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_cgraph" id="d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_cgraph">
+<area shape="rect" id="node2" href="../../d0/df0/class_parallel.html#a31daa8b6f5482131cda3a1ee5f45b670" title="Распределение задач по процессорам " alt="" coords="179,5,301,32"/>
+<area shape="rect" id="node3" href="../../df/d1d/structpar_prop.html#ac92dcdec0eb56774047dd8e0af921291" title="Обертка функции MPI_Scatterv(...) для распределения вектора по процессорам " alt="" coords="159,56,321,83"/>
+<area shape="rect" id="node4" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053" title="Виртуальная функция для выполнения одного вычисления " alt="" coords="172,107,308,133"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_icgraph.png" border="0" usemap="#d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_icgraph" alt=""/></div>
+<map name="d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_icgraph" id="d0/d39/class_computer_a79afc38363d70a19e70be7f49b404c41_icgraph">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html#a1ba4ac1c69399cb0bd711587647ee9f4" title="Деструктор " alt="" coords="159,5,303,47"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="205,71,256,98"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a14340d689ad01e29210b93c31156f06b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt;dim&gt;&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::db</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на базу данных геометрических параметров </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affa6a3bfd6e3bafc416c1f788b22b70d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt;dim&gt;* const <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::gp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Константный указатель на интегратор по гауссовым точкам (может быть пустым) </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a298915e70ef36f4f4259bd9ea578ad04"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a>&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::par</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на класс, управляющий распараллеливанием по MPI. </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a90f615779271ff521fe656a5db083104"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вектор для хранения результатов вычислений </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a1f7935bcae12a74140237e5765c9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;int, int&gt; &gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; T, dim &gt;::task</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вектор пар, определяющий необходимые вычисления </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>Computer/<a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/d39/class_computer.html">Computer</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

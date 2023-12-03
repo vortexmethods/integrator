@@ -1,0 +1,9 @@
+<map id="CompJ3DK::IntRegContact" name="CompJ3DK::IntRegContact">
+<area shape="rect" id="node2" href="$d6/d00/class_comp_j3_d_k.html#ab125f49d8f0b61fc7110bcfc8183b489" title="CompJ3DK::RegContact" alt="" coords="236,31,404,57"/>
+<area shape="rect" id="node3" href="$d6/d00/class_comp_j3_d_k.html#a716c3d597f9b70f73b4d5ed16a9ce1cb" title="CompJ3DK::ThetaPsi" alt="" coords="462,5,613,32"/>
+<area shape="rect" id="node7" href="$d6/d00/class_comp_j3_d_k.html#a32f5951d275b765f3402f53411519711" title="CompJ3DK::SingContact" alt="" coords="452,56,623,83"/>
+<area shape="rect" id="node4" href="$d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947" title="Нормирование вектора на заданную длину " alt="" coords="671,56,859,83"/>
+<area shape="rect" id="node6" href="$d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="741,5,788,32"/>
+<area shape="rect" id="node5" href="$d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="907,56,1073,83"/>
+<area shape="rect" id="node8" href="$d6/dd4/class_v_mlib_1_1numvector.html#a56ac6bd4c56643959be6548188a144bd" title="Вычисление квадрата нормы (длины) вектора " alt="" coords="677,107,852,133"/>
+</map>

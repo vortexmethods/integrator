@@ -1,0 +1,15 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$d0/df0/class_parallel.html#a1e86e5004faa53c95b0ccad7602325ce" title="Формирование MPI&#45;описателей пользовательских типов " alt="" coords="134,5,297,32"/>
+<area shape="rect" id="node3" href="$dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1" title="Считывание базы данных из файла " alt="" coords="104,56,327,83"/>
+<area shape="rect" id="node4" href="$d0/df0/class_parallel.html#a31daa8b6f5482131cda3a1ee5f45b670" title="Распределение задач по процессорам " alt="" coords="395,183,517,209"/>
+<area shape="rect" id="node5" href="$dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64" title="Database::fillNbh" alt="" coords="154,157,277,184"/>
+<area shape="rect" id="node6" href="$dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934" title="Database::calcNrm" alt="" coords="148,208,283,235"/>
+<area shape="rect" id="node7" href="$dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74" title="Database::calcCnt" alt="" coords="150,259,281,285"/>
+<area shape="rect" id="node8" href="$dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997" title="Database::calcMeasure" alt="" coords="135,309,295,336"/>
+<area shape="rect" id="node9" href="$d0/d39/class_computer.html#a79afc38363d70a19e70be7f49b404c41" title="Виртуальная функция выполнения всего объема расчетов " alt="" coords="163,360,268,387"/>
+<area shape="rect" id="node12" href="$d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="132,411,299,437"/>
+<area shape="rect" id="node13" href="$dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9" title="Database::ifSosed" alt="" coords="150,461,281,488"/>
+<area shape="rect" id="node14" href="$dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef" title="Database::ifContact" alt="" coords="146,512,285,539"/>
+<area shape="rect" id="node10" href="$df/d1d/structpar_prop.html#ac92dcdec0eb56774047dd8e0af921291" title="Обертка функции MPI_Scatterv(...) для распределения вектора по процессорам " alt="" coords="375,335,537,361"/>
+<area shape="rect" id="node11" href="$d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053" title="Виртуальная функция для выполнения одного вычисления " alt="" coords="388,385,524,412"/>
+</map>

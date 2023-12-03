@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Класс CompI3DK_Duffy</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dc/d84/class_comp_i3_d_k___duffy.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../de/de3/class_comp_i3_d_k___duffy-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс CompI3DK_Duffy</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс &ndash; вычислитель для 3D случая двукратного интеграла от функции Грина <br />
+ Наследован от <a class="el" href="../../d0/d39/class_computer.html">Computer&lt;double, 3&gt;</a>  
+ <a href="../../dc/d84/class_comp_i3_d_k___duffy.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:CompI3DK_Duffy:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d40/class_comp_i3_d_k___duffy__inherit__graph.png" border="0" usemap="#_comp_i3_d_k___duffy_inherit__map" alt="Inheritance graph"/></div>
+<map name="_comp_i3_d_k___duffy_inherit__map" id="_comp_i3_d_k___duffy_inherit__map">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html" title="Computer\&lt; double, 3 \&gt;" alt="" coords="5,5,161,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса CompI3DK_Duffy:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d29/class_comp_i3_d_k___duffy__coll__graph.png" border="0" usemap="#_comp_i3_d_k___duffy_coll__map" alt="Collaboration graph"/></div>
+<map name="_comp_i3_d_k___duffy_coll__map" id="_comp_i3_d_k___duffy_coll__map">
+<area shape="rect" id="node2" href="../../d0/d39/class_computer.html" title="Computer\&lt; double, 3 \&gt;" alt="" coords="253,71,409,98"/>
+<area shape="rect" id="node4" href="../../d0/df0/class_parallel.html" title="Класс, опеделяющий параметры исполнения задачи в параллельном MPI&#45;режиме " alt="" coords="51,71,117,98"/>
+<area shape="rect" id="node7" href="../../d5/db0/structgp_pos_weight_ord.html" title="gpPosWeightOrd\&lt; 2 \&gt;" alt="" coords="255,166,407,193"/>
+<area shape="rect" id="node6" href="../../df/df6/class_gausspoints_cube.html" title="GausspointsCube\&lt; 3 \&gt;" alt="" coords="479,122,636,149"/>
+<area shape="rect" id="node9" href="../../df/df6/class_gausspoints_cube.html" title="GausspointsCube\&lt; 2 \&gt;" alt="" coords="479,173,636,199"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac1917bf9c595b8bb30d6dd322e989e8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac1917bf9c595b8bb30d6dd322e989e8d">CompI3DK_Duffy</a> (const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 3 &gt; &amp;db_, const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;par_, const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; 3 &gt; *const gp_, const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 2 &gt; *const gp2_, const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 3 &gt; *const gp3_)</td></tr>
+<tr class="memdesc:ac1917bf9c595b8bb30d6dd322e989e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <a href="#ac1917bf9c595b8bb30d6dd322e989e8d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac1917bf9c595b8bb30d6dd322e989e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7b36cddf57ca5d212281026f810358"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#abc7b36cddf57ca5d212281026f810358">~CompI3DK_Duffy</a> ()</td></tr>
+<tr class="memdesc:abc7b36cddf57ca5d212281026f810358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор  <a href="#abc7b36cddf57ca5d212281026f810358">Подробнее...</a><br /></td></tr>
+<tr class="separator:abc7b36cddf57ca5d212281026f810358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9703e1555c3b0a1796c242d2cdf90d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d">evaluate</a> (int i, int j) override</td></tr>
+<tr class="memdesc:acf9703e1555c3b0a1796c242d2cdf90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перегрузка функции для выполнения одного скалярнозначного вычисления  <a href="#acf9703e1555c3b0a1796c242d2cdf90d">Подробнее...</a><br /></td></tr>
+<tr class="separator:acf9703e1555c3b0a1796c242d2cdf90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d68b34704eddd61b4964b539a1fc81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#af5d68b34704eddd61b4964b539a1fc81">RenumerationSosed</a> (int i, int j)</td></tr>
+<tr class="separator:af5d68b34704eddd61b4964b539a1fc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e8abb5bb1a0f6a16b0a5dbf682e306"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a52e8abb5bb1a0f6a16b0a5dbf682e306">RenumerationContact</a> (int i, int j)</td></tr>
+<tr class="separator:a52e8abb5bb1a0f6a16b0a5dbf682e306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0dce82f5d29f72361173fae1cee927"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927">DistContact</a> (double xi1, double xi2, double eta1, double eta2, const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;nodes_i, const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;nodes_j)</td></tr>
+<tr class="separator:a0e0dce82f5d29f72361173fae1cee927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0ff8a4a6f586f5bef5f97038f4b0fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a> (double xi2, double u1, double u2, const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;nodes_i, const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;nodes_j)</td></tr>
+<tr class="separator:acc0ff8a4a6f586f5bef5f97038f4b0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad463ea40a0937be7483c0c9a7c63261"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261">IntDuffyContact</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;ii, const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;jj, size_t &amp;refineLevel)</td></tr>
+<tr class="separator:aad463ea40a0937be7483c0c9a7c63261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d36eac48be39f018c02abc8f0f378dd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd">IntDuffySosed</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;ii, const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;jj, size_t &amp;refineLevel)</td></tr>
+<tr class="separator:a5d36eac48be39f018c02abc8f0f378dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79afc38363d70a19e70be7f49b404c41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a79afc38363d70a19e70be7f49b404c41">run</a> (bool split)</td></tr>
+<tr class="memdesc:a79afc38363d70a19e70be7f49b404c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Виртуальная функция выполнения всего объема расчетов  <a href="#a79afc38363d70a19e70be7f49b404c41">Подробнее...</a><br /></td></tr>
+<tr class="separator:a79afc38363d70a19e70be7f49b404c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:ac424a153a0d1a879d0a167944cb6bd6c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 2 &gt; *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">gp2</a></td></tr>
+<tr class="separator:ac424a153a0d1a879d0a167944cb6bd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b45a9e6537ef96287b22938b85b6321"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 3 &gt; *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a3b45a9e6537ef96287b22938b85b6321">gp3</a></td></tr>
+<tr class="separator:a3b45a9e6537ef96287b22938b85b6321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacc9a3be7d8939596943d6b5b57ed065"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aacc9a3be7d8939596943d6b5b57ed065">refines</a></td></tr>
+<tr class="separator:aacc9a3be7d8939596943d6b5b57ed065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14340d689ad01e29210b93c31156f06b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a></td></tr>
+<tr class="memdesc:a14340d689ad01e29210b93c31156f06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на базу данных геометрических параметров  <a href="#a14340d689ad01e29210b93c31156f06b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a14340d689ad01e29210b93c31156f06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298915e70ef36f4f4259bd9ea578ad04"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a298915e70ef36f4f4259bd9ea578ad04">par</a></td></tr>
+<tr class="memdesc:a298915e70ef36f4f4259bd9ea578ad04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на класс, управляющий распараллеливанием по MPI.  <a href="#a298915e70ef36f4f4259bd9ea578ad04">Подробнее...</a><br /></td></tr>
+<tr class="separator:a298915e70ef36f4f4259bd9ea578ad04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; dim &gt; *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a></td></tr>
+<tr class="memdesc:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный указатель на интегратор по гауссовым точкам (может быть пустым)  <a href="#affa6a3bfd6e3bafc416c1f788b22b70d">Подробнее...</a><br /></td></tr>
+<tr class="separator:affa6a3bfd6e3bafc416c1f788b22b70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1f7935bcae12a74140237e5765c9ba"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a9a1f7935bcae12a74140237e5765c9ba">task</a></td></tr>
+<tr class="memdesc:a9a1f7935bcae12a74140237e5765c9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор пар, определяющий необходимые вычисления  <a href="#a9a1f7935bcae12a74140237e5765c9ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9a1f7935bcae12a74140237e5765c9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f615779271ff521fe656a5db083104"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/class_computer.html#a90f615779271ff521fe656a5db083104">result</a></td></tr>
+<tr class="memdesc:a90f615779271ff521fe656a5db083104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вектор для хранения результатов вычислений  <a href="#a90f615779271ff521fe656a5db083104">Подробнее...</a><br /></td></tr>
+<tr class="separator:a90f615779271ff521fe656a5db083104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс &ndash; вычислитель для 3D случая двукратного интеграла от функции Грина <br />
+ Наследован от <a class="el" href="../../d0/d39/class_computer.html">Computer&lt;double, 3&gt;</a> </p>
+<dl class="section author"><dt>Автор</dt><dd>Иванова Юлия Витальевна </dd>
+<dd>
+Марчевский Илья Константинович </dd>
+<dd>
+Хорошева Анна Александровна </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.5 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>11 сентября 2022 г. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a> строка <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00029">29</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ac1917bf9c595b8bb30d6dd322e989e8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CompI3DK_Duffy::CompI3DK_Duffy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>db_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a> &amp;&#160;</td>
+          <td class="paramname"><em>par_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt; 3 &gt; *const&#160;</td>
+          <td class="paramname"><em>gp_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 2 &gt; *const&#160;</td>
+          <td class="paramname"><em>gp2_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; 3 &gt; *const&#160;</td>
+          <td class="paramname"><em>gp3_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">db_</td><td>константная ссылка на базу данных геометрических параметров </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">par_</td><td>константная ссылка на класс, управляющий распараллеливанием по MPI </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gp_</td><td>константный указатель на класс, обеспечивающий интегрирование по гауссовым точкам </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00025">25</a></p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    :  <a class="code" href="../../d0/d39/class_computer.html#a6a0d6ae7b8417877a4ddf7388f4d1a13">Computer</a>(db_, par_, gp_), <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">gp2</a>(gp2_), <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a3b45a9e6537ef96287b22938b85b6321">gp3</a>(gp3_) {};</div><div class="ttc" id="class_comp_i3_d_k___duffy_html_a3b45a9e6537ef96287b22938b85b6321"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#a3b45a9e6537ef96287b22938b85b6321">CompI3DK_Duffy::gp3</a></div><div class="ttdeci">const GausspointsCube&lt; 3 &gt; *const gp3</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00035">CompI3DK-Duffy.h:35</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_ac424a153a0d1a879d0a167944cb6bd6c"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">CompI3DK_Duffy::gp2</a></div><div class="ttdeci">const GausspointsCube&lt; 2 &gt; *const gp2</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00034">CompI3DK-Duffy.h:34</a></div></div>
+<div class="ttc" id="class_computer_html_a6a0d6ae7b8417877a4ddf7388f4d1a13"><div class="ttname"><a href="../../d0/d39/class_computer.html#a6a0d6ae7b8417877a4ddf7388f4d1a13">Computer&lt; double, 3 &gt;::Computer</a></div><div class="ttdeci">Computer(const Database&lt; dim &gt; &amp;db_, const Parallel &amp;par_, const Gausspoints&lt; dim &gt; *const gp_=nullptr)</div><div class="ttdoc">Конструктор </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00063">Computer.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abc7b36cddf57ca5d212281026f810358"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CompI3DK_Duffy::~CompI3DK_Duffy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор </p>
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00027">27</a></p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a0e0dce82f5d29f72361173fae1cee927"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> CompI3DK_Duffy::DistContact </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>eta1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>eta2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>nodes_i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>nodes_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00055">55</a></p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P11 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[0]];</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P12 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[1]];</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P13 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[2]];</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P22 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_j[1]];</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P23 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_j[2]];</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> (eta1 - xi1) * P11 + (xi1 - xi2) * P12 + xi2 * P13 - (eta1 - eta2) * P22 - eta2 * P23;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_a0e0dce82f5d29f72361173fae1cee927_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_a0e0dce82f5d29f72361173fae1cee927_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_a0e0dce82f5d29f72361173fae1cee927_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_a0e0dce82f5d29f72361173fae1cee927_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="257,5,439,47"/>
+<area shape="rect" id="node3" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="487,13,669,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acc0ff8a4a6f586f5bef5f97038f4b0fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> CompI3DK_Duffy::DistSosed </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>u2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>nodes_i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#abe9a334b431ee3e124927bc164384c21">i3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>nodes_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00066">66</a></p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P11 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[0]];</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P12 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[1]];</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P13 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_i[2]];</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P22 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_j[1]];</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; P23 = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[nodes_j[2]];</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> u1 * (P11-P12) + u2*(P12-P23)+xi2*(P13-P23);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_acc0ff8a4a6f586f5bef5f97038f4b0fa_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_acc0ff8a4a6f586f5bef5f97038f4b0fa_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_acc0ff8a4a6f586f5bef5f97038f4b0fa_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_acc0ff8a4a6f586f5bef5f97038f4b0fa_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="248,5,429,47"/>
+<area shape="rect" id="node3" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="477,13,660,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acf9703e1555c3b0a1796c242d2cdf90d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI3DK_Duffy::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перегрузка функции для выполнения одного скалярнозначного вычисления </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>индекс контрольной панели в базе данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>индекс влияющей панели в базе данных </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>скалярный результат &mdash; расстояние между центрами панелей </dd></dl>
+
+<p>Замещает <a class="el" href="../../d0/d39/class_computer.html#a734f98d2a5fb1d645fa3a33fb62e1053">Computer&lt; double, 3 &gt;</a>.</p>
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00157">157</a></p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">size_t</span> locRefine = <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#afa9109a5528732716e0bf91698dacad4">nrefine</a>;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (i==j)</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//if (&amp;(db.topo[i]) == &amp;(db.topo[j]))   </span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> 0.0;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.ifSosed({ i, j }))</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i2D</a> shifts = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#af5d68b34704eddd61b4964b539a1fc81">RenumerationSosed</a>(i, j);</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">auto</span> Integral = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd">IntDuffySosed</a>({ i, shifts[0] }, { j, shifts[1] }, locRefine);</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">//if (locRefine == maxRefine)</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">//  std::cout &lt;&lt; &quot;Sosed, (i,j) = &quot; &lt;&lt; i2D{ i,j } &lt;&lt; std::endl;</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;locRefine = &quot; &lt;&lt; locRefine &lt;&lt; std::endl;</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> Integral;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.ifContact({ i, j }))</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i2D</a> shifts = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a52e8abb5bb1a0f6a16b0a5dbf682e306">RenumerationContact</a>(i, j); </div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">auto</span> Integral = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261">IntDuffyContact</a>({ i, shifts[0] }, { j, shifts[1] }, locRefine);</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">//if (locRefine == maxRefine)</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">//  std::cout &lt;&lt; &quot;Contact, (i,j) = &quot; &lt;&lt; i2D{ i,j } &lt;&lt; std::endl;</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> Integral;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// Дальние панели</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">auto</span> onePt = [i, j, <span class="keyword">this</span>](<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> pt)</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment">//Векторы из вершин панели в точку наблюдения</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; va = pt - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]];</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; vb = pt - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]];</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; vc = pt - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][2]];</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> ova(va), ovb(vb), ovc(vc);</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">//</span></div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">double</span> lva = ova.normalize();</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordtype">double</span> lvb = ovb.normalize();</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">double</span> lvc = ovc.normalize();</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">//Орты векторов, направленных вдоль сторон треугольной панели K_j, лежащих против соответствующих вершин</span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> taua = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][2]] - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]];</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> taub = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]] - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][2]];</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> tauc = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][1]] - <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.node[<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j][0]];</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">//Длины сторон треугольника, лежащие против соответствующих вершин</span></div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">double</span> La = taua.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">normalize</a>();</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">double</span> Lb = taub.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">normalize</a>();</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordtype">double</span> Lc = tauc.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">normalize</a>();</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">//phi^p_q - плоский угол при основании боковой грани получающегося тетраэдра </span></div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">//(между вектором v_p и стороной L_q)</span></div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">double</span> fca = ova &amp; tauc;</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordtype">double</span> fcb = -(ovb &amp; tauc);</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordtype">double</span> fab = ovb &amp; taua;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordtype">double</span> fac = -(ovc &amp; taua);</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordtype">double</span> fbc = ovc &amp; taub;</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordtype">double</span> fba = -(ova &amp; taub);</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> Phi = (va ^ vb) * (log((lva * (1.0 + fca)) / (lvb * (1.0 - fcb))) / Lc)</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            + (vb ^ vc) * (log((lvb * (1.0 + fab)) / (lvc * (1.0 - fac))) / La)</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            + (vc ^ va) * (log((lvc * (1.0 + fbc)) / (lva * (1.0 - fba))) / Lb);</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="comment">//Величина, равная по модулю телесному углу, под которым видна панель из точки наблюдения</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordtype">double</span> Theta = 2.0 * atan2((ova ^ ovb) &amp; ovc, 1.0 + (ova &amp; ovb) + (ovb &amp; ovc) + (ovc &amp; ova));</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">return</span> 0.25 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * ((Phi - va * Theta) &amp; <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.nrm[j]);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    };</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> constnrefine = 1;</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a> = 1e-5;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#define AUTOSPLIT</span></div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#ifdef AUTOSPLIT        </span></div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">auto</span> [res, <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#afa9109a5528732716e0bf91698dacad4">nrefine</a>] = <a class="code" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a>-&gt;integrateEpsRel&lt;<span class="keywordtype">double</span>&gt;(onePt, i, <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a>);</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">//refines.push_back(nrefine);</span></div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">double</span> res = <a class="code" href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">gp</a>-&gt;integrate&lt;<span class="keywordtype">double</span>&gt;(onePt, i, constnrefine);</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">//refines.push_back(constnrefine);</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> res;</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a8e16f463451bfe1c316f359c535cd947"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947">VMlib::numvector::normalize</a></div><div class="ttdeci">T normalize(P newlen=1.0)</div><div class="ttdoc">Нормирование вектора на заданную длину </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00437">numvector.h:437</a></div></div>
+<div class="ttc" id="_comp_i3_d_k-_duffy_8cpp_html_a6cd199dead851943e8361ba9134eeaaf"><div class="ttname"><a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a></div><div class="ttdeci">const double epsRel</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00023">CompI3DK-Duffy.cpp:23</a></div></div>
+<div class="ttc" id="class_computer_html_affa6a3bfd6e3bafc416c1f788b22b70d"><div class="ttname"><a href="../../d0/d39/class_computer.html#affa6a3bfd6e3bafc416c1f788b22b70d">Computer&lt; double, 3 &gt;::gp</a></div><div class="ttdeci">const Gausspoints&lt; dim &gt; *const gp</div><div class="ttdoc">Константный указатель на интегратор по гауссовым точкам (может быть пустым) </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00050">Computer.h:50</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_aad463ea40a0937be7483c0c9a7c63261"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261">CompI3DK_Duffy::IntDuffyContact</a></div><div class="ttdeci">double IntDuffyContact(const i2D &amp;ii, const i2D &amp;jj, size_t &amp;refineLevel)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00077">CompI3DK-Duffy.cpp:77</a></div></div>
+<div class="ttc" id="_computer_8h_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00037">Computer.h:37</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_a52e8abb5bb1a0f6a16b0a5dbf682e306"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#a52e8abb5bb1a0f6a16b0a5dbf682e306">CompI3DK_Duffy::RenumerationContact</a></div><div class="ttdeci">i2D RenumerationContact(int i, int j)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00045">CompI3DK-Duffy.cpp:45</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_a5d36eac48be39f018c02abc8f0f378dd"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd">CompI3DK_Duffy::IntDuffySosed</a></div><div class="ttdeci">double IntDuffySosed(const i2D &amp;ii, const i2D &amp;jj, size_t &amp;refineLevel)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00114">CompI3DK-Duffy.cpp:114</a></div></div>
+<div class="ttc" id="_comp_i3_d_k-_duffy_8cpp_html_afa9109a5528732716e0bf91698dacad4"><div class="ttname"><a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#afa9109a5528732716e0bf91698dacad4">nrefine</a></div><div class="ttdeci">const int nrefine</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00022">CompI3DK-Duffy.cpp:22</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_af5d68b34704eddd61b4964b539a1fc81"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#af5d68b34704eddd61b4964b539a1fc81">CompI3DK_Duffy::RenumerationSosed</a></div><div class="ttdeci">i2D RenumerationSosed(int i, int j)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00034">CompI3DK-Duffy.cpp:34</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_acf9703e1555c3b0a1796c242d2cdf90d_cgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_acf9703e1555c3b0a1796c242d2cdf90d_cgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_acf9703e1555c3b0a1796c242d2cdf90d_cgraph" id="dc/d84/class_comp_i3_d_k___duffy_acf9703e1555c3b0a1796c242d2cdf90d_cgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#af5d68b34704eddd61b4964b539a1fc81" title="CompI3DK_Duffy::Renumeration\lSosed" alt="" coords="236,5,451,47"/>
+<area shape="rect" id="node3" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="253,123,434,164"/>
+<area shape="rect" id="node13" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a52e8abb5bb1a0f6a16b0a5dbf682e306" title="CompI3DK_Duffy::Renumeration\lContact" alt="" coords="236,253,451,295"/>
+<area shape="rect" id="node14" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="253,188,434,229"/>
+<area shape="rect" id="node16" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947" title="Нормирование вектора на заданную длину " alt="" coords="249,71,437,98"/>
+<area shape="rect" id="node4" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa" title="CompI3DK_Duffy::DistSosed" alt="" coords="503,122,698,149"/>
+<area shape="rect" id="node5" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="517,71,684,98"/>
+<area shape="rect" id="node6" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="509,224,693,265"/>
+<area shape="rect" id="node11" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="509,173,693,199"/>
+<area shape="rect" id="node7" href="../../d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="768,231,903,258"/>
+<area shape="rect" id="node8" href="../../d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="759,282,912,309"/>
+<area shape="rect" id="node9" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="804,333,867,359"/>
+<area shape="rect" id="node10" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="968,257,1015,283"/>
+<area shape="rect" id="node12" href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="751,130,920,157"/>
+<area shape="rect" id="node15" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927" title="CompI3DK_Duffy::DistContact" alt="" coords="499,290,703,317"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad463ea40a0937be7483c0c9a7c63261"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI3DK_Duffy::IntDuffyContact </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>ii</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>jj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>refineLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00077">77</a></p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i3D</a>&amp; nodes_i = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[ii[0]].rotateLeft(ii[1]);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i3D</a>&amp; nodes_j = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[jj[0]].rotateLeft(jj[1]);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::vector&lt;std::function&lt;double(v3D)&gt;&gt; fu = {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; r) {<span class="keywordflow">return</span> r[1] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927">DistContact</a>(1.0, r[0], r[1], r[1] * r[2], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); } ,</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>&amp; r) {<span class="keywordflow">return</span> r[1] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927">DistContact</a>(r[1], r[1] * r[2], 1.0, r[0], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); } </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//int refineLevel = 3;</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">double</span> ints = 0.0;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> refs = 0;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#ifdef AUTOSPLIT</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; fu.size(); ++i)</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">auto</span> [ti, tr] = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a3b45a9e6537ef96287b22938b85b6321">gp3</a>-&gt;<a class="code" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d">integrateEpsRel</a>&lt;<span class="keywordtype">double</span>&gt;(fu[i], <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        ints += ti;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        refs = std::max(refs, tr);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ints *= 0.3333333333333333 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[ii[0]] * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[jj[0]];</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    refineLevel = refs;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; fu.size(); ++i)</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">double</span> ti = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">gp2</a>-&gt;<a class="code" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">integrate</a>&lt;<span class="keywordtype">double</span>&gt;(fu[i], refineLevel);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ints += ti;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ints *= 0.3333333333333333 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[ii[0]] * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[jj[0]];</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> ints;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_a8cfc3b6f6fe4ec7aa30084e2b82965fb"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">GausspointsCube::integrate</a></div><div class="ttdeci">T integrate(std::function&lt; T(const numvector&lt; double, dim &gt; &amp;)&gt; fo, size_t refineLevel) const </div><div class="ttdoc">Шаблонная функция вычисления интеграла по гауссовым точкам </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00625">Gausspoints.h:625</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="_comp_i3_d_k-_duffy_8cpp_html_a6cd199dead851943e8361ba9134eeaaf"><div class="ttname"><a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a></div><div class="ttdeci">const double epsRel</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00023">CompI3DK-Duffy.cpp:23</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a6a1ef7e752852fd7a508497a037c2764"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">VMlib::numvector::length</a></div><div class="ttdeci">P length() const </div><div class="ttdoc">Вычисление 2-нормы (длины) вектора </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00393">numvector.h:393</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_a3b45a9e6537ef96287b22938b85b6321"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#a3b45a9e6537ef96287b22938b85b6321">CompI3DK_Duffy::gp3</a></div><div class="ttdeci">const GausspointsCube&lt; 3 &gt; *const gp3</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00035">CompI3DK-Duffy.h:35</a></div></div>
+<div class="ttc" id="_computer_8h_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00037">Computer.h:37</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_aef268008f3b36ebe01c4f539c83c3d1d"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d">GausspointsCube::integrateEpsRel</a></div><div class="ttdeci">std::pair&lt; T, int &gt; integrateEpsRel(std::function&lt; T(const numvector&lt; double, dim &gt; &amp;)&gt; fo, double epsRel) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00721">Gausspoints.h:721</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_ac424a153a0d1a879d0a167944cb6bd6c"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">CompI3DK_Duffy::gp2</a></div><div class="ttdeci">const GausspointsCube&lt; 2 &gt; *const gp2</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00034">CompI3DK-Duffy.h:34</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_a0e0dce82f5d29f72361173fae1cee927"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927">CompI3DK_Duffy::DistContact</a></div><div class="ttdeci">v3D DistContact(double xi1, double xi2, double eta1, double eta2, const i3D &amp;nodes_i, const i3D &amp;nodes_j)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00055">CompI3DK-Duffy.cpp:55</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_cgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_cgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_cgraph" id="dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_cgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927" title="CompI3DK_Duffy::DistContact" alt="" coords="235,5,439,32"/>
+<area shape="rect" id="node3" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="253,56,420,83"/>
+<area shape="rect" id="node4" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="245,107,429,149"/>
+<area shape="rect" id="node9" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="245,195,429,221"/>
+<area shape="rect" id="node5" href="../../d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="504,13,639,40"/>
+<area shape="rect" id="node6" href="../../d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="495,64,648,91"/>
+<area shape="rect" id="node7" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="540,115,603,141"/>
+<area shape="rect" id="node8" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="704,140,751,167"/>
+<area shape="rect" id="node10" href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="487,216,656,243"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_aad463ea40a0937be7483c0c9a7c63261_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="235,13,417,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d36eac48be39f018c02abc8f0f378dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CompI3DK_Duffy::IntDuffySosed </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>ii</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>jj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>refineLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00114">114</a></p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i3D</a>&amp; nodes_i = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[ii[0]].rotateLeft(ii[1]+1);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">i3D</a>&amp; nodes_j = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[jj[0]].rotateLeft(jj[1]+1);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;std::function&lt;double(v2D)&gt;&gt; fu = {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0 - r[0] + r[0] * r[1], -r[0], -r[0] * r[1], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); },</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0-r[0], r[0], r[0]*r[1], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); },</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0-r[0], -r[1] * r[0], r[0]*(1.0-r[1]), nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); },</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0-r[1]*r[0], r[1] * r[0], -r[0]*(1.0-r[1]), nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); },</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0, -r[0] * r[1], -r[0], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); },</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a>&amp; r) {<span class="keywordflow">return</span> r[0] / <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">DistSosed</a>(1.0 - r[0], r[0] * r[1], r[0], nodes_i, nodes_j).<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">length</a>(); } </div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    };</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">//int refineLevel = 3;</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">double</span> ints = 0.0;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> refs = 0;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#ifdef AUTOSPLIT</span></div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; fu.size(); ++i)</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">auto</span> [ti, tr] = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">gp2</a>-&gt;<a class="code" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d">integrateEpsRel</a>&lt;<span class="keywordtype">double</span>&gt;(fu[i], <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a>);</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        ints += ti;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        refs = std::max(refs, tr);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    ints *= 0.1666666666666667 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[ii[0]] * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[jj[0]];</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    refineLevel = refs;</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; fu.size(); ++i)</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">double</span> ti = <a class="code" href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">gp2</a>-&gt;<a class="code" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">integrate</a>&lt;<span class="keywordtype">double</span>&gt;(fu[i], refineLevel);</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        ints += ti;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ints *= 0.1666666666666667 / <a class="code" href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[ii[0]] * <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.measure[jj[0]];</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> ints;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_a8cfc3b6f6fe4ec7aa30084e2b82965fb"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">GausspointsCube::integrate</a></div><div class="ttdeci">T integrate(std::function&lt; T(const numvector&lt; double, dim &gt; &amp;)&gt; fo, size_t refineLevel) const </div><div class="ttdoc">Шаблонная функция вычисления интеграла по гауссовым точкам </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00625">Gausspoints.h:625</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="_comp_i3_d_k-_duffy_8cpp_html_a6cd199dead851943e8361ba9134eeaaf"><div class="ttname"><a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a></div><div class="ttdeci">const double epsRel</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00023">CompI3DK-Duffy.cpp:23</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a6a1ef7e752852fd7a508497a037c2764"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764">VMlib::numvector::length</a></div><div class="ttdeci">P length() const </div><div class="ttdoc">Вычисление 2-нормы (длины) вектора </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00393">numvector.h:393</a></div></div>
+<div class="ttc" id="_computer_8h_html_ae71449b1cc6e6250b91f539153a7a0d3"><div class="ttname"><a href="../../d3/da5/_computer_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a></div><div class="ttdeci">#define M_PI</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00037">Computer.h:37</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_aef268008f3b36ebe01c4f539c83c3d1d"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d">GausspointsCube::integrateEpsRel</a></div><div class="ttdeci">std::pair&lt; T, int &gt; integrateEpsRel(std::function&lt; T(const numvector&lt; double, dim &gt; &amp;)&gt; fo, double epsRel) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00721">Gausspoints.h:721</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_ac424a153a0d1a879d0a167944cb6bd6c"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#ac424a153a0d1a879d0a167944cb6bd6c">CompI3DK_Duffy::gp2</a></div><div class="ttdeci">const GausspointsCube&lt; 2 &gt; *const gp2</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00034">CompI3DK-Duffy.h:34</a></div></div>
+<div class="ttc" id="class_comp_i3_d_k___duffy_html_acc0ff8a4a6f586f5bef5f97038f4b0fa"><div class="ttname"><a href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa">CompI3DK_Duffy::DistSosed</a></div><div class="ttdeci">v3D DistSosed(double xi2, double u1, double u2, const i3D &amp;nodes_i, const i3D &amp;nodes_j)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00066">CompI3DK-Duffy.cpp:66</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_cgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_cgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_cgraph" id="dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_cgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa" title="CompI3DK_Duffy::DistSosed" alt="" coords="235,5,429,32"/>
+<area shape="rect" id="node3" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="249,56,415,83"/>
+<area shape="rect" id="node4" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="240,107,424,149"/>
+<area shape="rect" id="node9" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="240,195,424,221"/>
+<area shape="rect" id="node5" href="../../d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="495,13,629,40"/>
+<area shape="rect" id="node6" href="../../d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="485,64,639,91"/>
+<area shape="rect" id="node7" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="531,115,593,141"/>
+<area shape="rect" id="node8" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="695,140,741,167"/>
+<area shape="rect" id="node10" href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="477,216,647,243"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_a5d36eac48be39f018c02abc8f0f378dd_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="235,13,417,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a52e8abb5bb1a0f6a16b0a5dbf682e306"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> CompI3DK_Duffy::RenumerationContact </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00045">45</a></p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> comVert = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i].intersection(<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j])[0];</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> shiftI = (int)<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i].member(comVert);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> shiftJ = (int)<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j].member(comVert);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> { shiftI, shiftJ };  </div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_a52e8abb5bb1a0f6a16b0a5dbf682e306_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_a52e8abb5bb1a0f6a16b0a5dbf682e306_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_a52e8abb5bb1a0f6a16b0a5dbf682e306_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_a52e8abb5bb1a0f6a16b0a5dbf682e306_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="268,13,451,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af5d68b34704eddd61b4964b539a1fc81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#ae83a2e04992b8dc414efae78d5c82c4d">i2D</a> CompI3DK_Duffy::RenumerationSosed </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a> строка <a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00034">34</a></p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> outerVertexI = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i].difference(<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j])[0]; </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> outerVertexJ = <a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j].difference(<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i])[0];</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> shiftI = (int)<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[i].member(outerVertexI);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> shiftJ = (int)<a class="code" href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">db</a>.topo[j].member(outerVertexJ);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> { shiftI, shiftJ };</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div><div class="ttc" id="class_computer_html_a14340d689ad01e29210b93c31156f06b"><div class="ttname"><a href="../../d0/d39/class_computer.html#a14340d689ad01e29210b93c31156f06b">Computer&lt; double, 3 &gt;::db</a></div><div class="ttdeci">const Database&lt; dim &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/_computer_8h_source.html#l00044">Computer.h:44</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d84/class_comp_i3_d_k___duffy_af5d68b34704eddd61b4964b539a1fc81_icgraph.png" border="0" usemap="#dc/d84/class_comp_i3_d_k___duffy_af5d68b34704eddd61b4964b539a1fc81_icgraph" alt=""/></div>
+<map name="dc/d84/class_comp_i3_d_k___duffy_af5d68b34704eddd61b4964b539a1fc81_icgraph" id="dc/d84/class_comp_i3_d_k___duffy_af5d68b34704eddd61b4964b539a1fc81_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="268,13,451,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79afc38363d70a19e70be7f49b404c41"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::run </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>split</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Виртуальная функция выполнения всего объема расчетов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">split</td><td>признак разделения задач на 3 подсписка: для дальних пар ячеек, для ячеек с общим ребром и для ячеек с общей вершиной </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a14340d689ad01e29210b93c31156f06b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt;dim&gt;&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::db</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на базу данных геометрических параметров </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a class="anchor" id="affa6a3bfd6e3bafc416c1f788b22b70d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints</a>&lt;dim&gt;* const <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::gp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константный указатель на интегратор по гауссовым точкам (может быть пустым) </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00050">50</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac424a153a0d1a879d0a167944cb6bd6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt;2&gt;* const CompI3DK_Duffy::gp2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a> строка <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3b45a9e6537ef96287b22938b85b6321"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt;3&gt;* const CompI3DK_Duffy::gp3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a> строка <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a298915e70ef36f4f4259bd9ea578ad04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d0/df0/class_parallel.html">Parallel</a>&amp; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::par</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на класс, управляющий распараллеливанием по MPI. </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aacc9a3be7d8939596943d6b5b57ed065"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; CompI3DK_Duffy::refines</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a> строка <a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a90f615779271ff521fe656a5db083104"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double &gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вектор для хранения результатов вычислений </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a1f7935bcae12a74140237e5765c9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;int, int&gt; &gt; <a class="el" href="../../d0/d39/class_computer.html">Computer</a>&lt; double , dim &gt;::task</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вектор пар, определяющий необходимые вычисления </p>
+
+<p>См. определение в файле <a class="el" href="../../d3/da5/_computer_8h_source.html">Computer.h</a> строка <a class="el" href="../../d3/da5/_computer_8h_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>Computer/<a class="el" href="../../d1/ddc/_comp_i3_d_k-_duffy_8h_source.html">CompI3DK-Duffy.h</a></li>
+<li>Computer/<a class="el" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html">CompI3DK-Duffy.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dc/d84/class_comp_i3_d_k___duffy.html">CompI3DK_Duffy</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

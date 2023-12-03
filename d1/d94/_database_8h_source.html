@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Исходный файл Database/Database.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li><a href="../../globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/d94/_database_8h_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Database.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d94/_database_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Проект Integrator </span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// (c) А.И. Гумирова, И.К. Марчевский, С.Р. Серафимова, 2022</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/dc5/numvector_8h.html">numvector.h</a>&quot;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">   22</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">nbh_t</a> {</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">   24</a></span>&#160;    <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a>,  <span class="comment">//(0)</span></div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">   26</a></span>&#160;<span class="comment"></span>    <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a> <span class="comment">//(1)</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/*, self, far*/</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}; <span class="comment">//enum nbh_t</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> dim&gt;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d83/class_database.html">Database</a></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">   46</a></span>&#160;    std::vector&lt;numvector&lt;double, dim&gt;&gt; <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">   49</a></span>&#160;    std::vector&lt;numvector&lt;int, dim&gt;&gt; <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">   52</a></span>&#160;    std::vector&lt;numvector&lt;double, dim&gt;&gt; <a class="code" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">nrm</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">   55</a></span>&#160;    std::vector&lt;numvector&lt;double, dim&gt;&gt; <a class="code" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">   58</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a3e6bf4c6939cc72eb75f2d66983cb679">   61</a></span>&#160;    std::vector&lt;numvector&lt;double, dim&gt;&gt; <a class="code" href="../../dc/d83/class_database.html#a3e6bf4c6939cc72eb75f2d66983cb679">point</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">   64</a></span>&#160;    std::map&lt;std::pair&lt;int, int&gt;, <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">nbh_t</a>&gt; <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">ifSosed</a>(std::pair&lt;int, int&gt; pr) <span class="keyword">const</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">ifContact</a>(std::pair&lt;int, int&gt; pr) <span class="keyword">const</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a0723358983a8d6f6ff78f6b413d8656d">   70</a></span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a0723358983a8d6f6ff78f6b413d8656d">Database</a>() {};</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281">   73</a></span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281">~Database</a>() {};</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1">readNodeTopoFromFile</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keywordtype">double</span> scale = 1.0);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        </div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64">fillNbh</a>();</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934">calcNrm</a>();</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74">calcCnt</a>();</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997">calcMeasure</a>();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};<span class="comment">//class Database</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">//Специализации функций-членов шаблонного класса для dim=3</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1">Database&lt;3&gt;::readNodeTopoFromFile</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keywordtype">double</span> scale);</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1">Database&lt;2&gt;::readNodeTopoFromFile</a>(<span class="keyword">const</span> std::string&amp; fileName, <span class="keywordtype">double</span> scale);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64">Database&lt;3&gt;::fillNbh</a>();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64">Database&lt;2&gt;::fillNbh</a>();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934">Database&lt;3&gt;::calcNrm</a>();</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934">Database&lt;2&gt;::calcNrm</a>();</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74">Database&lt;3&gt;::calcCnt</a>();</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74">Database&lt;2&gt;::calcCnt</a>();</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997">Database&lt;3&gt;::calcMeasure</a>();</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> <a class="code" href="../../dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997">Database&lt;2&gt;::calcMeasure</a>();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">int</span> dim&gt;</div><div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">  118</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">Database&lt;dim&gt;::ifSosed</a>(std::pair&lt;int, int&gt; pr)<span class="keyword"> const</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword"></span>{</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.find(pr);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ((it != <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.end()) &amp;&amp; (it-&gt;second == <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a>))</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">int</span> dim&gt;</div><div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">  127</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">Database&lt;dim&gt;::ifContact</a>(std::pair&lt;int, int&gt; pr)<span class="keyword"> const</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword"></span>{</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.find(pr);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> ((it != <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.end()) &amp;&amp; (it-&gt;second == <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a>))</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div><div class="ttc" id="numvector_8h_html"><div class="ttname"><a href="../../df/dc5/numvector_8h.html">numvector.h</a></div><div class="ttdoc">Описание класса numvector. </div></div>
+<div class="ttc" id="class_database_html_ad9e6bf3ef65d98f6d76d43f72f8cdd64"><div class="ttname"><a href="../../dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64">Database::fillNbh</a></div><div class="ttdeci">void fillNbh()</div></div>
+<div class="ttc" id="class_database_html_a2cb2976ae1ebff16a44225cf9f56a934"><div class="ttname"><a href="../../dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934">Database::calcNrm</a></div><div class="ttdeci">void calcNrm()</div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a></div><div class="ttdoc">соседняя через вершину (3D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00026">Database.h:26</a></div></div>
+<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a0723358983a8d6f6ff78f6b413d8656d"><div class="ttname"><a href="../../dc/d83/class_database.html#a0723358983a8d6f6ff78f6b413d8656d">Database::Database</a></div><div class="ttdeci">Database()</div><div class="ttdoc">Конструктор (пустой) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00070">Database.h:70</a></div></div>
+<div class="ttc" id="class_database_html_ab93c242613d7493ffd466cfbe36dae6c"><div class="ttname"><a href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">Database::measure</a></div><div class="ttdeci">std::vector&lt; double &gt; measure</div><div class="ttdoc">Меры ячеек (площади или длины) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00058">Database.h:58</a></div></div>
+<div class="ttc" id="class_database_html_a1565e91f16beb01abd904d99027141e6"><div class="ttname"><a href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">Database::cnt</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; cnt</div><div class="ttdoc">Центры ячеек сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00055">Database.h:55</a></div></div>
+<div class="ttc" id="class_database_html_abe7b52e34992d2897e0896ba3f0878c1"><div class="ttname"><a href="../../dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1">Database::readNodeTopoFromFile</a></div><div class="ttdeci">void readNodeTopoFromFile(const std::string &amp;fileName, double scale=1.0)</div><div class="ttdoc">Считывание базы данных из файла </div></div>
+<div class="ttc" id="class_database_html_ab1394d73107593f0de8af377a343b997"><div class="ttname"><a href="../../dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997">Database::calcMeasure</a></div><div class="ttdeci">void calcMeasure()</div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="class_database_html_aa1da051499c5d3ca781fe14a9f653d74"><div class="ttname"><a href="../../dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74">Database::calcCnt</a></div><div class="ttdeci">void calcCnt()</div></div>
+<div class="ttc" id="class_database_html_a973d3a341a09b15838e1633461740281"><div class="ttname"><a href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281">Database::~Database</a></div><div class="ttdeci">~Database()</div><div class="ttdoc">Деструктор (пустой) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00073">Database.h:73</a></div></div>
+<div class="ttc" id="class_database_html_a411cb38d64c906ce7b94cf3742dfe2c1"><div class="ttname"><a href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">Database::nrm</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; nrm</div><div class="ttdoc">Нормали к ячейкам сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00052">Database.h:52</a></div></div>
+<div class="ttc" id="class_database_html_aa3551736c492ad17122eeec2b9223cef"><div class="ttname"><a href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">Database::ifContact</a></div><div class="ttdeci">bool ifContact(std::pair&lt; int, int &gt; pr) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00127">Database.h:127</a></div></div>
+<div class="ttc" id="class_database_html_a3e6bf4c6939cc72eb75f2d66983cb679"><div class="ttname"><a href="../../dc/d83/class_database.html#a3e6bf4c6939cc72eb75f2d66983cb679">Database::point</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; point</div><div class="ttdoc">Координаты точек вычисления однократных интегралов </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00061">Database.h:61</a></div></div>
+<div class="ttc" id="class_database_html_a10970aa7b7b6d2a216de9be9ef5052a9"><div class="ttname"><a href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">Database::ifSosed</a></div><div class="ttdeci">bool ifSosed(std::pair&lt; int, int &gt; pr) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00118">Database.h:118</a></div></div>
+<div class="ttc" id="class_database_html"><div class="ttname"><a href="../../dc/d83/class_database.html">Database</a></div><div class="ttdoc">Шаблонный класс, определяющий базу данных геометрических объектов — панелей и точек наблюдения ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00042">Database.h:42</a></div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">nbh_t</a></div><div class="ttdeci">nbh_t</div><div class="ttdoc">Признак соседних панелей </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00022">Database.h:22</a></div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a></div><div class="ttdoc">соседняя через грань (3D) или через граничную точку (2D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00024">Database.h:24</a></div></div>
+<div class="ttc" id="class_database_html_aec6cbc387c1f8a2ba55e59077aa23e85"><div class="ttname"><a href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">Database::nbh</a></div><div class="ttdeci">std::map&lt; std::pair&lt; int, int &gt;, nbh_t &gt; nbh</div><div class="ttdoc">Признаки соседства </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00064">Database.h:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d00f5e20d7b27686287f9c84bc9112f8.html">Database</a></li><li class="navelem"><a class="el" href="../../d1/d94/_database_8h.html">Database.h</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Шаблон класса GausspointsCube&lt; dim &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('df/df6/class_gausspoints_cube.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="../../da/d0e/class_gausspoints_cube-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса GausspointsCube&lt; dim &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс &ndash; интегратор по гауссовым точкам по квадрату  
+ <a href="../../df/df6/class_gausspoints_cube.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса GausspointsCube&lt; dim &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d6f/class_gausspoints_cube__coll__graph.png" border="0" usemap="#_gausspoints_cube_3_01dim_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_gausspoints_cube_3_01dim_01_4_coll__map" id="_gausspoints_cube_3_01dim_01_4_coll__map">
+<area shape="rect" id="node2" href="../../d5/db0/structgp_pos_weight_ord.html" title="gpPosWeightOrd\&lt; 2 \&gt;" alt="" coords="96,109,248,136"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a279f551833adeff1a415517fd0688abf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#a279f551833adeff1a415517fd0688abf">cube</a> = std::pair&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt;, double &gt;</td></tr>
+<tr class="separator:a279f551833adeff1a415517fd0688abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ae5874375de97e2005537803421e8c2d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#ae5874375de97e2005537803421e8c2d7">GausspointsCube</a> (const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt; &amp;pw_)</td></tr>
+<tr class="memdesc:ae5874375de97e2005537803421e8c2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор интегратора по гауссовым точкам  <a href="#ae5874375de97e2005537803421e8c2d7">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae5874375de97e2005537803421e8c2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15be7c68e0779a8bfe42cf56a6092f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#aa15be7c68e0779a8bfe42cf56a6092f2">~GausspointsCube</a> ()</td></tr>
+<tr class="memdesc:aa15be7c68e0779a8bfe42cf56a6092f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пустой деструктор  <a href="#aa15be7c68e0779a8bfe42cf56a6092f2">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa15be7c68e0779a8bfe42cf56a6092f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfc3b6f6fe4ec7aa30084e2b82965fb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8cfc3b6f6fe4ec7aa30084e2b82965fb"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">integrate</a> (std::function&lt; T(const <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &amp;)&gt; fo, size_t refineLevel) const </td></tr>
+<tr class="memdesc:a8cfc3b6f6fe4ec7aa30084e2b82965fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Шаблонная функция вычисления интеграла по гауссовым точкам  <a href="#a8cfc3b6f6fe4ec7aa30084e2b82965fb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8cfc3b6f6fe4ec7aa30084e2b82965fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef268008f3b36ebe01c4f539c83c3d1d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aef268008f3b36ebe01c4f539c83c3d1d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; T, int &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d">integrateEpsRel</a> (std::function&lt; T(const <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &amp;)&gt; fo, double <a class="el" href="../../dc/d11/_comp_j3_d_k_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a>) const </td></tr>
+<tr class="separator:aef268008f3b36ebe01c4f539c83c3d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20f175c30408658ea2a057dd301ce44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#ad20f175c30408658ea2a057dd301ce44">refineCube</a> (std::vector&lt; <a class="el" href="../../df/df6/class_gausspoints_cube.html#a279f551833adeff1a415517fd0688abf">cube</a> &gt; &amp;lst) const </td></tr>
+<tr class="separator:ad20f175c30408658ea2a057dd301ce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ab1ae23f799e8e234f4f2f968ecc05a2f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a></td></tr>
+<tr class="memdesc:ab1ae23f799e8e234f4f2f968ecc05a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на положения и веса гауссовых точек  <a href="#ab1ae23f799e8e234f4f2f968ecc05a2f">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab1ae23f799e8e234f4f2f968ecc05a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;size_t dim&gt;<br />
+class GausspointsCube&lt; dim &gt;</h3>
+
+<p>Класс &ndash; интегратор по гауссовым точкам по квадрату </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">dim</td><td>размерность задачи (dim=3 - интегрирование по треугольнику, dim = 2 - интегрирование по отрезку)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Автор</dt><dd>Гумирова Алия Ильдусовна </dd>
+<dd>
+Марчевский Илья Константинович </dd>
+<dd>
+Серафимова София Романовна </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.3 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>02 апреля 2022 г. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00584">584</a></p>
+</div><h2 class="groupheader">Определения типов</h2>
+<a class="anchor" id="a279f551833adeff1a415517fd0688abf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::<a class="el" href="../../df/df6/class_gausspoints_cube.html#a279f551833adeff1a415517fd0688abf">cube</a> =  std::pair&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;double, dim&gt;, double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00599">599</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ae5874375de97e2005537803421e8c2d7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::<a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pw_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор интегратора по гауссовым точкам </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pw_</td><td>константная ссылка на структуру с положениями и весами гауссовых точек </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00594">594</a></p>
+<div class="fragment"><div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;: <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>(pw_) {};</div><div class="ttc" id="class_gausspoints_cube_html_ab1ae23f799e8e234f4f2f968ecc05a2f"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">GausspointsCube::pw</a></div><div class="ttdeci">const gpPosWeightOrd&lt; 2 &gt; &amp; pw</div><div class="ttdoc">Константная ссылка на положения и веса гауссовых точек </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00588">Gausspoints.h:588</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa15be7c68e0779a8bfe42cf56a6092f2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::~<a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Пустой деструктор </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00597">597</a></p>
+<div class="fragment"><div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a8cfc3b6f6fe4ec7aa30084e2b82965fb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::integrate </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; T(const <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>fo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>refineLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Шаблонная функция вычисления интеграла по гауссовым точкам </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>тип результата интегрируемой функции</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fo</td><td>интегрируемая функция </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">refineLevel</td><td>количество дополнительных итераций разбиения панели </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00625">625</a></p>
+<div class="fragment"><div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;{</div><div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;</div><div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;</div><div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;double, dim&gt;</a> zeroVec;</div><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    zeroVec.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab">toZero</a>();</div><div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div><div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    std::vector&lt;std::pair&lt;numvector&lt;double, dim&gt;, <span class="keywordtype">double</span>&gt;&gt; cubs{ { zeroVec, 1.0 } };</div><div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> r = 0; r &lt; refineLevel; ++r)</div><div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <a class="code" href="../../df/df6/class_gausspoints_cube.html#ad20f175c30408658ea2a057dd301ce44">refineCube</a>(cubs);</div><div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div><div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;</div><div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;T, dim&gt;</a> resijk;</div><div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;double, dim&gt;</a> posijk;</div><div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;double, dim&gt;</a> weightijk;</div><div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;</div><div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    T result(0);</div><div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;</div><div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <span class="keywordtype">double</span> h;</div><div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;</div><div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordflow">if</span> (dim == 2)</div><div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    {</div><div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; cb : cubs)</div><div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        {</div><div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            h = cb.second;</div><div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;double, dim&gt;</a>&amp; a = cb.first;</div><div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            </div><div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;</div><div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;            resijk[0] = 0.0;</div><div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>.size(); ++i)</div><div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;            {</div><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                posijk[0] = a[0] + h * <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>[i][0];</div><div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                weightijk[0] = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">weight</a>[i];</div><div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;</div><div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                resijk[1] = 0.0;</div><div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>.size(); ++j)</div><div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                {</div><div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    posijk[1] = a[1] + h * <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>[j][0];</div><div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                    weightijk[1] = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">weight</a>[j];</div><div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;</div><div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    resijk[1] += weightijk[1] * fo(posijk);</div><div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                }<span class="comment">//for j</span></div><div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;</div><div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                resijk[0] += weightijk[0] * resijk[1];</div><div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            }<span class="comment">//for i</span></div><div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;</div><div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            result += resijk[0];</div><div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        }</div><div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;</div><div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        result *= h * h;</div><div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    }</div><div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div><div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordflow">if</span> (dim == 3)</div><div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    {</div><div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; cb : cubs)</div><div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        {</div><div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;            h = cb.second;</div><div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;            <span class="keyword">const</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;double, dim&gt;</a>&amp; a = cb.first;</div><div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            </div><div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            resijk[0] = 0.0;</div><div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>.size(); ++i)</div><div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            {</div><div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                posijk[0] = a[0] + h * <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>[i][0];</div><div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                weightijk[0] = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">weight</a>[i];</div><div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;</div><div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                resijk[1] = 0.0;</div><div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>.size(); ++j)</div><div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                {</div><div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    posijk[1] = a[1] + h * <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>[j][0];</div><div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    weightijk[1] = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">weight</a>[j];</div><div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div><div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                    resijk[2] = 0.0;</div><div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> k = 0; k &lt; <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>.size(); ++k)</div><div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    {</div><div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                        posijk[2] = a[2] + h * <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">pos</a>[k][0];</div><div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                        weightijk[2] = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">weight</a>[k];</div><div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div><div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                        resijk[2] += weightijk[2] * fo(posijk);</div><div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                    }<span class="comment">//for k</span></div><div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div><div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                    resijk[1] += weightijk[1] * resijk[2];</div><div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                }<span class="comment">//for j</span></div><div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;</div><div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                resijk[0] += weightijk[0] * resijk[1];</div><div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            }<span class="comment">//for i</span></div><div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;</div><div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            result += resijk[0];</div><div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        }</div><div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        result *= h * h * h;</div><div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    }</div><div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;</div><div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;}<span class="comment">//integrate(...)</span></div><div class="ttc" id="structgp_pos_weight_ord_html_ad8005d05669009a4ddb4fa868ec52bfe"><div class="ttname"><a href="../../d5/db0/structgp_pos_weight_ord.html#ad8005d05669009a4ddb4fa868ec52bfe">gpPosWeightOrd::pos</a></div><div class="ttdeci">const std::vector&lt; numvector&lt; double, dim-1 &gt; &gt; pos</div><div class="ttdoc">L-координаты гауссовых точек (последняя не задается, получается дополнением до единицы) ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00046">Gausspoints.h:46</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_ad20f175c30408658ea2a057dd301ce44"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#ad20f175c30408658ea2a057dd301ce44">GausspointsCube::refineCube</a></div><div class="ttdeci">void refineCube(std::vector&lt; cube &gt; &amp;lst) const </div></div>
+<div class="ttc" id="class_gausspoints_cube_html_ab1ae23f799e8e234f4f2f968ecc05a2f"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">GausspointsCube::pw</a></div><div class="ttdeci">const gpPosWeightOrd&lt; 2 &gt; &amp; pw</div><div class="ttdoc">Константная ссылка на положения и веса гауссовых точек </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00588">Gausspoints.h:588</a></div></div>
+<div class="ttc" id="structgp_pos_weight_ord_html_a152e2ae97aae83767ae8ce9d3ab27ef4"><div class="ttname"><a href="../../d5/db0/structgp_pos_weight_ord.html#a152e2ae97aae83767ae8ce9d3ab27ef4">gpPosWeightOrd::weight</a></div><div class="ttdeci">const std::vector&lt; double &gt; weight</div><div class="ttdoc">Веса гауссовых точек </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00049">Gausspoints.h:49</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_ab52c2bfa931d8533aae15b6999d718ab"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab">VMlib::numvector::toZero</a></div><div class="ttdeci">numvector&lt; T, n &gt; &amp; toZero(P val=0)</div><div class="ttdoc">Установка всех компонент вектора в константу (по умолчанию — нуль) </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00612">numvector.h:612</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_cgraph.png" border="0" usemap="#df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_cgraph" alt=""/></div>
+<map name="df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_cgraph" id="df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_cgraph">
+<area shape="rect" id="node2" href="../../d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="237,5,407,32"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_icgraph.png" border="0" usemap="#df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_icgraph" alt=""/></div>
+<map name="df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_icgraph" id="df/df6/class_gausspoints_cube_a8cfc3b6f6fe4ec7aa30084e2b82965fb_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="239,5,420,47"/>
+<area shape="rect" id="node4" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="239,71,420,112"/>
+<area shape="rect" id="node5" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac88d7eb48792a165d394c9b880522fcc" title="CompJ3DK_Duffy::IntDuffy\lContact" alt="" coords="237,136,421,177"/>
+<area shape="rect" id="node7" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac565648c0e47a76e862273ff7af4b20b" title="CompJ3DK_Duffy::IntDuffy\lSosed" alt="" coords="237,201,421,243"/>
+<area shape="rect" id="node3" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="471,46,654,73"/>
+<area shape="rect" id="node6" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a6405c284816d4c5702e48836b190906d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="469,175,656,202"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aef268008f3b36ebe01c4f539c83c3d1d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; T, int &gt; <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::integrateEpsRel </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; T(const <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>fo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>epsRel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00721">721</a></p>
+<div class="fragment"><div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;{</div><div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="keywordtype">int</span> refine = -1;</div><div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordtype">double</span> deltah2;</div><div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    T Ih, Ih2;</div><div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordtype">int</span> p = <a class="code" href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">pw</a>.<a class="code" href="../../d5/db0/structgp_pos_weight_ord.html#a1ba89238d84968d2b62dcdedc48e4ada">ord</a>;</div><div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordflow">do</span></div><div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    {</div><div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        ++refine;</div><div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        Ih = <a class="code" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">integrate</a>(fo, refine);</div><div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        Ih2 = <a class="code" href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">integrate</a>(fo,  refine + 1);</div><div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;</div><div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="keyword">auto</span> num = (Ih - Ih2);</div><div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="keyword">auto</span> den = (Ih2 * (1 &lt;&lt; (p)) - Ih);</div><div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="keyword">auto</span> div = <a class="code" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801">newdiv</a>(num, den);</div><div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        deltah2 = <a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(div);</div><div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;</div><div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;refine = &quot; &lt;&lt; refine &lt;&lt; std::endl;</span></div><div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; &quot;, den = &quot; &lt;&lt; den &lt;&lt; &quot;, div = &quot; &lt;&lt; div &lt;&lt; std::endl;</span></div><div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;Ih = &quot; &lt;&lt; Ih &lt;&lt; &quot;, Ih2 = &quot; &lt;&lt; Ih2 &lt;&lt; &quot;, deltah2 = &quot; &lt;&lt; deltah2 &lt;&lt; std::endl &lt;&lt; std::endl;</span></div><div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div><div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;</div><div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    } <span class="keywordflow">while</span> ((deltah2 &gt; <a class="code" href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a>) &amp;&amp; (refine &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#ad6dc632824218ddfc4a99338738f9c6c">maxRefine</a>));</div><div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;</div><div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordflow">if</span> (refine == <a class="code" href="../../d8/d02/_gausspoints_8h.html#ad6dc632824218ddfc4a99338738f9c6c">maxRefine</a>)</div><div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    {</div><div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Doesn&#39;t converge!&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div><div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div><div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordflow">return</span> { Ih2, refine };</div><div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;}</div><div class="ttc" id="class_gausspoints_cube_html_a8cfc3b6f6fe4ec7aa30084e2b82965fb"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb">GausspointsCube::integrate</a></div><div class="ttdeci">T integrate(std::function&lt; T(const numvector&lt; double, dim &gt; &amp;)&gt; fo, size_t refineLevel) const </div><div class="ttdoc">Шаблонная функция вычисления интеграла по гауссовым точкам </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00625">Gausspoints.h:625</a></div></div>
+<div class="ttc" id="structgp_pos_weight_ord_html_a1ba89238d84968d2b62dcdedc48e4ada"><div class="ttname"><a href="../../d5/db0/structgp_pos_weight_ord.html#a1ba89238d84968d2b62dcdedc48e4ada">gpPosWeightOrd::ord</a></div><div class="ttdeci">const int ord</div><div class="ttdoc">Порядок формулы </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00052">Gausspoints.h:52</a></div></div>
+<div class="ttc" id="_comp_i3_d_k-_duffy_8cpp_html_a6cd199dead851943e8361ba9134eeaaf"><div class="ttname"><a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp.html#a6cd199dead851943e8361ba9134eeaaf">epsRel</a></div><div class="ttdeci">const double epsRel</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d67/_comp_i3_d_k-_duffy_8cpp_source.html#l00023">CompI3DK-Duffy.cpp:23</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+<div class="ttc" id="class_gausspoints_cube_html_ab1ae23f799e8e234f4f2f968ecc05a2f"><div class="ttname"><a href="../../df/df6/class_gausspoints_cube.html#ab1ae23f799e8e234f4f2f968ecc05a2f">GausspointsCube::pw</a></div><div class="ttdeci">const gpPosWeightOrd&lt; 2 &gt; &amp; pw</div><div class="ttdoc">Константная ссылка на положения и веса гауссовых точек </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00588">Gausspoints.h:588</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_ad6dc632824218ddfc4a99338738f9c6c"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#ad6dc632824218ddfc4a99338738f9c6c">maxRefine</a></div><div class="ttdeci">const int maxRefine</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00024">Gausspoints.h:24</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_ababaeb0f8afe2efe7e5b38b235236801"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801">newdiv</a></div><div class="ttdeci">double newdiv(double x, double y)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00481">Gausspoints.h:481</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_cgraph.png" border="0" usemap="#df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_cgraph" alt=""/></div>
+<map name="df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_cgraph" id="df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_cgraph">
+<area shape="rect" id="node2" href="../../d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="247,5,381,32"/>
+<area shape="rect" id="node3" href="../../d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="237,56,391,83"/>
+<area shape="rect" id="node4" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="283,107,345,133"/>
+<area shape="rect" id="node5" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="439,132,485,159"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_icgraph.png" border="0" usemap="#df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_icgraph" alt=""/></div>
+<map name="df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_icgraph" id="df/df6/class_gausspoints_cube_aef268008f3b36ebe01c4f539c83c3d1d_icgraph">
+<area shape="rect" id="node2" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="239,5,420,47"/>
+<area shape="rect" id="node4" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="239,71,420,112"/>
+<area shape="rect" id="node5" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac88d7eb48792a165d394c9b880522fcc" title="CompJ3DK_Duffy::IntDuffy\lContact" alt="" coords="237,136,421,177"/>
+<area shape="rect" id="node7" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac565648c0e47a76e862273ff7af4b20b" title="CompJ3DK_Duffy::IntDuffy\lSosed" alt="" coords="237,201,421,243"/>
+<area shape="rect" id="node3" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="471,46,654,73"/>
+<area shape="rect" id="node6" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a6405c284816d4c5702e48836b190906d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="469,175,656,202"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad20f175c30408658ea2a057dd301ce44"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::refineCube </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../df/df6/class_gausspoints_cube.html#a279f551833adeff1a415517fd0688abf">cube</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lst</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ab1ae23f799e8e234f4f2f968ecc05a2f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt;&amp; <a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a>&lt; dim &gt;::pw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на положения и веса гауссовых точек </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00588">588</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>Gausspoints/<a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

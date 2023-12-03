@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Файл Gausspoints/Gausspoints.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li><a href="../../globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d8/d02/_gausspoints_8h.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл Gausspoints.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Файл c описанием шаблонного класса <a class="el" href="../../d0/d54/class_gausspoints.html" title="Класс – интегратор по гауссовым точкам по симплексу ">Gausspoints</a>.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;typeinfo&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для Gausspoints.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d89/_gausspoints_8h__incl.png" border="0" usemap="#_gausspoints_2_gausspoints_8h" alt=""/></div>
+<map name="_gausspoints_2_gausspoints_8h" id="_gausspoints_2_gausspoints_8h">
+<area shape="rect" id="node6" href="../../d1/d94/_database_8h.html" title="Файл c описанием шаблонного класса Database. " alt="" coords="396,80,485,107"/>
+<area shape="rect" id="node8" href="../../df/dc5/numvector_8h.html" title="Описание класса numvector. " alt="" coords="440,155,535,181"/>
+</map>
+</div>
+</div>
+<p><a href="../../d8/d02/_gausspoints_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd&lt; dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура &ndash; положения и веса гауссовых точек <br />
+ Формулы для интегрирования по треугольнику взяты из статьи <br />
+ Cowper, G. R. (1973). Gaussian quadrature formulas for triangles. <br />
+ International Journal for Numerical Methods in Engineering, 7(3), 405–408. doi:10.1002/nme.1620070316.  <a href="../../d5/db0/structgp_pos_weight_ord.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d54/class_gausspoints.html">Gausspoints&lt; dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс &ndash; интегратор по гауссовым точкам по симплексу  <a href="../../d0/d54/class_gausspoints.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df6/class_gausspoints_cube.html">GausspointsCube&lt; dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс &ndash; интегратор по гауссовым точкам по квадрату  <a href="../../df/df6/class_gausspoints_cube.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a895eb18ca89d190e69edd2ba09b05ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>&#160;&#160;&#160;2e-6</td></tr>
+<tr class="separator:a895eb18ca89d190e69edd2ba09b05ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ababaeb0f8afe2efe7e5b38b235236801"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801">newdiv</a> (double x, double y)</td></tr>
+<tr class="separator:ababaeb0f8afe2efe7e5b38b235236801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf7de2589f7d645f6fc3a17bf1ae4de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#adaf7de2589f7d645f6fc3a17bf1ae4de">newdiv</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> &amp;x, const <a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> &amp;y)</td></tr>
+<tr class="separator:adaf7de2589f7d645f6fc3a17bf1ae4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6149fd30774ab082a99dbb5726e2d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a0a6149fd30774ab082a99dbb5726e2d0">newdiv</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;x, const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;y)</td></tr>
+<tr class="separator:a0a6149fd30774ab082a99dbb5726e2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359fcada314581acd9e55de693e4aa19"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a> (const std::pair&lt; double, double &gt; &amp;x)</td></tr>
+<tr class="separator:a359fcada314581acd9e55de693e4aa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183a3781c3e5bebb9274c2d031a68fb2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a183a3781c3e5bebb9274c2d031a68fb2">fabs</a> (const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;x)</td></tr>
+<tr class="separator:a183a3781c3e5bebb9274c2d031a68fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b4e6571870fbd31621c477785b4b58"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a14b4e6571870fbd31621c477785b4b58">operator&lt;&lt;</a> (std::ostream &amp;str, const std::pair&lt; double, double &gt; &amp;pr)</td></tr>
+<tr class="separator:a14b4e6571870fbd31621c477785b4b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ad6dc632824218ddfc4a99338738f9c6c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#ad6dc632824218ddfc4a99338738f9c6c">maxRefine</a> = 7</td></tr>
+<tr class="separator:ad6dc632824218ddfc4a99338738f9c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb33e434adebc62f5fb9f1471045e49"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#abeb33e434adebc62f5fb9f1471045e49">gp2D1</a></td></tr>
+<tr class="memdesc:abeb33e434adebc62f5fb9f1471045e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 1-й гауссовой точкой (2-й порядок точности)  <a href="#abeb33e434adebc62f5fb9f1471045e49">Подробнее...</a><br /></td></tr>
+<tr class="separator:abeb33e434adebc62f5fb9f1471045e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e48fb5d180eedef2445c5a8a8ea0ec"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#af8e48fb5d180eedef2445c5a8a8ea0ec">gp2D2</a></td></tr>
+<tr class="memdesc:af8e48fb5d180eedef2445c5a8a8ea0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 2-мя гауссовыми точками (4-й порядок точности)  <a href="#af8e48fb5d180eedef2445c5a8a8ea0ec">Подробнее...</a><br /></td></tr>
+<tr class="separator:af8e48fb5d180eedef2445c5a8a8ea0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0329e15d31ff286e6a35a6201b7b82"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a8a0329e15d31ff286e6a35a6201b7b82">gp2D4</a></td></tr>
+<tr class="memdesc:a8a0329e15d31ff286e6a35a6201b7b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 4-мя гауссовыми точками (8-й порядок точности)  <a href="#a8a0329e15d31ff286e6a35a6201b7b82">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8a0329e15d31ff286e6a35a6201b7b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249c9e38cfaf404dfc696da0f50b8858"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a249c9e38cfaf404dfc696da0f50b8858">gp2D6</a></td></tr>
+<tr class="memdesc:a249c9e38cfaf404dfc696da0f50b8858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 6-мя гауссовыми точками (12-й порядок точности)  <a href="#a249c9e38cfaf404dfc696da0f50b8858">Подробнее...</a><br /></td></tr>
+<tr class="separator:a249c9e38cfaf404dfc696da0f50b8858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0cc1a23eabf5ec0be4dfcd9001762a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a2f0cc1a23eabf5ec0be4dfcd9001762a">gp2D10</a></td></tr>
+<tr class="memdesc:a2f0cc1a23eabf5ec0be4dfcd9001762a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 10-мя гауссовыми точками (20-й порядок точности)  <a href="#a2f0cc1a23eabf5ec0be4dfcd9001762a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2f0cc1a23eabf5ec0be4dfcd9001762a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf3af307868dbd0ec54ab9f81523951"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#adbf3af307868dbd0ec54ab9f81523951">gp2D8</a></td></tr>
+<tr class="memdesc:adbf3af307868dbd0ec54ab9f81523951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 8-мя гауссовыми точками (16-й порядок точности)  <a href="#adbf3af307868dbd0ec54ab9f81523951">Подробнее...</a><br /></td></tr>
+<tr class="separator:adbf3af307868dbd0ec54ab9f81523951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44f865fcf63ced6475e133ae7fbf797"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#ab44f865fcf63ced6475e133ae7fbf797">gp2D12</a></td></tr>
+<tr class="memdesc:ab44f865fcf63ced6475e133ae7fbf797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 12-мя гауссовыми точками (24-й порядок точности)  <a href="#ab44f865fcf63ced6475e133ae7fbf797">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab44f865fcf63ced6475e133ae7fbf797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626adeaa7e1cc1a6d8c307c4f8edf4e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a626adeaa7e1cc1a6d8c307c4f8edf4e4">gp3D1</a></td></tr>
+<tr class="memdesc:a626adeaa7e1cc1a6d8c307c4f8edf4e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 1-й гауссовой точкой (2-й порядок точности)  <a href="#a626adeaa7e1cc1a6d8c307c4f8edf4e4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a626adeaa7e1cc1a6d8c307c4f8edf4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363c05fa77056a2e568315f076ba4642"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a363c05fa77056a2e568315f076ba4642">gp3D3</a></td></tr>
+<tr class="memdesc:a363c05fa77056a2e568315f076ba4642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 3-мя гауссовыми точками (2-й порядок точности)  <a href="#a363c05fa77056a2e568315f076ba4642">Подробнее...</a><br /></td></tr>
+<tr class="separator:a363c05fa77056a2e568315f076ba4642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5851e1b56a52d1bcc46035c24b1a950d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a5851e1b56a52d1bcc46035c24b1a950d">gp3D4</a></td></tr>
+<tr class="memdesc:a5851e1b56a52d1bcc46035c24b1a950d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 4-мя гауссовыми точками (3-й порядок точности)  <a href="#a5851e1b56a52d1bcc46035c24b1a950d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5851e1b56a52d1bcc46035c24b1a950d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a3615adc02fa6c05f288b657d4bbc7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#ab3a3615adc02fa6c05f288b657d4bbc7">gp3D6</a></td></tr>
+<tr class="memdesc:ab3a3615adc02fa6c05f288b657d4bbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 6-ю гауссовыми точками (4-й порядок точности)  <a href="#ab3a3615adc02fa6c05f288b657d4bbc7">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab3a3615adc02fa6c05f288b657d4bbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db3936b52573de715659566fe1ebb4d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a9db3936b52573de715659566fe1ebb4d">gp3D7</a></td></tr>
+<tr class="memdesc:a9db3936b52573de715659566fe1ebb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 7-ю гауссовыми точками (5-й порядок точности)  <a href="#a9db3936b52573de715659566fe1ebb4d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9db3936b52573de715659566fe1ebb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbaa277d765ec5250b4246da1e105c1d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#abbaa277d765ec5250b4246da1e105c1d">gp3D9</a></td></tr>
+<tr class="memdesc:abbaa277d765ec5250b4246da1e105c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 9-ю гауссовыми точками (5-й порядок точности)  <a href="#abbaa277d765ec5250b4246da1e105c1d">Подробнее...</a><br /></td></tr>
+<tr class="separator:abbaa277d765ec5250b4246da1e105c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418bd3270451627b9cacdb98b630b6f1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a418bd3270451627b9cacdb98b630b6f1">gp3D12</a></td></tr>
+<tr class="memdesc:a418bd3270451627b9cacdb98b630b6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 12-ю гауссовыми точками (6-й порядок точности)  <a href="#a418bd3270451627b9cacdb98b630b6f1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a418bd3270451627b9cacdb98b630b6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5343991feaad7c8d97e19e730ccf7500"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/_gausspoints_8h.html#a5343991feaad7c8d97e19e730ccf7500">gp3D13</a></td></tr>
+<tr class="memdesc:a5343991feaad7c8d97e19e730ccf7500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Квадратурная формула с 13-ю гауссовыми точками (7-й порядок точности)  <a href="#a5343991feaad7c8d97e19e730ccf7500">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5343991feaad7c8d97e19e730ccf7500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Файл c описанием шаблонного класса <a class="el" href="../../d0/d54/class_gausspoints.html" title="Класс – интегратор по гауссовым точкам по симплексу ">Gausspoints</a>. </p>
+<dl class="section author"><dt>Автор</dt><dd>Гумирова Алия Ильдусовна </dd>
+<dd>
+Марчевский Илья Константинович </dd>
+<dd>
+Серафимова София Романовна</dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>11 сентября 2022 г. </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.5 </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a></p>
+</div><h2 class="groupheader">Макросы</h2>
+<a class="anchor" id="a895eb18ca89d190e69edd2ba09b05ff8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIVZERO&#160;&#160;&#160;2e-6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a class="anchor" id="a359fcada314581acd9e55de693e4aa19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fabs </td>
+          <td>(</td>
+          <td class="paramtype">const std::pair&lt; double, double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00506">506</a></p>
+<div class="fragment"><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.first) + <a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.second);</div><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;};</div><div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_a359fcada314581acd9e55de693e4aa19_icgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_a359fcada314581acd9e55de693e4aa19_icgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_a359fcada314581acd9e55de693e4aa19_icgraph" id="d8/d02/_gausspoints_8h_a359fcada314581acd9e55de693e4aa19_icgraph">
+<area shape="rect" id="node2" href="../../da/df7/class_comp_j2_d_m.html#a703ad27f69e891a52b8f0debd0896640" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="120,37,269,64"/>
+<area shape="rect" id="node3" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ab8052868b052152472cf19f76bfeef3a" title="CompJ3DK_Duffy::ThetaPsi" alt="" coords="100,291,289,317"/>
+<area shape="rect" id="node6" href="../../d6/d00/class_comp_j3_d_k.html#a716c3d597f9b70f73b4d5ed16a9ce1cb" title="CompJ3DK::ThetaPsi" alt="" coords="119,189,270,216"/>
+<area shape="rect" id="node15" href="../../d6/d00/class_comp_j3_d_k.html#a32f5951d275b765f3402f53411519711" title="CompJ3DK::SingContact" alt="" coords="109,240,280,267"/>
+<area shape="rect" id="node16" href="../../d6/d00/class_comp_j3_d_k.html#a7a4e04c04a77cd004034b04d2b004d78" title="CompJ3DK::IntJSingSosed" alt="" coords="344,37,527,64"/>
+<area shape="rect" id="node17" href="../../d6/d00/class_comp_j3_d_k.html#a53f0de553aff1f25172aa22f0d251240" title="CompJ3DK::IntSingContact" alt="" coords="581,63,767,89"/>
+<area shape="rect" id="node18" href="../../d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="163,392,226,419"/>
+<area shape="rect" id="node19" href="../../d0/d54/class_gausspoints.html#aa197c2f3fa59aba7fa36a86baf06cf79" title="Gausspoints::integrateEpsRel" alt="" coords="337,385,533,412"/>
+<area shape="rect" id="node20" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="343,443,527,485"/>
+<area shape="rect" id="node26" href="../../d8/d02/_gausspoints_8h.html#a183a3781c3e5bebb9274c2d031a68fb2" title="fabs" alt="" coords="171,493,218,520"/>
+<area shape="rect" id="node4" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a64d60e3b415a4dc9ce53c606f7acddf2" title="CompJ3DK_Duffy::J3D" alt="" coords="355,309,516,336"/>
+<area shape="rect" id="node5" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a6405c284816d4c5702e48836b190906d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="835,400,1021,427"/>
+<area shape="rect" id="node7" href="../../d6/d00/class_comp_j3_d_k.html#a079caf0b3d19fe2acd6c3513b59b9ccc" title="CompJ3DK::J3D" alt="" coords="374,189,497,216"/>
+<area shape="rect" id="node12" href="../../d6/d00/class_comp_j3_d_k.html#ab125f49d8f0b61fc7110bcfc8183b489" title="CompJ3DK::RegContact" alt="" coords="351,240,519,267"/>
+<area shape="rect" id="node8" href="../../d6/d00/class_comp_j3_d_k.html#a42ea59e6f442b8f1cd024d7c352a727c" title="CompJ3DK::JRegSosed" alt="" coords="591,139,757,165"/>
+<area shape="rect" id="node10" href="../../d6/d00/class_comp_j3_d_k.html#a59269cb6598222aa69ded32ab39c6550" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="1089,139,1236,165"/>
+<area shape="rect" id="node9" href="../../d6/d00/class_comp_j3_d_k.html#ad5d79bb42d7e09452dbd35b201512543" title="CompJ3DK::IntJRegSosed" alt="" coords="837,139,1019,165"/>
+<area shape="rect" id="node11" href="../../d6/d00/class_comp_j3_d_k.html#a978965a1d9d72295f97b921d240fbffd" title="CompJ3DK::IntJRegSosedEpsRel" alt="" coords="816,88,1040,115"/>
+<area shape="rect" id="node13" href="../../d6/d00/class_comp_j3_d_k.html#acccfd13a040fd8a7d2c2cdcea9b5e09f" title="CompJ3DK::IntRegContact" alt="" coords="837,291,1019,317"/>
+<area shape="rect" id="node14" href="../../d6/d00/class_comp_j3_d_k.html#a71a1864f2552cb201deeb0d2a3d3b21a" title="CompJ3DK::IntRegContactEpsRel" alt="" coords="815,240,1041,267"/>
+<area shape="rect" id="node21" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="583,589,765,630"/>
+<area shape="rect" id="node23" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="583,523,765,565"/>
+<area shape="rect" id="node24" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac88d7eb48792a165d394c9b880522fcc" title="CompJ3DK_Duffy::IntDuffy\lContact" alt="" coords="582,393,766,434"/>
+<area shape="rect" id="node25" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac565648c0e47a76e862273ff7af4b20b" title="CompJ3DK_Duffy::IntDuffy\lSosed" alt="" coords="582,458,766,499"/>
+<area shape="rect" id="node22" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="837,563,1019,589"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a183a3781c3e5bebb9274c2d031a68fb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fabs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00511">511</a></p>
+<div class="fragment"><div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;{</div><div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.first) + <a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.second);</div><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;};</div><div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_a183a3781c3e5bebb9274c2d031a68fb2_cgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_a183a3781c3e5bebb9274c2d031a68fb2_cgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_a183a3781c3e5bebb9274c2d031a68fb2_cgraph" id="d8/d02/_gausspoints_8h_a183a3781c3e5bebb9274c2d031a68fb2_cgraph">
+<area shape="rect" id="node2" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="100,5,147,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ababaeb0f8afe2efe7e5b38b235236801"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double newdiv </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00481">481</a></p>
+<div class="fragment"><div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;{</div><div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">return</span> ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x)&lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y)&lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x/y;</div><div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;}</div><div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_a895eb18ca89d190e69edd2ba09b05ff8"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a></div><div class="ttdeci">#define DIVZERO</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00026">Gausspoints.h:26</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_cgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_cgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_cgraph" id="d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_cgraph">
+<area shape="rect" id="node2" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="116,5,163,32"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_icgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_icgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_icgraph" id="d8/d02/_gausspoints_8h_ababaeb0f8afe2efe7e5b38b235236801_icgraph">
+<area shape="rect" id="node2" href="../../d0/d54/class_gausspoints.html#aa197c2f3fa59aba7fa36a86baf06cf79" title="Gausspoints::integrateEpsRel" alt="" coords="116,53,312,79"/>
+<area shape="rect" id="node3" href="../../df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="122,104,306,145"/>
+<area shape="rect" id="node4" href="../../dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="361,5,543,47"/>
+<area shape="rect" id="node6" href="../../dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="361,71,543,112"/>
+<area shape="rect" id="node7" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac88d7eb48792a165d394c9b880522fcc" title="CompJ3DK_Duffy::IntDuffy\lContact" alt="" coords="360,136,544,177"/>
+<area shape="rect" id="node9" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#ac565648c0e47a76e862273ff7af4b20b" title="CompJ3DK_Duffy::IntDuffy\lSosed" alt="" coords="360,201,544,243"/>
+<area shape="rect" id="node5" href="../../dc/d84/class_comp_i3_d_k___duffy.html#acf9703e1555c3b0a1796c242d2cdf90d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="594,46,777,73"/>
+<area shape="rect" id="node8" href="../../dd/dbf/class_comp_j3_d_k___duffy.html#a6405c284816d4c5702e48836b190906d" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="592,175,779,202"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adaf7de2589f7d645f6fc3a17bf1ae4de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> newdiv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a3f82bb42cec052698996286b7f9be4c0">v3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00486">486</a></p>
+<div class="fragment"><div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;{</div><div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a>{ </div><div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x[0]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y[0]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x[0] / y[0],</div><div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x[1]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y[1]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x[1] / y[1],</div><div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x[2]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y[2]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x[2] / y[2] };</div><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;}</div><div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_a895eb18ca89d190e69edd2ba09b05ff8"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a></div><div class="ttdeci">#define DIVZERO</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00026">Gausspoints.h:26</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_adaf7de2589f7d645f6fc3a17bf1ae4de_cgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_adaf7de2589f7d645f6fc3a17bf1ae4de_cgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_adaf7de2589f7d645f6fc3a17bf1ae4de_cgraph" id="d8/d02/_gausspoints_8h_adaf7de2589f7d645f6fc3a17bf1ae4de_cgraph">
+<area shape="rect" id="node2" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="116,5,163,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a6149fd30774ab082a99dbb5726e2d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> newdiv </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../df/dc5/numvector_8h.html#a162eb4f21107093ac12324d835e31548">p13D</a> &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00494">494</a></p>
+<div class="fragment"><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;{</div><div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d1/d11/struct_v_mlib_1_1pair_scalar_vector.html">p13D</a>{</div><div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.first) &lt; 1e-14) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y.first) &lt; 1e-14)) ? 0.0 : x.first / y.first,</div><div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div><div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;       {((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.second[0]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y.second[0]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x.second[0] / y.second[0],</div><div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.second[1]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y.second[1]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x.second[1] / y.second[1],</div><div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        ((<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(x.second[2]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>) &amp;&amp; (<a class="code" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a>(y.second[2]) &lt; <a class="code" href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a>)) ? 0.0 : x.second[2] / y.second[2]} };</div><div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div><div class="ttc" id="_gausspoints_8h_html_a359fcada314581acd9e55de693e4aa19"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19">fabs</a></div><div class="ttdeci">double fabs(const std::pair&lt; double, double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00506">Gausspoints.h:506</a></div></div>
+<div class="ttc" id="_gausspoints_8h_html_a895eb18ca89d190e69edd2ba09b05ff8"><div class="ttname"><a href="../../d8/d02/_gausspoints_8h.html#a895eb18ca89d190e69edd2ba09b05ff8">DIVZERO</a></div><div class="ttdeci">#define DIVZERO</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d02/_gausspoints_8h_source.html#l00026">Gausspoints.h:26</a></div></div>
+<div class="ttc" id="struct_v_mlib_1_1pair_scalar_vector_html"><div class="ttname"><a href="../../d1/d11/struct_v_mlib_1_1pair_scalar_vector.html">VMlib::pairScalarVector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l01051">numvector.h:1051</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d02/_gausspoints_8h_a0a6149fd30774ab082a99dbb5726e2d0_cgraph.png" border="0" usemap="#d8/d02/_gausspoints_8h_a0a6149fd30774ab082a99dbb5726e2d0_cgraph" alt=""/></div>
+<map name="d8/d02/_gausspoints_8h_a0a6149fd30774ab082a99dbb5726e2d0_cgraph" id="d8/d02/_gausspoints_8h_a0a6149fd30774ab082a99dbb5726e2d0_cgraph">
+<area shape="rect" id="node2" href="../../d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="116,5,163,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a14b4e6571870fbd31621c477785b4b58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::pair&lt; double, double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00516">516</a></p>
+<div class="fragment"><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;{</div><div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    str &lt;&lt; <span class="stringliteral">&quot;{ &quot;</span> &lt;&lt; pr.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; pr.second &lt;&lt; <span class="stringliteral">&quot; }&quot;</span>;</div><div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">return</span> str;</div><div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a class="anchor" id="abeb33e434adebc62f5fb9f1471045e49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.5 },</div><div class="line">},</div><div class="line">{</div><div class="line">    1.0</div><div class="line">},</div><div class="line">    2</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 1-й гауссовой точкой (2-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2f0cc1a23eabf5ec0be4dfcd9001762a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.013046735741414},</div><div class="line">    {0.06746831665551},</div><div class="line">    {0.16029521585049},</div><div class="line">    {0.28330230293538},</div><div class="line">    {0.42556283050918},</div><div class="line">    {0.5744371694908},</div><div class="line">    {0.7166976970646},</div><div class="line">    {0.8397047841495},</div><div class="line">    {0.9325316833445}, </div><div class="line">    {0.9869532642586}</div><div class="line">},</div><div class="line">{</div><div class="line">    0.0333356721543441, 0.074725674575290, 0.109543181257991, </div><div class="line">0.134633359654998, 0.147762112357376, 0.147762112357376, </div><div class="line">0.134633359654998, 0.109543181257991, 0.074725674575290, </div><div class="line">0.0333356721543441</div><div class="line">},</div><div class="line">    20</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 10-мя гауссовыми точками (20-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00111">111</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab44f865fcf63ced6475e133ae7fbf797"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.009219682876640},</div><div class="line">    {0.04794137181476},</div><div class="line">    {0.11504866290285},</div><div class="line">    {0.20634102285669},</div><div class="line">    {0.3160842505009},</div><div class="line">    {0.4373832957443},</div><div class="line">    {0.5626167042557},</div><div class="line">    {0.6839157494991},</div><div class="line">    {0.7936589771433},</div><div class="line">    {0.8849513370972},</div><div class="line">    {0.9520586281852},</div><div class="line">    {0.9907803171234}</div><div class="line">},</div><div class="line">{</div><div class="line">    0.0235876681932559, 0.0534696629976592, 0.080039164271673, </div><div class="line">    0.101583713361533, 0.116746268269177, 0.124573522906701, </div><div class="line">    0.124573522906701, 0.116746268269177, 0.101583713361533, </div><div class="line">    0.080039164271673, 0.0534696629976592, 0.0235876681932559</div><div class="line">},</div><div class="line">    24</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 12-мя гауссовыми точками (24-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00154">154</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af8e48fb5d180eedef2445c5a8a8ea0ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.211324865405187}, </div><div class="line">    {0.788675134594813},</div><div class="line">},</div><div class="line">{</div><div class="line">    0.500000000000000, 0.500000000000000</div><div class="line">},</div><div class="line">    4</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 2-мя гауссовыми точками (4-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00068">68</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8a0329e15d31ff286e6a35a6201b7b82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.069431844202974}, </div><div class="line">    {0.33000947820757},</div><div class="line">    {0.66999052179243},</div><div class="line">    {0.93056815579703}</div><div class="line">},</div><div class="line">{</div><div class="line">    0.173927422568727, 0.326072577431273, 0.326072577431273, 0.173927422568727</div><div class="line">},</div><div class="line">    8</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 4-мя гауссовыми точками (8-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00080">80</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a249c9e38cfaf404dfc696da0f50b8858"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.033765242898424},</div><div class="line">    {0.16939530676687},</div><div class="line">    {0.38069040695840},</div><div class="line">    {0.61930959304160},</div><div class="line">    {0.83060469323313},</div><div class="line">    {0.96623475710158}</div><div class="line">},</div><div class="line">{</div><div class="line">    0.085662246189585, 0.180380786524069, 0.233956967286346, </div><div class="line">0.233956967286346, 0.180380786524069, 0.085662246189585</div><div class="line">},</div><div class="line">    12</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 6-мя гауссовыми точками (12-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00094">94</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adbf3af307868dbd0ec54ab9f81523951"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;2&gt; gp2D8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    {0.019855071751232},</div><div class="line">    {0.10166676129319},</div><div class="line">    {0.23723379504184},</div><div class="line">    {0.40828267875218},</div><div class="line">    {0.59171732124782}, </div><div class="line">    {0.7627662049582}, </div><div class="line">    {0.8983332387068},</div><div class="line">    {0.9801449282488}</div><div class="line">},</div><div class="line">{</div><div class="line">    0.0506142681451881, 0.111190517226687, 0.156853322938944, </div><div class="line">    0.181341891689181, 0.181341891689181, 0.156853322938944, </div><div class="line">    0.111190517226687, 0.0506142681451881</div><div class="line">},</div><div class="line">    16</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 8-мя гауссовыми точками (16-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00134">134</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a626adeaa7e1cc1a6d8c307c4f8edf4e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.3333333333333333, 0.3333333333333333 }, </div><div class="line">},</div><div class="line">{</div><div class="line">    1.0 </div><div class="line">},</div><div class="line">    2</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 1-й гауссовой точкой (2-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00179">179</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a418bd3270451627b9cacdb98b630b6f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Квадратурная формула с 12-ю гауссовыми точками (6-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00295">295</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5343991feaad7c8d97e19e730ccf7500"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Квадратурная формула с 13-ю гауссовыми точками (7-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00328">328</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a363c05fa77056a2e568315f076ba4642"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.1666666666666667, 0.1666666666666667 },</div><div class="line">    { 0.6666666666666667, 0.1666666666666667 },</div><div class="line">    { 0.1666666666666667, 0.6666666666666667 },</div><div class="line">},</div><div class="line">{</div><div class="line">    0.3333333333333333,</div><div class="line">    0.3333333333333333,</div><div class="line">    0.3333333333333333</div><div class="line">},</div><div class="line">    2</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 3-мя гауссовыми точками (2-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00190">190</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5851e1b56a52d1bcc46035c24b1a950d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">    </div><div class="line">{</div><div class="line">    { 0.3333333333333333, 0.3333333333333333 },</div><div class="line">    { 0.6, 0.2 },</div><div class="line">    { 0.2, 0.6 },</div><div class="line">    { 0.2, 0.2 }</div><div class="line">},</div><div class="line"></div><div class="line">{</div><div class="line">    -0.5625,</div><div class="line">    0.5208333333333333,</div><div class="line">    0.5208333333333333,</div><div class="line">    0.5208333333333333</div><div class="line">},</div><div class="line">    3</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 4-мя гауссовыми точками (3-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00205">205</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab3a3615adc02fa6c05f288b657d4bbc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.816847572980459, 0.091576213509771 },</div><div class="line">    { 0.091576213509771, 0.816847572980459 },</div><div class="line">    { 0.091576213509771, 0.091576213509771 },</div><div class="line">    { 0.445948490915965, 0.108103018168070 },</div><div class="line">    { 0.108103018168070, 0.445948490915965 },</div><div class="line">    { 0.445948490915965, 0.445948490915965 }    </div><div class="line">},</div><div class="line">{</div><div class="line">    0.109951743655322,</div><div class="line">    0.109951743655322,</div><div class="line">    0.109951743655322,</div><div class="line">    0.223381589678011,</div><div class="line">    0.223381589678011,</div><div class="line">    0.223381589678011</div><div class="line">},</div><div class="line">    4</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 6-ю гауссовыми точками (4-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00224">224</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9db3936b52573de715659566fe1ebb4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.3333333333333333, 0.3333333333333333 },</div><div class="line">    { 0.101286507323456, 0.797426985353087 },</div><div class="line">    { 0.797426985353087, 0.101286507323456 },</div><div class="line">    { 0.101286507323456, 0.101286507323456 },</div><div class="line">    { 0.470142064105115, 0.059715871789770 },</div><div class="line">    { 0.059715871789770, 0.470142064105115 },</div><div class="line">    { 0.470142064105115, 0.470142064105115 }</div><div class="line">},</div><div class="line">{</div><div class="line">    0.225,</div><div class="line">    0.125939180544827,</div><div class="line">    0.125939180544827,</div><div class="line">    0.125939180544827,</div><div class="line">    0.132394152788506,</div><div class="line">    0.132394152788506,</div><div class="line">    0.132394152788506</div><div class="line">},</div><div class="line">    5</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 7-ю гауссовыми точками (5-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00245">245</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abbaa277d765ec5250b4246da1e105c1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/db0/structgp_pos_weight_ord.html">gpPosWeightOrd</a>&lt;3&gt; gp3D9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">{</div><div class="line">{</div><div class="line">    { 0.437525248383384, 0.124949503233232 },</div><div class="line">    { 0.124949503233232, 0.437525248383384 },</div><div class="line">    { 0.437525248383384, 0.437525248383384 },</div><div class="line">    { 0.797112651860071, 0.165409927389841 },</div><div class="line">    { 0.165409927389841, 0.797112651860071 },</div><div class="line">    { 0.797112651860071, 0.037477420750088 },</div><div class="line">    { 0.037477420750088, 0.797112651860071 },</div><div class="line">    { 0.165409927389841, 0.037477420750088 },</div><div class="line">    { 0.037477420750088, 0.165409927389841 }</div><div class="line">},</div><div class="line">{</div><div class="line">    0.205950504760887,</div><div class="line">    0.205950504760887,</div><div class="line">    0.205950504760887,</div><div class="line">    0.063691414286223,</div><div class="line">    0.063691414286223,</div><div class="line">    0.063691414286223,</div><div class="line">    0.063691414286223,</div><div class="line">    0.063691414286223,</div><div class="line">    0.063691414286223,  </div><div class="line">},</div><div class="line">    5</div><div class="line">}</div></div><!-- fragment -->
+<p>Квадратурная формула с 9-ю гауссовыми точками (5-й порядок точности) </p>
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00268">268</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad6dc632824218ddfc4a99338738f9c6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int maxRefine = 7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d8/d02/_gausspoints_8h_source.html">Gausspoints.h</a> строка <a class="el" href="../../d8/d02/_gausspoints_8h_source.html#l00024">24</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_df88dd5c63bb21ef49411bc7468f67c4.html">Gausspoints</a></li><li class="navelem"><a class="el" href="../../d8/d02/_gausspoints_8h.html">Gausspoints.h</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$d0/d39/class_computer.html" title="Computer\&lt; double, 3 \&gt;" alt="" coords="5,81,161,108"/>
+<area shape="rect" id="node2" href="$d8/d34/class_comp_i3_d_k.html" title="Класс – вычислитель для 3D случая двукратного интеграла от функции Грина &#160;&#160;Наследован от Computer&lt;do..." alt="" coords="229,5,316,32"/>
+<area shape="rect" id="node3" href="$dc/d84/class_comp_i3_d_k___duffy.html" title="Класс – вычислитель для 3D случая двукратного интеграла от функции Грина &#160;&#160;Наследован от Computer&lt;do..." alt="" coords="209,56,336,83"/>
+<area shape="rect" id="node4" href="$d6/db9/class_comp_i3_d_m.html" title="Класс – вычислитель для 3D случая однократного интеграла от функции Грина &#160;&#160;Наследован от Computer&lt;d..." alt="" coords="228,107,317,133"/>
+<area shape="rect" id="node5" href="$df/db4/class_comp_test.html" title="Пример класса – вычислителя скалярнозначных интегралов для пространственного случая &#160;&#160;Наследован от ..." alt="" coords="231,157,314,184"/>
+</map>

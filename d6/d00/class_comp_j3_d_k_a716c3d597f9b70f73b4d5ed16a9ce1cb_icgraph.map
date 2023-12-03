@@ -1,0 +1,10 @@
+<map id="CompJ3DK::ThetaPsi" name="CompJ3DK::ThetaPsi">
+<area shape="rect" id="node2" href="$d6/d00/class_comp_j3_d_k.html#a079caf0b3d19fe2acd6c3513b59b9ccc" title="CompJ3DK::J3D" alt="" coords="204,107,327,133"/>
+<area shape="rect" id="node7" href="$d6/d00/class_comp_j3_d_k.html#ab125f49d8f0b61fc7110bcfc8183b489" title="CompJ3DK::RegContact" alt="" coords="375,157,543,184"/>
+<area shape="rect" id="node3" href="$d6/d00/class_comp_j3_d_k.html#a42ea59e6f442b8f1cd024d7c352a727c" title="CompJ3DK::JRegSosed" alt="" coords="375,56,542,83"/>
+<area shape="rect" id="node5" href="$d6/d00/class_comp_j3_d_k.html#a59269cb6598222aa69ded32ab39c6550" title="Перегрузка функции для выполнения одного скалярнозначного вычисления " alt="" coords="865,107,1012,133"/>
+<area shape="rect" id="node4" href="$d6/d00/class_comp_j3_d_k.html#ad5d79bb42d7e09452dbd35b201512543" title="CompJ3DK::IntJRegSosed" alt="" coords="613,5,795,32"/>
+<area shape="rect" id="node6" href="$d6/d00/class_comp_j3_d_k.html#a978965a1d9d72295f97b921d240fbffd" title="CompJ3DK::IntJRegSosedEpsRel" alt="" coords="592,56,816,83"/>
+<area shape="rect" id="node8" href="$d6/d00/class_comp_j3_d_k.html#acccfd13a040fd8a7d2c2cdcea9b5e09f" title="CompJ3DK::IntRegContact" alt="" coords="613,157,795,184"/>
+<area shape="rect" id="node9" href="$d6/d00/class_comp_j3_d_k.html#a71a1864f2552cb201deeb0d2a3d3b21a" title="CompJ3DK::IntRegContactEpsRel" alt="" coords="591,208,817,235"/>
+</map>

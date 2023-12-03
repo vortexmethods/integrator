@@ -1,0 +1,20 @@
+<map id="CompJ3DK_Duffy::evaluate" name="CompJ3DK_Duffy::evaluate">
+<area shape="rect" id="node2" href="$dd/dbf/class_comp_j3_d_k___duffy.html#a2a4d9a82fb5ebcaa8cf3af6cca962b26" title="CompJ3DK_Duffy::Renumeration\lSosed" alt="" coords="240,56,459,97"/>
+<area shape="rect" id="node3" href="$dd/dbf/class_comp_j3_d_k___duffy.html#ac565648c0e47a76e862273ff7af4b20b" title="CompJ3DK_Duffy::IntDuffy\lSosed" alt="" coords="257,121,441,163"/>
+<area shape="rect" id="node13" href="$dd/dbf/class_comp_j3_d_k___duffy.html#a203ccfea1cb1b5ed86a90cb8b275ba9f" title="CompJ3DK_Duffy::Renumeration\lContact" alt="" coords="240,304,459,345"/>
+<area shape="rect" id="node14" href="$dd/dbf/class_comp_j3_d_k___duffy.html#ac88d7eb48792a165d394c9b880522fcc" title="CompJ3DK_Duffy::IntDuffy\lContact" alt="" coords="257,187,441,228"/>
+<area shape="rect" id="node16" href="$dd/dbf/class_comp_j3_d_k___duffy.html#a64d60e3b415a4dc9ce53c606f7acddf2" title="CompJ3DK_Duffy::J3D" alt="" coords="269,253,430,279"/>
+<area shape="rect" id="node4" href="$dd/dbf/class_comp_j3_d_k___duffy.html#a498e8e1e9dacbca802473d27c6fe31e7" title="CompJ3DK_Duffy::DistSosed" alt="" coords="511,26,709,53"/>
+<area shape="rect" id="node5" href="$da/d13/_comp_j3_d_k-_duffy_8cpp.html#a46980bd2d1ae44b5dc00dce91d229340" title="cubpow" alt="" coords="577,194,643,221"/>
+<area shape="rect" id="node6" href="$df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="518,77,702,119"/>
+<area shape="rect" id="node11" href="$df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="518,143,702,170"/>
+<area shape="rect" id="node7" href="$d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="788,138,923,165"/>
+<area shape="rect" id="node8" href="$d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="779,37,932,63"/>
+<area shape="rect" id="node9" href="$d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="824,87,887,114"/>
+<area shape="rect" id="node10" href="$d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="1057,87,1104,114"/>
+<area shape="rect" id="node12" href="$d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="771,189,940,215"/>
+<area shape="rect" id="node15" href="$dd/dbf/class_comp_j3_d_k___duffy.html#a320106d220b93f277f9f1a3878828818" title="CompJ3DK_Duffy::DistContact" alt="" coords="507,245,713,271"/>
+<area shape="rect" id="node17" href="$dd/dbf/class_comp_j3_d_k___duffy.html#ab8052868b052152472cf19f76bfeef3a" title="CompJ3DK_Duffy::ThetaPsi" alt="" coords="515,295,705,322"/>
+<area shape="rect" id="node18" href="$d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947" title="Нормирование вектора на заданную длину " alt="" coords="761,295,949,322"/>
+<area shape="rect" id="node19" href="$d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="997,295,1164,322"/>
+</map>

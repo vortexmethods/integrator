@@ -1,0 +1,17 @@
+<map id="CompI3DK_Duffy::evaluate" name="CompI3DK_Duffy::evaluate">
+<area shape="rect" id="node2" href="$dc/d84/class_comp_i3_d_k___duffy.html#af5d68b34704eddd61b4964b539a1fc81" title="CompI3DK_Duffy::Renumeration\lSosed" alt="" coords="236,5,451,47"/>
+<area shape="rect" id="node3" href="$dc/d84/class_comp_i3_d_k___duffy.html#a5d36eac48be39f018c02abc8f0f378dd" title="CompI3DK_Duffy::IntDuffy\lSosed" alt="" coords="253,123,434,164"/>
+<area shape="rect" id="node13" href="$dc/d84/class_comp_i3_d_k___duffy.html#a52e8abb5bb1a0f6a16b0a5dbf682e306" title="CompI3DK_Duffy::Renumeration\lContact" alt="" coords="236,253,451,295"/>
+<area shape="rect" id="node14" href="$dc/d84/class_comp_i3_d_k___duffy.html#aad463ea40a0937be7483c0c9a7c63261" title="CompI3DK_Duffy::IntDuffy\lContact" alt="" coords="253,188,434,229"/>
+<area shape="rect" id="node16" href="$d6/dd4/class_v_mlib_1_1numvector.html#a8e16f463451bfe1c316f359c535cd947" title="Нормирование вектора на заданную длину " alt="" coords="249,71,437,98"/>
+<area shape="rect" id="node4" href="$dc/d84/class_comp_i3_d_k___duffy.html#acc0ff8a4a6f586f5bef5f97038f4b0fa" title="CompI3DK_Duffy::DistSosed" alt="" coords="503,122,698,149"/>
+<area shape="rect" id="node5" href="$d6/dd4/class_v_mlib_1_1numvector.html#a6a1ef7e752852fd7a508497a037c2764" title="Вычисление 2&#45;нормы (длины) вектора " alt="" coords="517,71,684,98"/>
+<area shape="rect" id="node6" href="$df/df6/class_gausspoints_cube.html#aef268008f3b36ebe01c4f539c83c3d1d" title="GausspointsCube::integrate\lEpsRel" alt="" coords="509,224,693,265"/>
+<area shape="rect" id="node11" href="$df/df6/class_gausspoints_cube.html#a8cfc3b6f6fe4ec7aa30084e2b82965fb" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="509,173,693,199"/>
+<area shape="rect" id="node7" href="$d0/d54/class_gausspoints.html#af00da25235b6b09ec0d4d226f9ecc4b8" title="Gausspoints::refine" alt="" coords="768,231,903,258"/>
+<area shape="rect" id="node8" href="$d0/d54/class_gausspoints.html#a2ff840810ab8f876fcfd778cdfee652b" title="Шаблонная функция вычисления интеграла по гауссовым точкам " alt="" coords="759,282,912,309"/>
+<area shape="rect" id="node9" href="$d8/d02/_gausspoints_8h.html#ababaeb0f8afe2efe7e5b38b235236801" title="newdiv" alt="" coords="804,333,867,359"/>
+<area shape="rect" id="node10" href="$d8/d02/_gausspoints_8h.html#a359fcada314581acd9e55de693e4aa19" title="fabs" alt="" coords="968,257,1015,283"/>
+<area shape="rect" id="node12" href="$d6/dd4/class_v_mlib_1_1numvector.html#ab52c2bfa931d8533aae15b6999d718ab" title="Установка всех компонент вектора в константу (по умолчанию — нуль) " alt="" coords="751,130,920,157"/>
+<area shape="rect" id="node15" href="$dc/d84/class_comp_i3_d_k___duffy.html#a0e0dce82f5d29f72361173fae1cee927" title="CompI3DK_Duffy::DistContact" alt="" coords="499,290,703,317"/>
+</map>

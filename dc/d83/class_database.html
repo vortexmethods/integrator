@@ -1,0 +1,900 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Шаблон класса Database&lt; dim &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dc/d83/class_database.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d0/d3b/class_database-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса Database&lt; dim &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Шаблонный класс, определяющий базу данных геометрических объектов &mdash; панелей и точек наблюдения  
+ <a href="../../dc/d83/class_database.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса Database&lt; dim &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d56/class_database__coll__graph.png" border="0" usemap="#_database_3_01dim_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="_database_3_01dim_01_4_coll__map" id="_database_3_01dim_01_4_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a10970aa7b7b6d2a216de9be9ef5052a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">ifSosed</a> (std::pair&lt; int, int &gt; pr) const </td></tr>
+<tr class="separator:a10970aa7b7b6d2a216de9be9ef5052a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3551736c492ad17122eeec2b9223cef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">ifContact</a> (std::pair&lt; int, int &gt; pr) const </td></tr>
+<tr class="separator:aa3551736c492ad17122eeec2b9223cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0723358983a8d6f6ff78f6b413d8656d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a0723358983a8d6f6ff78f6b413d8656d">Database</a> ()</td></tr>
+<tr class="memdesc:a0723358983a8d6f6ff78f6b413d8656d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор (пустой)  <a href="#a0723358983a8d6f6ff78f6b413d8656d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0723358983a8d6f6ff78f6b413d8656d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973d3a341a09b15838e1633461740281"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281">~Database</a> ()</td></tr>
+<tr class="memdesc:a973d3a341a09b15838e1633461740281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор (пустой)  <a href="#a973d3a341a09b15838e1633461740281">Подробнее...</a><br /></td></tr>
+<tr class="separator:a973d3a341a09b15838e1633461740281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7b52e34992d2897e0896ba3f0878c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#abe7b52e34992d2897e0896ba3f0878c1">readNodeTopoFromFile</a> (const std::string &amp;fileName, double scale=1.0)</td></tr>
+<tr class="memdesc:abe7b52e34992d2897e0896ba3f0878c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывание базы данных из файла  <a href="#abe7b52e34992d2897e0896ba3f0878c1">Подробнее...</a><br /></td></tr>
+<tr class="separator:abe7b52e34992d2897e0896ba3f0878c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e6bf3ef65d98f6d76d43f72f8cdd64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#ad9e6bf3ef65d98f6d76d43f72f8cdd64">fillNbh</a> ()</td></tr>
+<tr class="separator:ad9e6bf3ef65d98f6d76d43f72f8cdd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb2976ae1ebff16a44225cf9f56a934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a2cb2976ae1ebff16a44225cf9f56a934">calcNrm</a> ()</td></tr>
+<tr class="separator:a2cb2976ae1ebff16a44225cf9f56a934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1da051499c5d3ca781fe14a9f653d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#aa1da051499c5d3ca781fe14a9f653d74">calcCnt</a> ()</td></tr>
+<tr class="separator:aa1da051499c5d3ca781fe14a9f653d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1394d73107593f0de8af377a343b997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#ab1394d73107593f0de8af377a343b997">calcMeasure</a> ()</td></tr>
+<tr class="separator:ab1394d73107593f0de8af377a343b997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cd926bb4bc92007359034f099d8425"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a39cd926bb4bc92007359034f099d8425"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a39cd926bb4bc92007359034f099d8425">readNodeTopoFromFile</a> (const std::string &amp;fileName, double scale)</td></tr>
+<tr class="separator:a39cd926bb4bc92007359034f099d8425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51c87b2f0a96f3df33306271bafa1cf"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:af51c87b2f0a96f3df33306271bafa1cf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#af51c87b2f0a96f3df33306271bafa1cf">fillNbh</a> ()</td></tr>
+<tr class="separator:af51c87b2f0a96f3df33306271bafa1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#abb4ed7658858cfaa1df6ddaabbd49e54">calcNrm</a> ()</td></tr>
+<tr class="separator:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ae60b1e4d468b395e523224a79f44a"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a32ae60b1e4d468b395e523224a79f44a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a32ae60b1e4d468b395e523224a79f44a">calcCnt</a> ()</td></tr>
+<tr class="separator:a32ae60b1e4d468b395e523224a79f44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992166cbe37ee45e439490e384ae0aaa"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a992166cbe37ee45e439490e384ae0aaa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a992166cbe37ee45e439490e384ae0aaa">calcMeasure</a> ()</td></tr>
+<tr class="separator:a992166cbe37ee45e439490e384ae0aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cd926bb4bc92007359034f099d8425"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a39cd926bb4bc92007359034f099d8425"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a39cd926bb4bc92007359034f099d8425">readNodeTopoFromFile</a> (const std::string &amp;fileName, double scale)</td></tr>
+<tr class="separator:a39cd926bb4bc92007359034f099d8425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51c87b2f0a96f3df33306271bafa1cf"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:af51c87b2f0a96f3df33306271bafa1cf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#af51c87b2f0a96f3df33306271bafa1cf">fillNbh</a> ()</td></tr>
+<tr class="separator:af51c87b2f0a96f3df33306271bafa1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#abb4ed7658858cfaa1df6ddaabbd49e54">calcNrm</a> ()</td></tr>
+<tr class="separator:abb4ed7658858cfaa1df6ddaabbd49e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ae60b1e4d468b395e523224a79f44a"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a32ae60b1e4d468b395e523224a79f44a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a32ae60b1e4d468b395e523224a79f44a">calcCnt</a> ()</td></tr>
+<tr class="separator:a32ae60b1e4d468b395e523224a79f44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992166cbe37ee45e439490e384ae0aaa"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a992166cbe37ee45e439490e384ae0aaa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a992166cbe37ee45e439490e384ae0aaa">calcMeasure</a> ()</td></tr>
+<tr class="separator:a992166cbe37ee45e439490e384ae0aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:aa8f2753755c01dfb799eb1731ef30a83"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a></td></tr>
+<tr class="memdesc:aa8f2753755c01dfb799eb1731ef30a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Координаты узлов сетки  <a href="#aa8f2753755c01dfb799eb1731ef30a83">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa8f2753755c01dfb799eb1731ef30a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a632479c48f30582f6f9376f383f4dead"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; int, dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a></td></tr>
+<tr class="memdesc:a632479c48f30582f6f9376f383f4dead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Топология сетки  <a href="#a632479c48f30582f6f9376f383f4dead">Подробнее...</a><br /></td></tr>
+<tr class="separator:a632479c48f30582f6f9376f383f4dead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411cb38d64c906ce7b94cf3742dfe2c1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">nrm</a></td></tr>
+<tr class="memdesc:a411cb38d64c906ce7b94cf3742dfe2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Нормали к ячейкам сетки  <a href="#a411cb38d64c906ce7b94cf3742dfe2c1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a411cb38d64c906ce7b94cf3742dfe2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1565e91f16beb01abd904d99027141e6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a></td></tr>
+<tr class="memdesc:a1565e91f16beb01abd904d99027141e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Центры ячеек сетки  <a href="#a1565e91f16beb01abd904d99027141e6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1565e91f16beb01abd904d99027141e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93c242613d7493ffd466cfbe36dae6c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a></td></tr>
+<tr class="memdesc:ab93c242613d7493ffd466cfbe36dae6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Меры ячеек (площади или длины)  <a href="#ab93c242613d7493ffd466cfbe36dae6c">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab93c242613d7493ffd466cfbe36dae6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6bf4c6939cc72eb75f2d66983cb679"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt; double, dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#a3e6bf4c6939cc72eb75f2d66983cb679">point</a></td></tr>
+<tr class="memdesc:a3e6bf4c6939cc72eb75f2d66983cb679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Координаты точек вычисления однократных интегралов  <a href="#a3e6bf4c6939cc72eb75f2d66983cb679">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3e6bf4c6939cc72eb75f2d66983cb679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6cbc387c1f8a2ba55e59077aa23e85"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::pair&lt; int, int &gt;, <a class="el" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">nbh_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a></td></tr>
+<tr class="memdesc:aec6cbc387c1f8a2ba55e59077aa23e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Признаки соседства  <a href="#aec6cbc387c1f8a2ba55e59077aa23e85">Подробнее...</a><br /></td></tr>
+<tr class="separator:aec6cbc387c1f8a2ba55e59077aa23e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;int dim&gt;<br />
+class Database&lt; dim &gt;</h3>
+
+<p>Шаблонный класс, определяющий базу данных геометрических объектов &mdash; панелей и точек наблюдения </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">dim</td><td>размерность задачи</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Автор</dt><dd>Гумирова Алия Ильдусовна </dd>
+<dd>
+Марчевский Илья Константинович </dd>
+<dd>
+Серафимова София Романовна </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.5 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>11 сентября 2022 г. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00042">42</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a0723358983a8d6f6ff78f6b413d8656d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::<a class="el" href="../../dc/d83/class_database.html">Database</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор (пустой) </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00070">70</a></p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a973d3a341a09b15838e1633461740281"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::~<a class="el" href="../../dc/d83/class_database.html">Database</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор (пустой) </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00073">73</a></p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="aa1da051499c5d3ca781fe14a9f653d74"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::calcCnt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Вычисление центров панелей </p><dl class="section warning"><dt>Предупреждения</dt><dd>Базовая реализация отсутствует, см. явные специализации для конкретных dim </dd></dl>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_aa1da051499c5d3ca781fe14a9f653d74_icgraph.png" border="0" usemap="#dc/d83/class_database_aa1da051499c5d3ca781fe14a9f653d74_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_aa1da051499c5d3ca781fe14a9f653d74_icgraph" id="dc/d83/class_database_aa1da051499c5d3ca781fe14a9f653d74_icgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281" title="Деструктор (пустой) " alt="" coords="184,5,365,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="249,56,300,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a32ae60b1e4d468b395e523224a79f44a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcCnt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a32ae60b1e4d468b395e523224a79f44a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcCnt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d3/dcb/_database_8cpp_source.html">Database.cpp</a> строка <a class="el" href="../../d3/dcb/_database_8cpp_source.html#l00312">312</a></p>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;{</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a>.clear();</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a>.resize(0);</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a>.reserve(<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size());</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; trg : <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>)</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">cnt</a>.push_back((<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]] + <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]]) * 0.5);</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div><div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a1565e91f16beb01abd904d99027141e6"><div class="ttname"><a href="../../dc/d83/class_database.html#a1565e91f16beb01abd904d99027141e6">Database::cnt</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; cnt</div><div class="ttdoc">Центры ячеек сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00055">Database.h:55</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab1394d73107593f0de8af377a343b997"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::calcMeasure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Вычисление мер </p><dl class="section warning"><dt>Предупреждения</dt><dd>Базовая реализация отсутствует, см. явные специализации для конкретных dim </dd></dl>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_ab1394d73107593f0de8af377a343b997_icgraph.png" border="0" usemap="#dc/d83/class_database_ab1394d73107593f0de8af377a343b997_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_ab1394d73107593f0de8af377a343b997_icgraph" id="dc/d83/class_database_ab1394d73107593f0de8af377a343b997_icgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281" title="Деструктор (пустой) " alt="" coords="213,5,395,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="279,56,329,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a992166cbe37ee45e439490e384ae0aaa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcMeasure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a992166cbe37ee45e439490e384ae0aaa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcMeasure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d3/dcb/_database_8cpp_source.html">Database.cpp</a> строка <a class="el" href="../../d3/dcb/_database_8cpp_source.html#l00323">323</a></p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>.clear();</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>.resize(0);</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>.reserve(<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size());</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; trg : <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>)</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>.push_back((<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]] - <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]]).length());</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_ab93c242613d7493ffd466cfbe36dae6c"><div class="ttname"><a href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">Database::measure</a></div><div class="ttdeci">std::vector&lt; double &gt; measure</div><div class="ttdoc">Меры ячеек (площади или длины) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00058">Database.h:58</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2cb2976ae1ebff16a44225cf9f56a934"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::calcNrm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Вычисление нормалей </p><dl class="section warning"><dt>Предупреждения</dt><dd>Базовая реализация отсутствует, см. явные специализации для конкретных dim </dd></dl>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_a2cb2976ae1ebff16a44225cf9f56a934_icgraph.png" border="0" usemap="#dc/d83/class_database_a2cb2976ae1ebff16a44225cf9f56a934_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_a2cb2976ae1ebff16a44225cf9f56a934_icgraph" id="dc/d83/class_database_a2cb2976ae1ebff16a44225cf9f56a934_icgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281" title="Деструктор (пустой) " alt="" coords="188,5,369,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="253,56,304,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abb4ed7658858cfaa1df6ddaabbd49e54"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcNrm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb4ed7658858cfaa1df6ddaabbd49e54"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::calcNrm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d3/dcb/_database_8cpp_source.html">Database.cpp</a> строка <a class="el" href="../../d3/dcb/_database_8cpp_source.html#l00299">299</a></p>
+<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">nrm</a>.clear();</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">nrm</a>.resize(0);</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; trg : <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>)</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v2D</a> v = <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]] - <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]];</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <a class="code" href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">nrm</a>.push_back(-v.<a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9">kcross</a>().unit());</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div><div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="class_database_html_a411cb38d64c906ce7b94cf3742dfe2c1"><div class="ttname"><a href="../../dc/d83/class_database.html#a411cb38d64c906ce7b94cf3742dfe2c1">Database::nrm</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; nrm</div><div class="ttdoc">Нормали к ячейкам сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00052">Database.h:52</a></div></div>
+<div class="ttc" id="class_v_mlib_1_1numvector_html_a1471ef55266b8e21d045c4f4e05912d9"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9">VMlib::numvector::kcross</a></div><div class="ttdeci">numvector&lt; T, 2 &gt; kcross() const </div><div class="ttdoc">Геометрический поворот двумерного вектора на 90 градусов </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00595">numvector.h:595</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_abb4ed7658858cfaa1df6ddaabbd49e54_cgraph.png" border="0" usemap="#dc/d83/class_database_abb4ed7658858cfaa1df6ddaabbd49e54_cgraph" alt=""/></div>
+<map name="dc/d83/class_database_abb4ed7658858cfaa1df6ddaabbd49e54_cgraph" id="dc/d83/class_database_abb4ed7658858cfaa1df6ddaabbd49e54_cgraph">
+<area shape="rect" id="node2" href="../../d6/dd4/class_v_mlib_1_1numvector.html#a1471ef55266b8e21d045c4f4e05912d9" title="Геометрический поворот двумерного вектора на 90 градусов " alt="" coords="188,5,359,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9e6bf3ef65d98f6d76d43f72f8cdd64"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::fillNbh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Заполнение сведений о соседних панелях </p><dl class="section warning"><dt>Предупреждения</dt><dd>Базовая реализация отсутствует, см. явные специализации для конкретных dim </dd></dl>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_ad9e6bf3ef65d98f6d76d43f72f8cdd64_icgraph.png" border="0" usemap="#dc/d83/class_database_ad9e6bf3ef65d98f6d76d43f72f8cdd64_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_ad9e6bf3ef65d98f6d76d43f72f8cdd64_icgraph" id="dc/d83/class_database_ad9e6bf3ef65d98f6d76d43f72f8cdd64_icgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281" title="Деструктор (пустой) " alt="" coords="176,5,357,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="241,56,292,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af51c87b2f0a96f3df33306271bafa1cf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::fillNbh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af51c87b2f0a96f3df33306271bafa1cf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::fillNbh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d3/dcb/_database_8cpp_source.html">Database.cpp</a> строка <a class="el" href="../../d3/dcb/_database_8cpp_source.html#l00216">216</a></p>
+<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;{</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    std::vector&lt;std::set&lt;int&gt;&gt; db;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    db.resize(<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>.size());</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    std::set&lt;int&gt; memb;</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#pragma omp parallel for default(none) shared(db) private(memb)</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nd = 0; nd &lt; <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>.size(); ++nd)</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        memb.clear();</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> trg = 0; trg &lt; <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size(); ++trg)</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        {</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>[trg].member(nd) != -1)</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                memb.insert(trg);</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        db[nd] = memb;</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size(); ++i)</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        std::set&lt;int&gt; ssd;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nd = 0; nd &lt; <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>.size(); ++nd)</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        {       </div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keyword">auto</span> it = db[nd].find(i);</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">if</span> (it != db[nd].end())</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            {</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                ssd.insert(db[nd].begin(), db[nd].end());</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            }</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            ssd.erase(i);</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;, ssd = &quot;;</span></div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">//for (auto q : ssd)</span></div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="comment">//  std::cout &lt;&lt; q &lt;&lt; &quot; &quot;;</span></div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">//std::cout &lt;&lt; std::endl;</span></div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> q : ssd)</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>[{i, q}] = <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a>;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    </div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div><div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a></div><div class="ttdoc">соседняя через грань (3D) или через граничную точку (2D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00024">Database.h:24</a></div></div>
+<div class="ttc" id="class_database_html_aec6cbc387c1f8a2ba55e59077aa23e85"><div class="ttname"><a href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">Database::nbh</a></div><div class="ttdeci">std::map&lt; std::pair&lt; int, int &gt;, nbh_t &gt; nbh</div><div class="ttdoc">Признаки соседства </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00064">Database.h:64</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa3551736c492ad17122eeec2b9223cef"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::ifContact </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; int, int &gt;&#160;</td>
+          <td class="paramname"><em>pr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00127">127</a></p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.find(pr);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> ((it != <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.end()) &amp;&amp; (it-&gt;second == <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a>))</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div><div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a56a3984b01171b812664a3b8925a82ae">contact</a></div><div class="ttdoc">соседняя через вершину (3D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00026">Database.h:26</a></div></div>
+<div class="ttc" id="class_database_html_aec6cbc387c1f8a2ba55e59077aa23e85"><div class="ttname"><a href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">Database::nbh</a></div><div class="ttdeci">std::map&lt; std::pair&lt; int, int &gt;, nbh_t &gt; nbh</div><div class="ttdoc">Признаки соседства </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00064">Database.h:64</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_aa3551736c492ad17122eeec2b9223cef_icgraph.png" border="0" usemap="#dc/d83/class_database_aa3551736c492ad17122eeec2b9223cef_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_aa3551736c492ad17122eeec2b9223cef_icgraph" id="dc/d83/class_database_aa3551736c492ad17122eeec2b9223cef_icgraph">
+<area shape="rect" id="node2" href="../../d3/d09/class_model_analyze.html#aa34edfcf844572219036c8b4d4bcadbc" title="Наибольшее отношение площадей ячеек " alt="" coords="192,5,383,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="262,56,313,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a10970aa7b7b6d2a216de9be9ef5052a9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::ifSosed </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; int, int &gt;&#160;</td>
+          <td class="paramname"><em>pr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00118">118</a></p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.find(pr);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> ((it != <a class="code" href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">nbh</a>.end()) &amp;&amp; (it-&gt;second == <a class="code" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a>))</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div><div class="ttc" id="_database_8h_html_aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296"><div class="ttname"><a href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064a9d4a89ac109074534bc8a42b1cd2a296">sosed</a></div><div class="ttdoc">соседняя через грань (3D) или через граничную точку (2D) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00024">Database.h:24</a></div></div>
+<div class="ttc" id="class_database_html_aec6cbc387c1f8a2ba55e59077aa23e85"><div class="ttname"><a href="../../dc/d83/class_database.html#aec6cbc387c1f8a2ba55e59077aa23e85">Database::nbh</a></div><div class="ttdeci">std::map&lt; std::pair&lt; int, int &gt;, nbh_t &gt; nbh</div><div class="ttdoc">Признаки соседства </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00064">Database.h:64</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_a10970aa7b7b6d2a216de9be9ef5052a9_icgraph.png" border="0" usemap="#dc/d83/class_database_a10970aa7b7b6d2a216de9be9ef5052a9_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_a10970aa7b7b6d2a216de9be9ef5052a9_icgraph" id="dc/d83/class_database_a10970aa7b7b6d2a216de9be9ef5052a9_icgraph">
+<area shape="rect" id="node2" href="../../d3/d09/class_model_analyze.html#aa34edfcf844572219036c8b4d4bcadbc" title="Наибольшее отношение площадей ячеек " alt="" coords="184,5,375,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="254,56,305,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a39cd926bb4bc92007359034f099d8425"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::readNodeTopoFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="../../d3/dcb/_database_8cpp_source.html">Database.cpp</a> строка <a class="el" href="../../d3/dcb/_database_8cpp_source.html#l00062">62</a></p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> NP_, NTr_;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::ifstream file;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    file.open(fileName, std::ios::in);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (file.is_open())</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        file &gt;&gt; NP_ &gt;&gt; NTr_;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">double</span> x, y, z;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">int</span> A, B, Number, Trigger;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NP_; ++i)</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            file &gt;&gt; x &gt;&gt; x &gt;&gt; y &gt;&gt; z;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">v3D</a> P{ x, y, z };</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>.push_back(scale * <a class="code" href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a>({P[0], P[1]}));</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        };</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">while</span> (!file.eof())</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            file &gt;&gt; Number &gt;&gt; Trigger;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (Trigger == 102)</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                file &gt;&gt; A &gt;&gt; B;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.push_back({ A - 1, B - 1 });</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">/*else</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">            {</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">                --NTr_;</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">                file &gt;&gt; Number &gt;&gt; Number;</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">            };*/</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        };</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Error! File isn&#39;t opened.&quot;</span>;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    file.close();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div><div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="numvector_8h_html_a2655f4ec4ad15a8634903baf415ba45c"><div class="ttname"><a href="../../df/dc5/numvector_8h.html#a2655f4ec4ad15a8634903baf415ba45c">v2D</a></div><div class="ttdeci">numvector&lt; double, 2 &gt; v2D</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l01352">numvector.h:1352</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abe7b52e34992d2897e0896ba3f0878c1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::readNodeTopoFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считывание базы данных из файла </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>имя файла в формате Salome </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>коэффициент масштабирования профиля </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Базовая реализация отсутствует, см. явные специализации для конкретных dim </dd></dl>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d83/class_database_abe7b52e34992d2897e0896ba3f0878c1_icgraph.png" border="0" usemap="#dc/d83/class_database_abe7b52e34992d2897e0896ba3f0878c1_icgraph" alt=""/></div>
+<map name="dc/d83/class_database_abe7b52e34992d2897e0896ba3f0878c1_icgraph" id="dc/d83/class_database_abe7b52e34992d2897e0896ba3f0878c1_icgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a973d3a341a09b15838e1633461740281" title="Деструктор (пустой) " alt="" coords="276,5,457,32"/>
+<area shape="rect" id="node3" href="../../d8/d88/_integrator_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="341,56,392,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a39cd926bb4bc92007359034f099d8425"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 2 &gt;::readNodeTopoFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a1565e91f16beb01abd904d99027141e6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;double, dim&gt; &gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::cnt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Центры ячеек сетки </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab93c242613d7493ffd466cfbe36dae6c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::measure</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Меры ячеек (площади или длины) </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aec6cbc387c1f8a2ba55e59077aa23e85"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::pair&lt;int, int&gt;, <a class="el" href="../../d1/d94/_database_8h.html#aaa098434c6c6079be01413e6495c6064">nbh_t</a>&gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::nbh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Признаки соседства </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa8f2753755c01dfb799eb1731ef30a83"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;double, dim&gt; &gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Координаты узлов сетки </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a411cb38d64c906ce7b94cf3742dfe2c1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;double, dim&gt; &gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::nrm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Нормали к ячейкам сетки </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3e6bf4c6939cc72eb75f2d66983cb679"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;double, dim&gt; &gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::point</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Координаты точек вычисления однократных интегралов </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a632479c48f30582f6f9376f383f4dead"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector</a>&lt;int, dim&gt; &gt; <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; dim &gt;::topo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Топология сетки </p>
+
+<p>См. определение в файле <a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a> строка <a class="el" href="../../d1/d94/_database_8h_source.html#l00049">49</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>Database/<a class="el" href="../../d1/d94/_database_8h_source.html">Database.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dc/d83/class_database.html">Database</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

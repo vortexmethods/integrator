@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Integrator: Класс ModelAnalyze</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/NativeMML"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Integrator
+   &#160;<span id="projectnumber">0.5</span>
+   </div>
+   <div id="projectbrief">Вычисление интегралов от фундаментального решения уравнения Лапласа и его градиента</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/d09/class_model_analyze.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d9/d53/class_model_analyze-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс ModelAnalyze</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса ModelAnalyze:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/df0/class_model_analyze__coll__graph.png" border="0" usemap="#_model_analyze_coll__map" alt="Collaboration graph"/></div>
+<map name="_model_analyze_coll__map" id="_model_analyze_coll__map">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html" title="Database\&lt; 3 \&gt;" alt="" coords="265,111,375,138"/>
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:afd1612c84cac0251df0ef4e5bafa0cae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#afd1612c84cac0251df0ef4e5bafa0cae">ModelAnalyze</a> (const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 3 &gt; &amp;db_)</td></tr>
+<tr class="memdesc:afd1612c84cac0251df0ef4e5bafa0cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор  <a href="#afd1612c84cac0251df0ef4e5bafa0cae">Подробнее...</a><br /></td></tr>
+<tr class="separator:afd1612c84cac0251df0ef4e5bafa0cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af293dec57ae62ac5873e374cfaa482ad"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#af293dec57ae62ac5873e374cfaa482ad">~ModelAnalyze</a> ()</td></tr>
+<tr class="memdesc:af293dec57ae62ac5873e374cfaa482ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор  <a href="#af293dec57ae62ac5873e374cfaa482ad">Подробнее...</a><br /></td></tr>
+<tr class="separator:af293dec57ae62ac5873e374cfaa482ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace55987ebb29361d69e13d2f95b17f2e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#ace55987ebb29361d69e13d2f95b17f2e">NumberOfCells</a> () const </td></tr>
+<tr class="memdesc:ace55987ebb29361d69e13d2f95b17f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество ячеек в модели  <a href="#ace55987ebb29361d69e13d2f95b17f2e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ace55987ebb29361d69e13d2f95b17f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34edfcf844572219036c8b4d4bcadbc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#aa34edfcf844572219036c8b4d4bcadbc">MaxAreaNeib</a> (bool neib=false)</td></tr>
+<tr class="memdesc:aa34edfcf844572219036c8b4d4bcadbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Наибольшее отношение площадей ячеек  <a href="#aa34edfcf844572219036c8b4d4bcadbc">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa34edfcf844572219036c8b4d4bcadbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65289f07e4b44753fa993c99368249ce"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#a65289f07e4b44753fa993c99368249ce">MaxSide</a> ()</td></tr>
+<tr class="memdesc:a65289f07e4b44753fa993c99368249ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Наибольшее отношение длин сторон ячейки  <a href="#a65289f07e4b44753fa993c99368249ce">Подробнее...</a><br /></td></tr>
+<tr class="separator:a65289f07e4b44753fa993c99368249ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b9b8dee22805116986e39e9718c488"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#a13b9b8dee22805116986e39e9718c488">MinMaxAngle</a> ()</td></tr>
+<tr class="memdesc:a13b9b8dee22805116986e39e9718c488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Наименьший/наибольший угол в ячейке  <a href="#a13b9b8dee22805116986e39e9718c488">Подробнее...</a><br /></td></tr>
+<tr class="separator:a13b9b8dee22805116986e39e9718c488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a55161bf32643ed5e8192a0191683648d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a></td></tr>
+<tr class="memdesc:a55161bf32643ed5e8192a0191683648d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная ссылка на базу данных геометрических параметров  <a href="#a55161bf32643ed5e8192a0191683648d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a55161bf32643ed5e8192a0191683648d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock">
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00034">34</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="afd1612c84cac0251df0ef4e5bafa0cae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ModelAnalyze::ModelAnalyze </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>db_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">db_</td><td>константная ссылка на базу данных геометрических параметров </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00043">43</a></p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;: <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>(db_) {};</div><div class="ttc" id="class_model_analyze_html_a55161bf32643ed5e8192a0191683648d"><div class="ttname"><a href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">ModelAnalyze::db</a></div><div class="ttdeci">const Database&lt; 3 &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd0/_model_analyze_8h_source.html#l00038">ModelAnalyze.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af293dec57ae62ac5873e374cfaa482ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ModelAnalyze::~ModelAnalyze </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00046">46</a></p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{};</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="aa34edfcf844572219036c8b4d4bcadbc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ModelAnalyze::MaxAreaNeib </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>neib</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Наибольшее отношение площадей ячеек </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">neib</td><td>если true &mdash; поиск наибольшего отношения площадей соседних ячеек </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>наибольшее отношение площадей ячеек </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00056">56</a></p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::vector&lt;double&gt; area_ratio;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">size_t</span> msize = <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>.size();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        area_ratio.reserve(msize * msize);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; msize - 1; ++i)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; msize - 1; ++j)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">if</span> (i != j)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keywordflow">if</span> (neib)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">ifSosed</a>({ i,j }) || <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">ifContact</a>({ i,j }))</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                            area_ratio.push_back(<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>[i] / <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>[j]);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        }</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    area_ratio.push_back(<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>[i] / <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">measure</a>[j]);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span>(*(std::max_element(area_ratio.begin(), area_ratio.end())));</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div><div class="ttc" id="class_database_html_ab93c242613d7493ffd466cfbe36dae6c"><div class="ttname"><a href="../../dc/d83/class_database.html#ab93c242613d7493ffd466cfbe36dae6c">Database::measure</a></div><div class="ttdeci">std::vector&lt; double &gt; measure</div><div class="ttdoc">Меры ячеек (площади или длины) </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00058">Database.h:58</a></div></div>
+<div class="ttc" id="class_database_html_aa3551736c492ad17122eeec2b9223cef"><div class="ttname"><a href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef">Database::ifContact</a></div><div class="ttdeci">bool ifContact(std::pair&lt; int, int &gt; pr) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00127">Database.h:127</a></div></div>
+<div class="ttc" id="class_model_analyze_html_a55161bf32643ed5e8192a0191683648d"><div class="ttname"><a href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">ModelAnalyze::db</a></div><div class="ttdeci">const Database&lt; 3 &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd0/_model_analyze_8h_source.html#l00038">ModelAnalyze.h:38</a></div></div>
+<div class="ttc" id="class_database_html_a10970aa7b7b6d2a216de9be9ef5052a9"><div class="ttname"><a href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9">Database::ifSosed</a></div><div class="ttdeci">bool ifSosed(std::pair&lt; int, int &gt; pr) const </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00118">Database.h:118</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d09/class_model_analyze_aa34edfcf844572219036c8b4d4bcadbc_cgraph.png" border="0" usemap="#d3/d09/class_model_analyze_aa34edfcf844572219036c8b4d4bcadbc_cgraph" alt=""/></div>
+<map name="d3/d09/class_model_analyze_aa34edfcf844572219036c8b4d4bcadbc_cgraph" id="d3/d09/class_model_analyze_aa34edfcf844572219036c8b4d4bcadbc_cgraph">
+<area shape="rect" id="node2" href="../../dc/d83/class_database.html#a10970aa7b7b6d2a216de9be9ef5052a9" title="Database::ifSosed" alt="" coords="248,5,379,32"/>
+<area shape="rect" id="node3" href="../../dc/d83/class_database.html#aa3551736c492ad17122eeec2b9223cef" title="Database::ifContact" alt="" coords="244,56,383,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a65289f07e4b44753fa993c99368249ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ModelAnalyze::MaxSide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Наибольшее отношение длин сторон ячейки </p>
+<dl class="section return"><dt>Возвращает</dt><dd>наибольшее отношение длин сторон ячейки </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00088">88</a></p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::vector&lt;double&gt; area_ratio;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        area_ratio.reserve(6 * <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size());</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;int, 3&gt;</a> trg;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">double</span> st1, st2, st3, r1, r2, r3;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size(); ++i)</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            trg = <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>[i];</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            </div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            st1 = (<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]]).length();</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            st2 = (<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]]).length();</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            st3 = (<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]]).length();</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            r1 = st1 / st2;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            r2 = st1 / st3;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            r3 = st2 / st3;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            area_ratio.push_back(r1);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            area_ratio.push_back(1.0 / r1);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            area_ratio.push_back(r2);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            area_ratio.push_back(1.0 / r2);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            area_ratio.push_back(r3);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            area_ratio.push_back(1.0 / r3);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span>(*(std::max_element(area_ratio.begin(), area_ratio.end())));</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div><div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="class_model_analyze_html_a55161bf32643ed5e8192a0191683648d"><div class="ttname"><a href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">ModelAnalyze::db</a></div><div class="ttdeci">const Database&lt; 3 &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd0/_model_analyze_8h_source.html#l00038">ModelAnalyze.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a13b9b8dee22805116986e39e9718c488"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; ModelAnalyze::MinMaxAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Наименьший/наибольший угол в ячейке </p>
+<dl class="section return"><dt>Возвращает</dt><dd>пара наименьший и наибольший угол в ячейке </dd></dl>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00122">122</a></p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        std::vector&lt;double&gt; area_ratio;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">/*area_ratio.resize(db.topo.size());*/</span></div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="../../d6/dd4/class_v_mlib_1_1numvector.html">numvector&lt;int, 3&gt;</a> trg;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">double</span> st1, st2, st3;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size(); ++i)</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            trg = <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>[i];</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            st1 = <a class="code" href="../../dd/d9a/namespace_v_mlib.html#a7d23b56d807a8ebd93629cd3d6a05af7">angle</a>(<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]], <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]]);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            st2 = <a class="code" href="../../dd/d9a/namespace_v_mlib.html#a7d23b56d807a8ebd93629cd3d6a05af7">angle</a>(<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]], <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]]);</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            st3 = <a class="code" href="../../dd/d9a/namespace_v_mlib.html#a7d23b56d807a8ebd93629cd3d6a05af7">angle</a>(<a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[0]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]], <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[1]] - <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">node</a>[trg[2]]);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                        </div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            area_ratio.push_back(st1);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="comment">//area_ratio.push_back(1.0 / r1);</span></div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            area_ratio.push_back(st2);</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">//area_ratio.push_back(1.0 / r2);</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            area_ratio.push_back(st3);</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="comment">//area_ratio.push_back(1.0 / r3);</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span>{(*(std::min_element(area_ratio.begin(), area_ratio.end()))), (*(std::max_element(area_ratio.begin(), area_ratio.end())))};</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div><div class="ttc" id="class_v_mlib_1_1numvector_html"><div class="ttname"><a href="../../d6/dd4/class_v_mlib_1_1numvector.html">VMlib::numvector</a></div><div class="ttdoc">Шаблонный класс, определяющий вектор фиксированной длины   Фактически представляет собой массив...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00087">numvector.h:87</a></div></div>
+<div class="ttc" id="class_database_html_aa8f2753755c01dfb799eb1731ef30a83"><div class="ttname"><a href="../../dc/d83/class_database.html#aa8f2753755c01dfb799eb1731ef30a83">Database::node</a></div><div class="ttdeci">std::vector&lt; numvector&lt; double, dim &gt; &gt; node</div><div class="ttdoc">Координаты узлов сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00046">Database.h:46</a></div></div>
+<div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="namespace_v_mlib_html_a7d23b56d807a8ebd93629cd3d6a05af7"><div class="ttname"><a href="../../dd/d9a/namespace_v_mlib.html#a7d23b56d807a8ebd93629cd3d6a05af7">VMlib::angle</a></div><div class="ttdeci">auto angle(const numvector&lt; T, n &gt; &amp;x, const numvector&lt; P, n &gt; &amp;y) -&gt; typename std::remove_const&lt; decltype(x[0]*y[0])&gt;::type</div><div class="ttdoc">Вычисление угла между двумя радиус-векторами </div><div class="ttdef"><b>Definition:</b> <a href="../../df/dc5/numvector_8h_source.html#l00881">numvector.h:881</a></div></div>
+<div class="ttc" id="class_model_analyze_html_a55161bf32643ed5e8192a0191683648d"><div class="ttname"><a href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">ModelAnalyze::db</a></div><div class="ttdeci">const Database&lt; 3 &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd0/_model_analyze_8h_source.html#l00038">ModelAnalyze.h:38</a></div></div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d09/class_model_analyze_a13b9b8dee22805116986e39e9718c488_cgraph.png" border="0" usemap="#d3/d09/class_model_analyze_a13b9b8dee22805116986e39e9718c488_cgraph" alt=""/></div>
+<map name="d3/d09/class_model_analyze_a13b9b8dee22805116986e39e9718c488_cgraph" id="d3/d09/class_model_analyze_a13b9b8dee22805116986e39e9718c488_cgraph">
+<area shape="rect" id="node2" href="../../dd/d9a/namespace_v_mlib.html#a7d23b56d807a8ebd93629cd3d6a05af7" title="Вычисление угла между двумя радиус&#45;векторами " alt="" coords="244,5,339,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace55987ebb29361d69e13d2f95b17f2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ModelAnalyze::NumberOfCells </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество ячеек в модели </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00050">50</a></p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">db</a>.<a class="code" href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">topo</a>.size();};</div><div class="ttc" id="class_database_html_a632479c48f30582f6f9376f383f4dead"><div class="ttname"><a href="../../dc/d83/class_database.html#a632479c48f30582f6f9376f383f4dead">Database::topo</a></div><div class="ttdeci">std::vector&lt; numvector&lt; int, dim &gt; &gt; topo</div><div class="ttdoc">Топология сетки </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d94/_database_8h_source.html#l00049">Database.h:49</a></div></div>
+<div class="ttc" id="class_model_analyze_html_a55161bf32643ed5e8192a0191683648d"><div class="ttname"><a href="../../d3/d09/class_model_analyze.html#a55161bf32643ed5e8192a0191683648d">ModelAnalyze::db</a></div><div class="ttdeci">const Database&lt; 3 &gt; &amp; db</div><div class="ttdoc">Константная ссылка на базу данных геометрических параметров </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd0/_model_analyze_8h_source.html#l00038">ModelAnalyze.h:38</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="a55161bf32643ed5e8192a0191683648d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dc/d83/class_database.html">Database</a>&lt;3&gt;&amp; ModelAnalyze::db</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Константная ссылка на базу данных геометрических параметров </p>
+
+<p>См. определение в файле <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a> строка <a class="el" href="../../d2/dd0/_model_analyze_8h_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>Database/<a class="el" href="../../d2/dd0/_model_analyze_8h_source.html">ModelAnalyze.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d3/d09/class_model_analyze.html">ModelAnalyze</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>
